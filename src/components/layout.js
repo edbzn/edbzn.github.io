@@ -10,49 +10,6 @@ class Layout extends React.Component {
     const rootPath = `${__PATH_PREFIX__}/`;
     let header;
 
-    if (location.pathname === rootPath) {
-      header = (
-        <span
-          style={{
-            marginBottom: 0,
-            marginTop: 0,
-            fontFamily: "'Merriweather', 'Georgia', serif",
-            fontSize: rhythm(0.9),
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            <strong>edbzn</strong>.github.io
-          </Link>
-        </span>
-      );
-    } else {
-      header = (
-        <span
-          style={{
-            marginBottom: 0,
-            marginTop: 0,
-            fontSize: rhythm(0.9),
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            <strong>edbzn</strong>.github.io
-          </Link>
-        </span>
-      );
-    }
     return (
       <div
         style={{
@@ -70,7 +27,25 @@ class Layout extends React.Component {
             paddingTop: 18,
           }}
         >
-          {header}
+          <span
+            style={{
+              marginBottom: 0,
+              marginTop: 0,
+              fontFamily: "'Merriweather', 'Georgia', serif",
+              fontSize: rhythm(0.9),
+            }}
+          >
+            <Link
+              style={{
+                boxShadow: `none`,
+                textDecoration: `underline`,
+                color: `inherit`,
+              }}
+              to={`/`}
+            >
+              <strong>edbzn</strong>.github.io
+            </Link>
+          </span>
         </header>
         <main style={{ marginTop: rhythm(1) }}>{children}</main>
         <CookieConsent
