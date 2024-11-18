@@ -41,6 +41,7 @@ export const pageQuery = graphql`
           github
           instagram
           linkedin
+          youtube
         }
       }
     }

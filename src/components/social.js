@@ -4,6 +4,7 @@ import github from '../../static/icons/github.svg';
 import linkedin from '../../static/icons/linkedin.svg';
 import twitter from '../../static/icons/twitter.svg';
 import instagram from '../../static/icons/instagram.svg';
+import youtube from '../../static/icons/youtube.svg';
 
 export const Social = ({ social }) => {
   return (
@@ -28,6 +29,13 @@ export const Social = ({ social }) => {
         title="@edbzn on Instagram"
       >
         <img src={instagram} alt="Instagram profile" />
+      </a>
+      <a
+        style={{ boxShadow: 'none' }}
+        href={social.instagram}
+        title="@edbzn on YouTube"
+      >
+        <img src={youtube} alt="YouTube profile" />
       </a>
       <a
         style={{ boxShadow: 'none' }}
