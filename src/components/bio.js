@@ -34,12 +34,9 @@ const Bio = () => {
 
   return (
     <div
-      className="bio"
+      className="bio box"
       style={{
         display: `flex`,
-        padding: `${(0, rhythm(0.7))}`,
-        border: '2px solid #eee',
-        borderRadius: '4px',
       }}
     >
       <div className="avatar" style={{ paddingRight: rhythm(0.7) }}>
@@ -49,9 +46,9 @@ const Bio = () => {
           style={{
             marginTop: rhythm(0.4),
             marginBottom: 0,
-            width: 66,
-            height: 66,
-            borderRadius: `4px`,
+            width: 84,
+            height: 84,
+            borderRadius: `50%`,
             margin: 0,
           }}
         />

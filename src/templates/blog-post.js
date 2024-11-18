@@ -3,7 +3,7 @@ import React from 'react';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import { PostNav } from '../components/post-nav';
-import { SEO } from '../components/seo';
+import { Seo } from '../components/seo';
 import { rhythm } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
@@ -14,7 +14,7 @@ class BlogPostTemplate extends React.Component {
     const { location } = this.props;
     return (
       <Layout location={location} social={social} author={author}>
-        <SEO
+        <Seo
           title={post.frontmatter.title}
           description={post.excerpt}
           article={true}
