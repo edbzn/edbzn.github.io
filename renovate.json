@@ -3,7 +3,7 @@
   "extends": ["config:base"],
   "automerge": true,
   "automergeType": "branch",
-  "baseBranches": ["master"],
+  "baseBranches": ["main"],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
