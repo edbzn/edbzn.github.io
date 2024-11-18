@@ -14,6 +14,7 @@ module.exports = {
     social: {
       twitter: `https://twitter.com/edbzn`,
       github: `https://github.com/edbzn`,
+      instagram: `https://github.com/edbzn`,
       linkedin: `https://www.linkedin.com/in/edouardbozon`,
       mail: `bozonedouard@gmail.com`,
     },

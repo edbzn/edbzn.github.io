@@ -3,6 +3,7 @@ import React from 'react';
 import github from '../../static/icons/github.svg';
 import linkedin from '../../static/icons/linkedin.svg';
 import twitter from '../../static/icons/twitter.svg';
+import instagram from '../../static/icons/instagram.svg';
 
 export const Social = ({ social }) => {
   return (
@@ -20,6 +21,13 @@ export const Social = ({ social }) => {
         title="@edbzn on GitHub"
       >
         <img src={github} alt="Github profile" />
+      </a>
+      <a
+        style={{ boxShadow: 'none' }}
+        href={social.instagram}
+        title="@edbzn on Instagram"
+      >
+        <img src={instagram} alt="Instagram profile" />
       </a>
       <a
         style={{ boxShadow: 'none' }}
