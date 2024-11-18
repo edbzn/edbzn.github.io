@@ -21,23 +21,39 @@ function terminalLog(violations) {
 }
 
 describe('Accessibility tests', () => {
-  beforeEach(() => {
-    cy.visit('/').wait(1000).get('main').injectAxe();
+  it('Has no detectable accessibility violations on home', () => {
+    cy.visit('/')
+      .wait(1000)
+      .get('main')
+      .injectAxe()
+      .checkA11y(
+        null,
+        {
+          includedImpacts: ['critical', 'serious'],
+        },
+        terminalLog
+      );
   });
 
-  it('Has no detectable accessibility violations on home', () => {
-    cy.checkA11y(
-      null,
-      {
-        includedImpacts: ['critical', 'serious'],
-      },
-      terminalLog
-    );
+  it('Has no detectable accessibility violations on blog', () => {
+    cy.visit('/blog')
+      .wait(1000)
+      .get('main')
+      .injectAxe()
+      .checkA11y(
+        null,
+        {
+          includedImpacts: ['critical', 'serious'],
+        },
+        terminalLog
+      );
   });
 
   it('Has no detectable accessibility violations on a blog post', () => {
-    cy.findByText(/Data store service in Angular/i)
-      .click()
+    cy.visit('/data-store-service-in-angular')
+      .wait(1000)
+      .get('main')
+      .injectAxe()
       .checkA11y(
         null,
         {
