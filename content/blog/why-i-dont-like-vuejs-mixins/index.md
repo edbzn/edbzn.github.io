@@ -1,6 +1,7 @@
 ---
-title: Vue.js Mixins are broken
+title: Why I don't like Vue.js mixins
 date: '2020-08-01T00:00:00.000Z'
+draft: false
 ---
 
 Vue.js comes with its mixin concept **to share logic between components**, this way we can extract common properties into a separate module.

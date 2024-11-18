@@ -1,11 +1,11 @@
 ---
-title: Runtime cache made easy
+title: Service worker runtime cache made easy
 date: '2019-01-24T00:00:00.000Z'
 ---
 
 Service workers improve client-side performance but they are not easy to build. They bring complexity in the build pipeline and they have a huge impact on what's going on in the browser.
 
-### How can we simplify the service worker creation ? 
+### How can we simplify the service worker creation ?
 
 Simply by not creating them. Nowadays we're all using tools like Webpack that generates a bundle associated with a hash. This hash is recreated each time source code is changed.
 
@@ -14,11 +14,11 @@ Version: webpack 4.29.5
 Time: 5435ms
 Built at: 2019-03-03 17:06:12
 
-app-admin.f749dac1d8ea877edf08.js       69.5 KiB    [emitted]  
-app-article.5b996e3b9cffbefbc618.js     115 KiB     [emitted]  
-app-error.892811b3974653ad852f.js       23.3 KiB    [emitted]  
-app-home.67b6eecbf2b49d55ed66.js        49.9 KiB    [emitted]  
-app-login.a7ac57a5bcc4588af0a1.js       22.7 KiB    [emitted]  
+app-admin.f749dac1d8ea877edf08.js       69.5 KiB    [emitted]
+app-article.5b996e3b9cffbefbc618.js     115 KiB     [emitted]
+app-error.892811b3974653ad852f.js       23.3 KiB    [emitted]
+app-home.67b6eecbf2b49d55ed66.js        49.9 KiB    [emitted]
+app-login.a7ac57a5bcc4588af0a1.js       22.7 KiB    [emitted]
 ```
 
 Keep in mind that to precache resources in a service worker we need to hard-code their public path. So each time we're bundling a new version of our application we should update the service worker :
