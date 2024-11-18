@@ -55,10 +55,12 @@ p > img {
   display: block;
   box-shadow: none;
   transition: all 200ms ease;
+  max-height: 26px;
+  will-change: transform;
 }
 
 .socials a:hover {
-  transform: scale(1.1);
+  transform: rotate(12deg);
 }
 
 @media screen and (max-width: 640px) {

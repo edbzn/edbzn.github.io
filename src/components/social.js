@@ -17,7 +17,7 @@ export const Social = ({ social }) => {
         <img src={linkedin} alt="Linkedin profile" />
       </a>
       <a
-        style={{ fontSize: '22px', marginTop: '-6px', textDecoration: 'none' }}
+        style={{ fontSize: '22px', lineHeight: '22px', textDecoration: 'none' }}
         title="Email me"
         href={'mailto:' + social.mail}
       >

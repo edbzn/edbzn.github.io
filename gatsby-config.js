@@ -9,7 +9,7 @@ module.exports = {
     description:
       'Tech blog authored by Edouard Bozon about web development: Angular, Node.js, TypeScript, JavaScript and more.',
     authorDescription:
-      "I'm Edouard Bozon, I play almost everyday with web technologies. I focus my work on JavaScript, mainly around Angular and Node.js. I'm self employed, always open to new opportunities, so let's keep in touch.",
+      "I'm Edouard Bozon, a freelance software engineer with expertise in web technologies. My focus areas include Angular, Nx, Node.js, and beyond. I'm also an open-source contributor and a tech blogger on my spare time.",
     twitterUsername: '@edbzn',
     social: {
       twitter: `https://twitter.com/edbzn`,
