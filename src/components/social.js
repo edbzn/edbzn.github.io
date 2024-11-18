@@ -13,12 +13,6 @@ export const Social = ({ social }) => {
       <a href={social.github} title="@edbzn on GitHub">
         <img src={github} alt="Github profile" />
       </a>
-      <a href={social.devto} title="@edbzn on Dev.to">
-        <img
-          src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
-          alt="Dev.to profile"
-        />
-      </a>
       <a href={social.linkedin} title="@edouardbozon on LinkedIn">
         <img src={linkedin} alt="Linkedin profile" />
       </a>

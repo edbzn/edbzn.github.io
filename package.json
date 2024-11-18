@@ -1,7 +1,7 @@
 {
-  "name": "codamit.dev",
+  "name": "edbzn.github.io",
   "private": true,
-  "description": "Source code for the tech blog https://www.codamit.dev",
+  "description": "Source code for the tech blog https://edbzn.github.io",
   "version": "0.0.0",
   "author": "Edouard Bozon <bozonedouard@gmail.com>",
   "dependencies": {

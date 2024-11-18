@@ -1,10 +1,10 @@
-const siteUrl = `https://www.codamit.dev`;
+const siteUrl = `https://edbzn.github.io`;
 
 module.exports = {
   siteMetadata: {
     siteUrl,
     url: siteUrl,
-    titleTemplate: '%s · codamit.dev',
+    titleTemplate: '%s · edbzn.github.io',
     author: `Edouard Bozon`,
     description:
       'Tech blog authored by Edouard Bozon about web development: Angular, Node.js, TypeScript, JavaScript and more.',
@@ -124,7 +124,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "codamit.dev's RSS Feed",
+            title: "edbzn.github.io's RSS Feed",
             match: '^/blog/',
           },
         ],
@@ -133,7 +133,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `codamit.dev`,
+        name: `edbzn.github.io`,
         short_name: `codamit`,
         start_url: `/`,
         background_color: `#ffffff`,
@@ -160,8 +160,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.codamit.dev',
-        sitemap: 'https://www.codamit.dev/sitemap.xml',
+        host: 'https://edbzn.github.io',
+        sitemap: 'https://edbzn.github.io/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },

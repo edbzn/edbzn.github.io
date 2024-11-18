@@ -183,7 +183,7 @@ A plugin can manipulate the request and the response stream as well.
 
 ```ts
 export const addCustomHeaderPlugin: ConvoyrPlugin = {
-  shouldHandleRequest: matchOrigin('https://www.codamit.dev'),
+  shouldHandleRequest: matchOrigin('https://edbzn.github.io'),
   handler: {
     handle({ request, next }) {
       return next.handle({
@@ -206,7 +206,7 @@ The `shouldHandleRequest` function lets you conditionally handle requests :
 
 ```ts
 export const rejectUnknownOriginsPlugin: ConvoyrPlugin = {
-  shouldHandleRequest: not(matchOrigin('https://www.codamit.dev')),
+  shouldHandleRequest: not(matchOrigin('https://edbzn.github.io')),
   handler: {
     handle({ request, next }) {
       return throwError(`🛑 Requesting invalid origin, url: ${request.url}`);
@@ -298,7 +298,7 @@ const usersMock = [
 
 export const mockUserApiPlugin: ConvoyrPlugin = {
   shouldHandleRequest: and(
-    matchOrigin('https://www.codamit.dev'),
+    matchOrigin('https://edbzn.github.io'),
     matchPath('/api/users'),
     matchMethod('GET')
   ),

@@ -28,7 +28,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            <strong>codamit</strong>.dev
+            <strong>edbzn</strong>.github.io
           </Link>
         </span>
       );
@@ -48,7 +48,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            <strong>codamit</strong>.dev
+            <strong>edbzn</strong>.github.io
           </Link>
         </span>
       );
@@ -94,7 +94,7 @@ class Layout extends React.Component {
           style={{ marginTop: rhythm(2), fontSize: 14, fontWeight: 100 }}
         >
           <div style={{ textAlign: 'center' }}>
-            © {new Date().getFullYear()} - <strong>codamit</strong>.dev -
+            © {new Date().getFullYear()} - <strong>edbzn</strong>.github.io -
             <a href="https://twitter.com/edbzn">@edbzn</a> -
             <a
               href="/rss.xml"

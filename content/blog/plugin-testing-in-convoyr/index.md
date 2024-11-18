@@ -80,7 +80,7 @@ Let's imagine an other plugin that throws if the requested origin is unknown.
 
 ```ts
 export const rejectUnknownOriginsPlugin: ConvoyrPlugin = {
-  shouldHandleRequest: not(matchOrigin('https://www.codamit.dev')),
+  shouldHandleRequest: not(matchOrigin('https://edbzn.github.io')),
   handler: {
     handle({ request }) {
       return throwError(`🛑 Requesting invalid origin, url: ${request.url}`);

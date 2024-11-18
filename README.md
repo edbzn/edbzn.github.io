@@ -1,5 +1,5 @@
-# www.codamit.dev
+# edbzn.github.io
 
-![Codamit](https://media.giphy.com/media/3o6Mb5ZXk5gzKggqBy/giphy.gif)
+![GIF](https://media.giphy.com/media/3o6Mb5ZXk5gzKggqBy/giphy.gif)
 
-[Browse to the site](https://www.codamit.dev)
+[Browse to the site](https://edbzn.github.io)
