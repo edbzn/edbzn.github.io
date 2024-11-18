@@ -31,7 +31,7 @@ class BlogIndex extends React.Component {
                       marginBottom: 0,
                     }}
                   >
-                    <Link to={node.fields.slug}>{title}</Link>
+                    <Link style={{ color: 'initial' }} to={node.fields.slug}>{title}</Link>
                   </h3>
                 </header>
                 <section

@@ -6,10 +6,7 @@ import { rhythm } from '../utils/typography';
 
 class Layout extends React.Component {
   render() {
-    const { location, children } = this.props;
-    const rootPath = `${__PATH_PREFIX__}/`;
-    let header;
-
+    const { children } = this.props;
     return (
       <div
         style={{
@@ -38,7 +35,6 @@ class Layout extends React.Component {
             <Link
               style={{
                 boxShadow: `none`,
-                textDecoration: `underline`,
                 color: `inherit`,
               }}
               to={`/`}
@@ -68,14 +64,10 @@ class Layout extends React.Component {
           role="contentinfo"
           style={{ marginTop: rhythm(2), fontSize: 14, fontWeight: 100 }}
         >
-          <div style={{ textAlign: 'center' }}>
-            © {new Date().getFullYear()} - <strong>edbzn</strong>.github.io -
-            <a href="https://twitter.com/edbzn">@edbzn</a> -
+       <div style={{ textAlign: 'center' }}>
+            &copy; {new Date().getFullYear()} · Edouard Bozon ·{' '}
             <a
               href="/rss.xml"
-              style={{
-                boxShadow: `none`,
-              }}
             >
               <img
                 src={rss}
@@ -83,15 +75,13 @@ class Layout extends React.Component {
                 style={{
                   width: 14,
                   marginBottom: -2,
-                  marginRight: 4,
-                  marginLeft: 6,
+                  marginRight: 2,
+                  marginLeft: 2,
                 }}
               />{' '}
               RSS feed
-            </a>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            This website is under{' '}
+            </a>{' '}
+            · This website is under{' '}
             <a href="https://creativecommons.org/licenses/by-sa/4.0">
               CC BY-SA 4.0
             </a>{' '}

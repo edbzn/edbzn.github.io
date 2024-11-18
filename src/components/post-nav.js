@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 
 const style = {
   width: '48%',
-  margin: '0 1%',
   padding: '1rem',
   border: '2px solid rgb(238, 238, 238)',
   borderRadius: '4px',
-  fontFamily: 'Montserrat,sans-serif',
   textAlign: 'center',
   display: 'flex',
   alignItems: 'center',
@@ -25,18 +23,19 @@ export const PostNav = ({ previous, next }) => (
         alignItems: 'stretch',
         listStyle: `none`,
         padding: 0,
+        marginTop: '2rem',
       }}
     >
       {previous && (
         <li style={style}>
-          <Link to={previous.fields.slug} rel="prev">
+          <Link to={previous.fields.slug} style={{ color: 'inherit', fontWeight: 'bold'}} rel="prev">
             {previous.frontmatter.title}
           </Link>
         </li>
       )}
       {next && (
         <li style={style}>
-          <Link to={next.fields.slug} rel="next">
+          <Link to={next.fields.slug} style={{ color: 'inherit', fontWeight: 'bold'}} rel="next">
             {next.frontmatter.title}
           </Link>
         </li>

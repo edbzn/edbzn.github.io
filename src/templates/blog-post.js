@@ -1,5 +1,4 @@
 import { graphql } from 'gatsby';
-import { Disqus } from 'gatsby-plugin-disqus';
 import React from 'react';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -10,15 +9,9 @@ import { rhythm } from '../utils/typography';
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
-    const { social, author, siteUrl } = this.props.data.site.siteMetadata;
+    const { social, author } = this.props.data.site.siteMetadata;
     const { previous, next } = this.props.pageContext;
-    const { path, location } = this.props;
-    const disqusConfig = {
-      url: siteUrl + path,
-      identifier: post.id,
-      title: post.title,
-    };
-
+    const { location } = this.props;
     return (
       <Layout location={location} social={social} author={author}>
         <SEO
@@ -42,6 +35,7 @@ class BlogPostTemplate extends React.Component {
                 display: `block`,
                 marginTop: rhythm(0.2),
                 marginBottom: rhythm(2),
+                fontWeight: 'lighter',
               }}
             >
               {post.frontmatter.draft ? (
@@ -62,11 +56,9 @@ class BlogPostTemplate extends React.Component {
           />
           <footer>
             <Bio />
-            <Disqus style={{ marginTop: rhythm(2) }} config={disqusConfig} />
           </footer>
         </article>
         <PostNav
-          style={{ marginTop: rhythm(2) }}
           previous={previous}
           next={next}
         ></PostNav>
@@ -82,7 +74,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         author
-        siteUrl
         social {
           twitter
           linkedin

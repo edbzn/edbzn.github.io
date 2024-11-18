@@ -7,17 +7,34 @@ import twitter from '../../static/icons/twitter.svg';
 export const Social = ({ social }) => {
   return (
     <div className="socials">
-      <a href={social.twitter} title="@edbzn on Twitter">
+      <a
+        style={{ boxShadow: 'none' }}
+        href={social.twitter}
+        title="@edbzn on Twitter"
+      >
         <img src={twitter} alt="Twitter profile" />
       </a>
-      <a href={social.github} title="@edbzn on GitHub">
+      <a
+        style={{ boxShadow: 'none' }}
+        href={social.github}
+        title="@edbzn on GitHub"
+      >
         <img src={github} alt="Github profile" />
       </a>
-      <a href={social.linkedin} title="@edouardbozon on LinkedIn">
+      <a
+        style={{ boxShadow: 'none' }}
+        href={social.linkedin}
+        title="@edouardbozon on LinkedIn"
+      >
         <img src={linkedin} alt="Linkedin profile" />
       </a>
       <a
-        style={{ fontSize: '22px', lineHeight: '22px', textDecoration: 'none' }}
+        style={{
+          fontSize: '22px',
+          lineHeight: '22px',
+          boxShadow: 'none',
+          color: '#000000e6',
+        }}
         title="Email me"
         href={'mailto:' + social.mail}
       >

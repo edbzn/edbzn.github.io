@@ -7,15 +7,14 @@ module.exports = {
     titleTemplate: '%s · edbzn.github.io',
     author: `Edouard Bozon`,
     description:
-      'Tech blog authored by Edouard Bozon about web development: Angular, Node.js, TypeScript, JavaScript and more.',
+      'Edouard Bozon is a freelance software engineer with expertise in web technologies. His focus areas include Angular, Node.js, and beyond. He is also an open-source contributor and a climber on his spare time.',
     authorDescription:
-      "I'm Edouard Bozon, a freelance software engineer with expertise in web technologies. My focus areas include Angular, Nx, Node.js, and beyond. I'm also an open-source contributor and a tech blogger on my spare time.",
+      "Edouard Bozon is a freelance software engineer with expertise in web technologies. His focus areas include Angular, Node.js, and beyond. He is also an open-source contributor and a climber on his spare time.",
     twitterUsername: '@edbzn',
     social: {
       twitter: `https://twitter.com/edbzn`,
       github: `https://github.com/edbzn`,
       linkedin: `https://www.linkedin.com/in/edouardbozon`,
-      devto: `https://dev.to/edbzn`,
       mail: `bozonedouard@gmail.com`,
     },
   },
@@ -134,7 +133,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `edbzn.github.io`,
-        short_name: `codamit`,
+        short_name: `edbzn.github.io`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#000000`,
@@ -148,12 +147,6 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `codamit-dev`,
       },
     },
     `gatsby-plugin-sitemap`,

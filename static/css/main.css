@@ -15,11 +15,12 @@ li {
 }
 
 a.anchor {
-  margin-left: -24px;
+  box-shadow: none;
 }
 
-a.anchor:hover {
-  box-shadow: none;
+.anchor.before {
+  padding-right: 16px;
+  left: 0;
 }
 
 twitter-widget {
@@ -53,14 +54,7 @@ p > img {
 
 .socials a {
   display: block;
-  box-shadow: none;
-  transition: all 200ms ease;
   max-height: 26px;
-  will-change: transform;
-}
-
-.socials a:hover {
-  transform: rotate(12deg);
 }
 
 @media screen and (max-width: 640px) {
