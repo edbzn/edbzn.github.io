@@ -23,6 +23,7 @@ const Bio = () => {
             twitter
             github
             linkedin
+            instagram
             mail
           }
         }
