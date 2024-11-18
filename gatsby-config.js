@@ -66,14 +66,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-preload-fonts`,
     {
-      resolve: `gatsby-plugin-gdpr-cookies`,
-      options: {
-        googleAnalytics: {
-          trackingId: 'UA-47975149-8',
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
