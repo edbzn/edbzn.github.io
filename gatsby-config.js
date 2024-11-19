@@ -152,6 +152,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          'G-RP7PEWVFB4',
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         color: `#000000`,
