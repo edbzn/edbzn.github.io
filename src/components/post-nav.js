@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 import { rhythm } from '../utils/typography';
 
 const style = {
-  li: {
-
-  },
   title: {
-
     fontSize: '1.1rem',
     marginBottom: rhythm(0.6),
     fontWeight: 'light',
@@ -20,7 +16,7 @@ const style = {
   nav: {
     margin: rhythm(2.4) + ' auto',
     fontFamily: 'Montserrat, sans-serif',
-  }
+  },
 };
 
 export const PostNav = ({ previous, next }) => (
@@ -28,15 +24,23 @@ export const PostNav = ({ previous, next }) => (
     <div style={style.title}>More from Edouard Bozon</div>
     <ul style={style.ul}>
       {previous && (
-        <li style={style.li}>
-          <Link to={previous.fields.slug} style={{ color: 'inherit', fontWeight: 'bold'}} rel="prev">
+        <li>
+          <Link
+            to={previous.fields.slug}
+            style={{ color: 'inherit', fontWeight: 'bold' }}
+            rel="prev"
+          >
             {previous.frontmatter.title}
           </Link>
         </li>
       )}
       {next && (
-        <li style={style.li}>
-          <Link to={next.fields.slug} style={{ color: 'inherit', fontWeight: 'bold'}} rel="next">
+        <li>
+          <Link
+            to={next.fields.slug}
+            style={{ color: 'inherit', fontWeight: 'bold' }}
+            rel="next"
+          >
             {next.frontmatter.title}
           </Link>
         </li>

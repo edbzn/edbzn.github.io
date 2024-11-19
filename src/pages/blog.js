@@ -19,7 +19,10 @@ class BlogIndex extends React.Component {
         <Bio />
         <section role="main" style={{ marginTop: rhythm(2) }}>
           {blogPosts.map(({ node }) => (
-            <div key={node.frontmatter.title} style={{ marginTop: rhythm(1.4) }}>
+            <div
+              key={node.frontmatter.title}
+              style={{ marginTop: rhythm(1.4) }}
+            >
               <PostPreview node={node} />
             </div>
           ))}

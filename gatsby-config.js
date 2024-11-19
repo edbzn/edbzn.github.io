@@ -6,8 +6,10 @@ module.exports = {
     url: siteUrl,
     titleTemplate: '%s · edbzn.github.io',
     author: `Edouard Bozon`,
-    description: "Edouard Bozon - Freelance software engineer specializing in Angular, Node.js, and modern web technologies. Explore insights on tech, development tips, and my freelance services to help bring your projects to life.",
-    authorDescription: "I'm Edouard Bozon, a freelance software engineer with expertise in web technologies. My focus areas include Angular, Node.js, and more. I'm also an open-source contributor and a climber in my spare time.",
+    description:
+      'Edouard Bozon - Freelance software engineer specializing in Angular, Node.js, and modern web technologies. Explore insights on tech, development tips, and my freelance services to help bring your projects to life.',
+    authorDescription:
+      "I'm Edouard Bozon, a freelance software engineer with expertise in web technologies. My focus areas include Angular, Node.js, and more. I'm also an open-source contributor and a climber in my spare time.",
     twitterUsername: '@edbzn',
     social: {
       twitter: `https://twitter.com/edbzn`,

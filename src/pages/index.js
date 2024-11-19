@@ -70,7 +70,10 @@ class AboutMe extends React.Component {
             · <Link to="blog">All Posts</Link>
           </div>
           {blogPosts.map(({ node }) => (
-            <div key={node.frontmatter.title} style={{ marginTop: rhythm(1.4) }}>
+            <div
+              key={node.frontmatter.title}
+              style={{ marginTop: rhythm(1.4) }}
+            >
               <PostPreview node={node} />
             </div>
           ))}
@@ -91,7 +94,7 @@ class AboutMe extends React.Component {
             >
               Open source projects
             </span>{' '}
-            · <a href={"https://github.com/sponsors/edbzn"}>Sponsor Me</a>
+            · <a href={'https://github.com/sponsors/edbzn'}>Sponsor Me</a>
           </div>
 
           <ul
@@ -103,7 +106,7 @@ class AboutMe extends React.Component {
             }}
           >
             {ossProjects.map((project) => (
-              <li className="box" key={project.name} >
+              <li className="box" key={project.name}>
                 <a
                   href={project.url}
                   style={{

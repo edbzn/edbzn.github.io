@@ -36,7 +36,7 @@ class Layout extends React.Component {
               style={{
                 boxShadow: `none`,
                 color: `inherit`,
-                fontWeight: '100'
+                fontWeight: '100',
               }}
               to={`/`}
             >
@@ -50,11 +50,9 @@ class Layout extends React.Component {
           role="contentinfo"
           style={{ marginTop: rhythm(2), fontSize: 14, fontWeight: 100 }}
         >
-       <div style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center' }}>
             &copy; {new Date().getFullYear()} · Edouard Bozon ·{' '}
-            <a
-              href="/rss.xml"
-            >
+            <a href="/rss.xml">
               <img
                 src={rss}
                 alt="RSS feed icon"
