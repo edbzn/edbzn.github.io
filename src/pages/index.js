@@ -17,7 +17,7 @@ class AboutMe extends React.Component {
         name: ' rx-angular/rx-angular',
         description: 'Reactive Extensions for Angular.',
         img: 'https://avatars.githubusercontent.com/u/70377545?s=200&v=4',
-        url: 'https://github.com/jscutlery/semver',
+        url: 'https://github.com/rx-angular/rx-angular',
       },
       {
         name: 'nxext/nx-extensions',

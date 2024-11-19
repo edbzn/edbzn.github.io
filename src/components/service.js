@@ -4,13 +4,16 @@ import nxBadge from '../../static/images/nx-badge.png';
 export const Service = () => {
   return (
     <section style={styles.section} className="box">
-            <img style={styles.img} src={nxBadge} alt="Nx Badge" />
-
+      <img style={styles.img} src={nxBadge} alt="Nx Badge" />
       <h2 style={styles.heading}>Looking for an experienced developer?</h2>
       <p style={styles.services}>
         Mobile & Web Development, Consulting, Auditing.
       </p>
-      <a href="mailto:bozonedouard@gmail.com" style={styles.contactLink} title='Mail to Edouard Bozon'>
+      <a
+        href="mailto:bozonedouard@gmail.com"
+        style={styles.contactLink}
+        title="Mail to Edouard Bozon"
+      >
         📧 Contact Me
       </a>
     </section>
@@ -47,5 +50,5 @@ const styles = {
     width: '100px',
     margin: '0 auto',
     filter: 'drop-shadow(rgb(255, 255, 255, 0.1) 0px 0px 8px)',
-  }
+  },
 };
