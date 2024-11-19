@@ -79,7 +79,7 @@ class AboutMe extends React.Component {
           ))}
         </section>
 
-        <section style={{ marginTop: rhythm(2) }}>
+        <section className="projects" style={{ marginTop: rhythm(2) }}>
           <div
             style={{
               marginBottom: rhythm(1.4),
@@ -100,8 +100,6 @@ class AboutMe extends React.Component {
           <ul
             style={{
               listStyle: 'none',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
               gap: rhythm(0.4),
             }}
           >

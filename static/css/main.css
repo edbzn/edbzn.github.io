@@ -70,9 +70,28 @@ p > img {
   margin: 0;
 }
 
+.projects ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
 @media screen and (max-width: 640px) {
+  .box {
+    padding: 1rem;
+  }
+
   .bio {
     flex-direction: column;
+  }
+
+  .post-nav ul {
+    margin: 0;
+  }
+
+  .projects ul {
+    margin: 0;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .socials {
@@ -88,10 +107,5 @@ p > img {
 
   blockquote {
     margin-left: 0;
-  }
-
-  ul,
-  ol {
-    padding-left: 1rem;
   }
 }
