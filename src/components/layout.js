@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import rss from '../../static/icons/rss.svg';
 import { rhythm } from '../utils/typography';
+import { Service } from './service';
 
 class Layout extends React.Component {
   render() {
@@ -35,6 +36,7 @@ class Layout extends React.Component {
               style={{
                 boxShadow: `none`,
                 color: `inherit`,
+                fontWeight: '100'
               }}
               to={`/`}
             >
@@ -43,6 +45,7 @@ class Layout extends React.Component {
           </span>
         </header>
         <main style={{ marginTop: rhythm(1) }}>{children}</main>
+        <Service />
         <footer
           role="contentinfo"
           style={{ marginTop: rhythm(2), fontSize: 14, fontWeight: 100 }}
