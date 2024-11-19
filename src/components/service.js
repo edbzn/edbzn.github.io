@@ -1,5 +1,6 @@
 import React from 'react';
 import nxBadge from '../../static/images/nx-badge.png';
+import { rhythm } from '../utils/typography';
 
 export const Service = () => {
   return (
@@ -22,6 +23,7 @@ export const Service = () => {
 
 const styles = {
   section: {
+    margin: rhythm(2.4) + ' auto',
     backgroundColor: 'rgb(10 25 47)',
     color: '#ccd6f6',
     textAlign: 'center',

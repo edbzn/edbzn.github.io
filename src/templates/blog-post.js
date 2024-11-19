@@ -54,14 +54,11 @@ class BlogPostTemplate extends React.Component {
             dangerouslySetInnerHTML={{ __html: post.html }}
             style={{ marginBottom: rhythm(2) }}
           />
+          <PostNav previous={previous} next={next} />
           <footer>
             <Bio />
           </footer>
         </article>
-        <PostNav
-          previous={previous}
-          next={next}
-        ></PostNav>
       </Layout>
     );
   }
