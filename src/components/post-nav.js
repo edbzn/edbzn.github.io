@@ -20,7 +20,7 @@ const style = {
 };
 
 export const PostNav = ({ previous, next }) => (
-  <nav role="navigation" style={style.nav} className='post-nav'>
+  <nav role="navigation" style={style.nav} className="post-nav">
     <div style={style.title}>More from Edouard Bozon</div>
     <ul style={style.ul}>
       {previous && (

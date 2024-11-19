@@ -137,7 +137,7 @@ class AboutMe extends React.Component {
 export default AboutMe;
 
 export const pageQuery = graphql`
-  query {
+  {
     site {
       siteMetadata {
         author
@@ -153,7 +153,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 5
       filter: { published: { eq: true } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {
