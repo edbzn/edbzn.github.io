@@ -32,7 +32,7 @@ export const Social = ({ social }) => {
       </a>
       <a
         style={{ boxShadow: 'none' }}
-        href={social.instagram}
+        href={social.youtube}
         title="@edbzn on YouTube"
       >
         <img src={youtube} alt="YouTube profile" />
@@ -43,18 +43,6 @@ export const Social = ({ social }) => {
         title="@edouardbozon on LinkedIn"
       >
         <img src={linkedin} alt="Linkedin profile" />
-      </a>
-      <a
-        style={{
-          fontSize: '22px',
-          lineHeight: '22px',
-          boxShadow: 'none',
-          color: '#000000e6',
-        }}
-        title="Email me"
-        href={'mailto:' + social.mail}
-      >
-        @
       </a>
     </div>
   );

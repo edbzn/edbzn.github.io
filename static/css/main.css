@@ -70,11 +70,6 @@ p > img {
   margin: 0;
 }
 
-.socials a {
-  display: block;
-  max-height: 26px;
-}
-
 @media screen and (max-width: 640px) {
   .bio {
     flex-direction: column;

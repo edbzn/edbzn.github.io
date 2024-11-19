@@ -17,7 +17,6 @@ module.exports = {
       instagram: `https://instagram.com/edbzn`,
       youtube: `https://youtube.com/@edbzn`,
       linkedin: `https://www.linkedin.com/in/edouardbozon`,
-      mail: `bozonedouard@gmail.com`,
     },
   },
   plugins: [

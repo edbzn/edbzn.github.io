@@ -25,7 +25,6 @@ const Bio = () => {
             linkedin
             instagram
             youtube
-            mail
           }
         }
       }
