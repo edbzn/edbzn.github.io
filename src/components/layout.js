@@ -14,7 +14,7 @@ class Layout extends React.Component {
           marginRight: `auto`,
           marginTop: rhythm(0.4),
           marginBottom: rhythm(1.4),
-          maxWidth: rhythm(26),
+          maxWidth: '698px',
         }}
       >
         <header

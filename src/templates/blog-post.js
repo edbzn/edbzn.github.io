@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
+import Giscus from '@giscus/react';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import { PostNav } from '../components/post-nav';
@@ -53,6 +54,23 @@ class BlogPostTemplate extends React.Component {
           <section
             dangerouslySetInnerHTML={{ __html: post.html }}
             style={{ marginBottom: rhythm(2) }}
+          />
+          <Giscus
+            id="comments"
+            repo="edbzn/edbzn.github.io"
+            repoId="MDEwOlJlcG9zaXRvcnk5OTQ4MDU0Mw=="
+            category="Comments"
+            categoryId="DIC_kwDOBe3z384CkeQh"
+            mapping="pathname"
+            strict="0"
+            reactionsEnabled="1"
+            emitMetadata="0"
+            inputPosition="bottom"
+            theme="light"
+            loading="lazy"
+            lang="en"
+            crossorigin="anonymous"
+            async
           />
           <PostNav previous={previous} next={next} />
           <footer>

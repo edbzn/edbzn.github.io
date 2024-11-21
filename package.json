@@ -5,6 +5,7 @@
   "version": "0.0.0",
   "author": "Edouard Bozon <bozonedouard@gmail.com>",
   "dependencies": {
+    "@giscus/react": "^3.0.0",
     "@raae/gatsby-remark-oembed": "0.3.3",
     "gatsby": "^5.0.0",
     "gatsby-image": "3.11.0",
