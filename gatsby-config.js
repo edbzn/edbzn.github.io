@@ -49,6 +49,9 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 698, // 698 is the width of the container
+            },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
