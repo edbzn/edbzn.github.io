@@ -155,9 +155,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [
-          'G-RP7PEWVFB4',
-        ],
+        trackingIds: ['G-RP7PEWVFB4'],
       },
     },
     {
@@ -165,12 +163,6 @@ module.exports = {
       options: {
         color: `#000000`,
         showSpinner: true,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
-      options: {
-        siteUrl,
       },
     },
   ],
