@@ -14,6 +14,9 @@ wordpress2016.overrideThemeStyles = () => {
     code: {
       fontSize: 'inherit',
     },
+    pre: {
+      fontSize: 'inherit',
+    },
   };
 };
 
