@@ -11,6 +11,9 @@ wordpress2016.overrideThemeStyles = () => {
       color: `black`,
       fontSize: 16,
     },
+    code: {
+      fontSize: 'inherit',
+    },
   };
 };
 
