@@ -45,7 +45,7 @@
     "axe-core": "^4.1.1",
     "cypress": "^9.0.0",
     "cypress-axe": "^0.13.0",
-    "husky": "7.0.4",
+    "husky": "^9.0.0",
     "lint-staged": "12.0.3",
     "prettier": "2.4.1",
     "start-server-and-test": "^1.11.6"
@@ -54,7 +54,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,json}\"",
     "preload-fonts": "gatsby-preload-fonts",
     "start": "yarn develop",
     "serve": "gatsby serve",
@@ -62,12 +62,8 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
+    "prepare": "husky"
   },
   "lint-staged": {
     "*.{js,jsx,json}": [
