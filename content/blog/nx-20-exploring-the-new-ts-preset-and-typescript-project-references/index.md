@@ -89,6 +89,10 @@ The `build` target leverages TypeScript project references to only recompile the
 
 ![Build output](./build.png)
 
+#### Demo repository
+
+📂 Here's a demo repository to [compare all the differences](https://github.com/edbzn/nx-preset-ts/compare/main...preset-apps?expand=1) between the traditional integrated repository generated using the **apps** preset and the **ts** preset.
+
 ### Migrating existing workspaces
 
 **Migrating to TypeScript project references is, unfortunately, a challenging process.**
