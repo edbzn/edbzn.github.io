@@ -74,7 +74,7 @@ This command automatically updates TypeScript references based on the project de
 
 ![nx sync](./out_of_sync.png)
 
-> **Note: 📌** <br> Nx uses the standard `workspaces: ['packages/*']` property in the root `package.json` to analyze dependencies and sync references.
+> **Note: 📌** <br> Nx uses the standard `"workspaces": ["packages/*"]` property in the root `package.json` to analyze dependencies and sync references.
 
 6. **Build the library:**
 
@@ -103,7 +103,7 @@ Additionally, most Nx plugins (Angular, React, Vue, Node) are not yet compatible
 2. **Generate libraries:** Generate a few libraries to establish the desired structure.
 3. **Compare and apply configurations:** Compare the new workspace's setup with your existing one, applying necessary changes in one single refactoring.
 
-> **Warning: ⚠️** <br> This process is uncertain, dangerous and may be time-consuming.
+> **Warning: ⚠️** <br>  This process involves a big bang approach that is uncertain, risky, and time-consuming.
 
 ## Clarifying confusing points
 
@@ -120,7 +120,7 @@ Both Nx and TypeScript incrementally recompile only the necessary parts of your 
 
 > **Note: 📌** <br> As of Nx 20, the distinction between integrated and package-based repositories is less relevant. Nx features can be enabled independently, offering flexibility in configuring your monorepo.
 
-- **Package-based repos:** Traditional approach for monorepos where each package is a standalone project with its own `package.json` and nested `node_modules`.
+- **Package-based repos:** Traditional approach for monorepos where each package is an independent project with its own `package.json` and nested `node_modules`.
 - **Integrated repositories:** Nx's original approach, where dependencies are shared between projects at the root level using path aliases.
 - **`ts` preset:** This new approach leverages TypeScript's project references along with individual `package.json` to declare dependencies between projects.
 
@@ -133,14 +133,14 @@ The `ts` preset aims to become the standard approach for new Nx projects, eventu
 - 🚀 **Faster builds and type-checking** <br>
   Only changed projects and their dependencies are recompiled, not the entire repository. This is particularly beneficial for large monorepos.
 - 💻 **Improved IDE experience** <br>
-  TypeScript's Language Server Protocol (LSP) benefits from faster type-checking and autocomplete, along with more accurate Go-To-Definition.
+  TypeScript's Language Server Protocol (LSP) benefits from faster type-checking and autocomplete, along with more accurate Go-To-Definition via [`declarationMap`](https://www.typescriptlang.org/tsconfig/#declarationMap).
 - 🔒 **Enforced project boundaries** <br>
   Imports from arbitrary projects are disallowed unless explicitly referenced, ensuring stricter code organization.
 
 ### Current limitations
 
 - 🛑 **No migration path for existing workspaces** <br>
-  Existing Nx workspaces using path aliases cannot be migrated to Project References. This requires starting with a new workspace.
+  Existing Nx workspaces using path aliases cannot be easily migrated to project references. This requires starting with a new workspace.
 - 📝 **Manual dependency configuration** <br>
   Dependencies between projects must be explicitly declared in `package.json` files for Nx to sync references correctly.
 - ⚙️ **Complex setup with overhead** <br>
@@ -158,9 +158,12 @@ However, the potential for future improvements make it a promising approach for 
 
 ### References
 
+- **[TypeScript Docs - Project References](https://www.typescriptlang.org/docs/handbook/project-references.html)** by TypeScript
 - **[Nx Docs - Configure TypeScript Project References in an Nx Workspace](https://nx.dev/blog/announcing-nx-20#typescript-project-references-for-monorepos)** by Nx
 - **[Announcing Nx 20 - TypeScript Project References For Monorepos](https://nx.dev/blog/announcing-nx-20#typescript-project-references-for-monorepos)** by Nx
 - **[Benchmarking TS Project Reference Changes 📊](https://www.loom.com/share/7c3ad6a27a6b48d0b652cec248f51bbd)** by Jack Hsu
 - **[Migrating Large TypeScript Codebases To Project References](https://shopify.engineering/migrating-large-typescript-codebases-project-references)** by Shopify
-- **[YouTube - The Dilemma of TypeScript in Monorepos](https://www.youtube.com/watch?v=RRsttfhg1sA)** by Ahmed Elsakaan
+- **[Boost your productivity with TypeScript project references](https://blog.logrocket.com/boost-your-productivity-with-typescript-project-references/)** by LogRocket
 - **[ixahmedxi/typescript-monorepo-demo](https://github.com/ixahmedxi/typescript-monorepo-demo)** by Ahmed Elsakaan
+
+`oembed: https://www.youtube.com/watch?v=RRsttfhg1sA`
