@@ -1,13 +1,13 @@
 ---
-title: 'Nx 20: Exploring the new ts preset and TypeScript project references'
-draft: true
+title: 'Nx 20: Exploring the new TS preset and TypeScript project references'
+date: '2024-11-23T00:00:00.000Z'
 ---
 
-Nx 20 introduces a new `ts` preset, allowing developers to generate workspaces that leverage TypeScript project references. Given the promising claims, the confusion in the community, and the lack of literature on it, I decided to explore the feature.
+Nx 20 introduces a new [TS preset](https://nx.dev/nx-api/js/documents/typescript-project-references#create-a-new-nx-workspace-using-project-references), allowing developers to generate workspaces that leverage TypeScript project references. Given the promising claims, the confusion in the community, and the lack of literature on it, I decided to explore the feature.
 
 ## What are project references?
 
-[Project References](https://www.typescriptlang.org/docs/handbook/project-references.html) were introduced in [TypeScript 3.0](https://devblogs.microsoft.com/typescript/announcing-typescript-3-0/#project-references) back in 2018. This feature allows you to _split the code into smaller units and define explicit relationships between them_. It ensures that only the changed units and their dependencies are recompiled, resulting in faster builds, improved code isolation, and a better IDE experience. This feature is well-suited for defining projects in a monorepo.
+[Project references](https://www.typescriptlang.org/docs/handbook/project-references.html) were introduced in [TypeScript 3.0](https://devblogs.microsoft.com/typescript/announcing-typescript-3-0/#project-references) back in 2018. This feature allows you to _split the code into smaller units and define explicit relationships between them_. It ensures that only the changed units and their dependencies are recompiled, resulting in faster builds, improved code isolation, and a better IDE experience. This feature is well-suited for defining projects in a monorepo.
 
 > **Note: 📌** <br> Project references are theoretically a better alternative to globally defined path aliases in the root `tsconfig.base.json` configuration.
 
@@ -15,7 +15,7 @@ Nx 20 introduces a new `ts` preset, allowing developers to generate workspaces t
 
 ### Generating a new workspace with project references
 
-Nx 20 introduces a new [ts preset](https://nx.dev/nx-api/js/documents/typescript-project-references#create-a-new-nx-workspace-using-project-references) that leverages project references for faster builds and improved developer experience. Here's how to create a new workspace with this setup:
+Nx 20 provides a new `ts` preset that leverages project references. Here's how to create a new workspace with this setup:
 
 1. **Create a workspace with the `ts` preset:**
 
@@ -23,7 +23,7 @@ Nx 20 introduces a new [ts preset](https://nx.dev/nx-api/js/documents/typescript
 npx create-nx-workspace @org --preset=ts
 ```
 
-This command creates a new workspace using the `ts` preset. This preset configures the project to use TypeScript project references.
+This command creates a new workspace using the `ts` preset, which configures the project to use TypeScript project references. For all available options, see the [`create-nx-workspace` documentation](https://nx.dev/nx-api/nx/documents/create-nx-workspace).
 
 2. **Generate libraries with the `tsc` bundler:**
 
@@ -40,29 +40,14 @@ These commands the generator to create two libraries within the `packages` direc
 // packages/my-lib/package.json
 {
   "dependencies": {
-    "@org/my-shared-lib": "workspace:*"
+    "@org/my-shared-lib": "*"
   }
 }
 ```
 
 Here, you explicitly declare dependencies in your `package.json` files. This tells Nx which projects your library relies on. Nx uses this information to manage project references.
 
-4. **Configure path alias:**
-
-In order to import `@org/my-shared-lib` symbols from `@org/my-lib`, you have to specify the path alias in the base configuration:
-
-```json
-// tsconfig.base.json
-{
-  "compilerOptions": {
-    "paths": {
-      "@org/my-shared-lib": ["../my-shared-lib/src/index.ts"]
-    }
-  }
-}
-```
-
-5. **Update TypeScript references:**
+4. **Update TypeScript references:**
 
 While project references offer benefits, manually maintaining them in `tsconfig` files can be cumbersome. Nx provides the `nx sync` command:
 
@@ -76,6 +61,22 @@ This command automatically updates TypeScript references based on the project de
 
 > **Note: 📌** <br> Nx uses the standard `"workspaces": ["packages/*"]` property in the root `package.json` to analyze dependencies and sync references.
 
+5. **Configure path alias:**
+
+By default, project references work with relative imports. To import symbols from `@org/my-shared-lib` into `@org/my-lib`, you need to define the path alias in the base configuration:
+
+```json
+// tsconfig.base.json
+{
+  "compilerOptions": {
+    "paths": {
+      "@org/my-shared-lib": ["../my-shared-lib/src/index.ts"]
+    }
+  }
+}
+```
+> **Note: 📌** <br> In contrast to global path aliases in integrated repositories, you can only import libraries explicitly declared as dependencies in a project's `package.json`, ensuring strict project boundaries.
+
 6. **Build the library:**
 
 With everything configured, you can build your library using the standard Nx command:
@@ -84,16 +85,15 @@ With everything configured, you can build your library using the standard Nx com
 nx build @org/my-lib
 ```
 
-This command leverages TypeScript project references to only recompile the necessary parts of your codebase, resulting in faster builds ([up to 3 times](https://www.loom.com/share/7c3ad6a27a6b48d0b652cec248f51bbd)).
+The `build` target leverages TypeScript project references to only recompile the necessary parts of your codebase, resulting in faster builds ([up to 3 times](https://www.loom.com/share/7c3ad6a27a6b48d0b652cec248f51bbd)).
 
 ![Build output](./build.png)
-
 
 ### Migrating existing workspaces
 
 **Migrating to TypeScript project references is, unfortunately, a challenging process.**
 
-The traditional path aliases approach used in integrated workspaces is incompatible with project references. Since these configurations cannot coexist, migration requires **a complete refactoring**, leaving no option for incremental updates.
+The traditional path aliases approach used in integrated workspaces is incompatible with project references. Since these configurations cannot coexist, **migration requires a complete refactoring**, leaving no option for incremental updates.
 
 Additionally, most Nx plugins (Angular, React, Vue, Node) are not yet compatible with project references. Migration is thus feasible only for small, package-based, framework-agnostic monorepos—a minority of real-world scenarios.
 
@@ -121,10 +121,10 @@ Both Nx and TypeScript incrementally recompile only the necessary parts of your 
 > **Note: 📌** <br> As of Nx 20, the distinction between integrated and package-based repositories is less relevant. Nx features can be enabled independently, offering flexibility in configuring your monorepo.
 
 - **Package-based repos:** Traditional approach for monorepos where each package is an independent project with its own `package.json` and nested `node_modules`.
-- **Integrated repositories:** Nx's original approach, where dependencies are shared between projects at the root level using path aliases.
+- **Integrated repositories:** Nx's original approach, where dependencies are shared between projects at the root level in `tsconfig.base.json` using path aliases.
 - **`ts` preset:** This new approach leverages TypeScript's project references along with individual `package.json` to declare dependencies between projects.
 
-The `ts` preset aims to become the standard approach for new Nx projects, eventually replacing the integrated setup. While it offers significant advantages, it's still in its early stages.
+The `ts` preset aims to become the standard approach for new Nx projects, eventually replacing the integrated setup. **While it offers significant advantages, it's still in its early stages**.
 
 ## Overview of the `ts` preset and TypeScript project references
 
