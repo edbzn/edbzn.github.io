@@ -41,7 +41,7 @@ module.exports = {
             options: {
               usePrefix: true,
               providers: {
-                include: ['Twitter'],
+                include: ['Twitter', 'YouTube'],
               },
             },
           },
