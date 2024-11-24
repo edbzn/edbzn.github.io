@@ -75,6 +75,7 @@ By default, project references work with relative imports. To import symbols fro
   }
 }
 ```
+
 > **Note: 📌** <br> In contrast to global path aliases in integrated repositories, you can only import libraries explicitly declared as dependencies in a project's `package.json`, ensuring strict project boundaries.
 
 6. **Build the library:**
@@ -91,7 +92,10 @@ The `build` target leverages TypeScript project references to only recompile the
 
 #### Demo repository
 
-📂 Here's a demo repository to [compare all the differences](https://github.com/edbzn/nx-preset-ts/compare/main...preset-apps?expand=1) between the traditional integrated repository generated using the **apps** preset and the **ts** preset.
+📂 Here's a demo repository that shows all the differences between the traditional integrated repository generated using the **apps** preset and the **ts** preset:
+
+- **[edbzn/nx-preset-ts](https://github.com/edbzn/nx-preset-ts)**
+- **[edbzn/nx-preset-ts/compare](https://github.com/edbzn/nx-preset-ts/compare/main...preset-apps?expand=1)**
 
 ### Migrating existing workspaces
 
@@ -107,7 +111,7 @@ Additionally, most Nx plugins (Angular, React, Vue, Node) are not yet compatible
 2. **Generate libraries:** Generate a few libraries to establish the desired structure.
 3. **Compare and apply configurations:** Compare the new workspace's setup with your existing one, applying necessary changes in one single refactoring.
 
-> **Warning: ⚠️** <br>  This process involves a big bang approach that is uncertain, risky, and time-consuming.
+> **Warning: ⚠️** <br> This process involves a big bang approach that is uncertain, risky, and time-consuming.
 
 ## Clarifying confusing points
 
@@ -151,6 +155,19 @@ The `ts` preset aims to become the standard approach for new Nx projects, eventu
   This setup is not the default in Nx and is considerably more complex than configuring path aliases.
 - ❌ **Lack of framework support** <br>
   Most plugins, including Angular, React, Vue, and Node, aren't supported at the moment.
+
+### Ecosystem support
+
+The table summarizes ecosystem support for TypeScript project references.
+
+| Tool    | Link                                                                                     | Status        |
+| ------- | ---------------------------------------------------------------------------------------- | ------------- |
+| Webpack | [ts-loader](https://github.com/TypeStrong/ts-loader/blob/main/REFERENCES.md)             | 🟢 Supported  |
+| Rspack  | [Rspack Documentation](https://rspack.dev/config/resolve.html#resolvetsconfigreferences) | 🟢 Supported  |
+| Rollup  | [rollup-plugin-typescript2](https://github.com/ezolenko/rollup-plugin-typescript2)       | 🟢 Supported  |
+| ESBuild | [GitHub Issue](https://github.com/evanw/esbuild/issues/1250)                             | 🔴 No support |
+| SWC     | [GitHub Discussion](https://github.com/swc-project/swc/discussions/2156)                 | 🔴 No support |
+| Angular | [GitHub Issue](https://github.com/angular/angular/issues/37276)                          | 🔴 No support |
 
 ## A promising future for large TypeScript monorepos
 
