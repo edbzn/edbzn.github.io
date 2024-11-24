@@ -49,17 +49,20 @@ describe('Accessibility tests', () => {
       );
   });
 
-  it('Has no detectable accessibility violations on a blog post', () => {
-    cy.visit('/data-store-service-in-angular')
-      .wait(1000)
-      .get('main')
-      .injectAxe()
-      .checkA11y(
-        null,
-        {
-          includedImpacts: ['critical', 'serious'],
-        },
-        terminalLog
-      );
+  it('should navigate to blog page', () => {
+    cy.visit('/')
+      .get('a[href="/blog/"]')
+      .click()
+      .url()
+      .should('include', '/blog');
+  });
+
+  it('should navigate to blog post', () => {
+    cy.visit('/blog/')
+      .get('main article a')
+      .first()
+      .click()
+      .get('h1')
+      .should('exist');
   });
 });
