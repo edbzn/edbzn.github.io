@@ -143,14 +143,17 @@ The `ts` preset aims to become the standard approach for new Nx projects, eventu
 
 The table summarizes ecosystem support for TypeScript project references.
 
-| Tool    | Link                                                                                     | Status        |
-| ------- | ---------------------------------------------------------------------------------------- | ------------- |
-| Webpack | [ts-loader](https://github.com/TypeStrong/ts-loader/blob/main/REFERENCES.md)             | 🟢 Supported  |
-| Rspack  | [Rspack Documentation](https://rspack.dev/config/resolve.html#resolvetsconfigreferences) | 🟢 Supported  |
-| Rollup  | [rollup-plugin-typescript2](https://github.com/ezolenko/rollup-plugin-typescript2)       | 🟢 Supported  |
-| ESBuild | [GitHub Issue](https://github.com/evanw/esbuild/issues/1250)                             | 🔴 No support |
-| SWC     | [GitHub Discussion](https://github.com/swc-project/swc/discussions/2156)                 | 🔴 No support |
-| Angular | [GitHub Issue](https://github.com/angular/angular/issues/37276)                          | 🔴 No support |
+| Tool    | Link                                                                                       | Status        |
+| ------- | ------------------------------------------------------------------------------------------ | ------------- |
+| Webpack | [ts-loader](https://github.com/TypeStrong/ts-loader/blob/main/REFERENCES.md)               | 🟢 Supported  |
+| Rspack  | [Rspack Documentation](https://rspack.dev/config/resolve.html#resolvetsconfigreferences)   | 🟢 Supported  |
+| Rollup  | [rollup-plugin-typescript2](https://github.com/ezolenko/rollup-plugin-typescript2)         | 🟢 Supported  |
+| Vue     | [Vue Documentation](https://vuejs.org/guide/typescript/overview#configuring-tsconfig-json) | 🟢 Supported  |
+| ESBuild | [GitHub Issue](https://github.com/evanw/esbuild/issues/1250)                               | 🔴 No support |
+| SWC     | [GitHub Discussion](https://github.com/swc-project/swc/discussions/2156)                   | 🔴 No support |
+| Angular | [GitHub Issue](https://github.com/angular/angular/issues/37276)                            | 🔴 No support |
+
+> **Note: 📌** <br> React support is coming in Nx (see [nx/pull/28808](https://github.com/nrwl/nx/pull/28808)), the new TS solution setup using project references will be the default when adding the React plugin `nx add @nx/react` or choosing the React stack with `npx create-nx-workspace`.
 
 ## A promising future for large TypeScript monorepos
 
