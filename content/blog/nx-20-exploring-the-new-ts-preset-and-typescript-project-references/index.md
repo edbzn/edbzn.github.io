@@ -61,24 +61,7 @@ This command automatically updates TypeScript references based on the project de
 
 > **Note: 📌** <br> Nx uses the standard `"workspaces": ["packages/*"]` property in the root `package.json` to analyze dependencies and sync references.
 
-5. **Configure path alias:**
-
-By default, project references work with relative imports. To import symbols from `@org/my-shared-lib` into `@org/my-lib`, you need to define the path alias in the base configuration:
-
-```json
-// tsconfig.base.json
-{
-  "compilerOptions": {
-    "paths": {
-      "@org/my-shared-lib": ["../my-shared-lib/src/index.ts"]
-    }
-  }
-}
-```
-
-> **Note: 📌** <br> In contrast to global path aliases in integrated repositories, you can only import libraries explicitly declared as dependencies in a project's `package.json`, ensuring strict project boundaries.
-
-6. **Build the library:**
+5. **Build the library:**
 
 With everything configured, you can build your library using the standard Nx command:
 
