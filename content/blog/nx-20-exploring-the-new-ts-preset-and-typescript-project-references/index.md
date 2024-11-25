@@ -61,6 +61,17 @@ This command automatically updates TypeScript references based on the project de
 
 > **Note: 📌** <br> Nx uses the standard `"workspaces": ["packages/*"]` property in the root `package.json` to analyze dependencies and sync references.
 
+You can tell Nx to [automatically sync references](https://nx.dev/concepts/sync-generators#task-sync-generators) when running the `build` and `typecheck` targets by setting up the `sync` property in `nx.json`:
+
+```json
+{
+  "$schema": "packages/nx/schemas/nx-schema.json",
+  "sync": {
+    "applyChanges": true
+  }
+}
+```
+
 5. **Build the library:**
 
 With everything configured, you can build your library using the standard Nx command:
@@ -153,7 +164,7 @@ The table summarizes ecosystem support for TypeScript project references.
 | SWC     | [GitHub Discussion](https://github.com/swc-project/swc/discussions/2156)                   | 🔴 No support |
 | Angular | [GitHub Issue](https://github.com/angular/angular/issues/37276)                            | 🔴 No support |
 
-> **Note: 📌** <br> React support is coming in Nx (see [nx/pull/28808](https://github.com/nrwl/nx/pull/28808)), the new TS solution setup using project references will be the default when adding the React plugin `nx add @nx/react` or choosing the React stack with `npx create-nx-workspace`.
+> **Note: 📌** <br> React support is coming in Nx (**[nx/pull/28808](https://github.com/nrwl/nx/pull/28808))**, the new TS solution setup using project references will be the default when adding the React plugin `nx add @nx/react` or choosing the React stack with `npx create-nx-workspace`.
 
 ## A promising future for large TypeScript monorepos
 
