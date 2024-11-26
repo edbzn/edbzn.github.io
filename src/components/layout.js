@@ -64,12 +64,13 @@ class Layout extends React.Component {
                 }}
               />{' '}
               RSS feed
-            </a>{' '}
-            · This website is under{' '}
+            </a>
+            <br /> This website is powered by{' '}
+            <a href="https://www.gatsbyjs.com">Gatsby</a> and licensed under{' '}
             <a href="https://creativecommons.org/licenses/by-sa/4.0">
               CC BY-SA 4.0
-            </a>{' '}
-            license
+            </a>
+            .
           </div>
         </footer>
       </div>
