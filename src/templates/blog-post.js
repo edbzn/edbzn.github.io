@@ -93,6 +93,7 @@ export const pageQuery = graphql`
           twitter
           linkedin
           github
+          bluesky
         }
       }
     }
