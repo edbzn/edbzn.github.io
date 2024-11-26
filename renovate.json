@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/renovate",
-  "extends": ["config:base"],
+  "extends": ["config:recommended"],
   "automerge": true,
   "automergeType": "branch",
   "baseBranches": ["main"],
