@@ -67,6 +67,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-preload-fonts`,
     {
       resolve: `gatsby-plugin-feed`,
