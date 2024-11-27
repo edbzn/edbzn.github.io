@@ -46,7 +46,7 @@
     "cypress-axe": "^1.0.0",
     "husky": "^9.0.0",
     "lint-staged": "15.2.10",
-    "prettier": "2.8.8",
+    "prettier": "3.4.1",
     "start-server-and-test": "^1.11.6"
   },
   "license": "CC-BY-SA-4.0",
