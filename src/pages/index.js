@@ -57,15 +57,15 @@ class AboutMe extends React.Component {
             style={{
               marginBottom: rhythm(1.4),
               fontFamily: 'Montserrat, sans-serif',
+              textTransform: 'uppercase',
             }}
           >
             <span
               style={{
                 fontWeight: '200',
-                textTransform: 'uppercase',
               }}
             >
-              Last posts
+              Latest posts
             </span>{' '}
             · <Link to="blog">All Posts</Link>
           </div>
@@ -84,12 +84,12 @@ class AboutMe extends React.Component {
             style={{
               marginBottom: rhythm(1.4),
               fontFamily: 'Montserrat, sans-serif',
+              textTransform: 'uppercase',
             }}
           >
             <span
               style={{
                 fontWeight: '200',
-                textTransform: 'uppercase',
               }}
             >
               Open source projects
