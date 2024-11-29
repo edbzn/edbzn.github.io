@@ -73,8 +73,7 @@ Download and install [Android Studio](https://developer.android.com/studio) to e
 
 ![Android Studio Icon](./studio.svg)
 
-> **Note:** 📌<br>
-> Check the installation guide for more information: https://developer.android.com/studio/install
+> **Note:** 📌 <br> Check the installation guide for more information: https://developer.android.com/studio/install
 
 ### 3.2 Add the Android Platform
 
@@ -109,43 +108,93 @@ Android Studio will open, displaying a project view similar to this:
 
 ### 3.5 Run the App on your Connected Device (optional)
 
-1. Activate the developer mode on your device ([guide](https://developer.android.com/studio/debug/dev-options)).
-2. Setup your device for development ([guide](https://developer.android.com/studio/run/device)).
+Testing on a real device provides the most accurate results, as it replicates real-world conditions. Follow these steps to set up and deploy your app to a physical Android device.
 
-### 4.0 Apply Your Changes
+1. [**Activate the developer mode on your device.**](https://developer.android.com/studio/debug/dev-options)
+2. [**Setup your device for development.**](https://developer.android.com/studio/run/device)
 
-To reflect your modifications in Android Studio, rebuild your app:
+![Physical Device](./device.png)
+
+### 4.0 Apply and Test Your Changes on Android
+
+After making changes to your app, ensure that your modifications are reflected on the Android platform. Rebuild your app to generate the latest build files:
 
 ```bash
 nx build my-app
 ```
 
-Sync your app's changes to the Android platform:
+Sync changes with the Android platform:
 
 ```bash
 nx run my-app:sync:android
 ```
 
-Now, rerun the app in Android Studio to see your changes applied.
+This updates the Android project with the latest build and configuration changes. Now, open your app in Android Studio again and re-run it to see your changes.
 
-> **Note:** 📌<br>
-> To automatically rebuild the app when running the `sync` target, configure `targetDefaults` in `nx.json`.
+### 4.1 Live Reload for Faster Iteration
 
-```json
-{
-  "targetDefaults": {
-    "sync": {
-      "dependsOn": ["build"]
-    }
-  }
+To enable live reload on an Android emulator or physical device, update your Capacitor configuration. This feature allows your app to reflect changes in real-time during development.
+
+#### Update the Capacitor Configuration
+
+Replace your `capacitor.config.ts` with the following setup:
+
+```ts
+import { CapacitorConfig } from '@capacitor/cli';
+import * as os from 'os';
+
+const config: CapacitorConfig = {
+  appId: 'io.ionic.starter',
+  appName: 'my-app',
+  webDir: '../../dist/apps/my-app/browser',
+  bundledWebRuntime: false,
+  server: {
+    androidScheme: 'https',
+  },
+};
+
+if (process.env.LIVE === 'true') {
+  const localIp = getLocalIp();
+  const port = process.env.PORT || '4200';
+  config.server = { url: `http://${localIp}:${port}`, cleartext: true };
+} else {
+  Reflect.deleteProperty(config, 'server');
 }
+
+function getLocalIp() {
+  const interfaces = os.networkInterfaces();
+  const addresses = Object.values(interfaces)
+    .flat()
+    .filter((details) => details?.family === 'IPv4' && !details?.internal)
+    .map((details) => details?.address);
+
+  return addresses[0];
+}
+
+export default config;
 ```
+
+> **Note: 📌** <br> This configuration dynamically sets the server URL to your local network's IP address when live reload is enabled.
+
+#### Serve Your App with Live Reload
+
+Set the `LIVE` environment variable to `true` before syncing the Android platform:
+
+```bash
+LIVE=true nx run my-app:sync:android
+```
+
+Run the app's development server and make it accessible on your local network:
+
+```bash
+nx serve my-app --host 0.0.0.0
+```
+
+Finally, re-run your app in Android Studio. The app will now automatically reload as you make changes.
 
 ## Conclusion
 
-In this article, you’ve set up an Nx workspace, configured Angular, Ionic, and Capacitor, and successfully ran your app on the web and Android platforms. With these foundations in place, you’re ready to expand your app’s capabilities and target additional platforms.
-
-Stay tuned for the next part of this series, where we’ll dive deeper into building and deploying cross-platform features.
+In this article, you’ve set up an Nx workspace, configured Angular, Ionic, and Capacitor, and successfully ran your app on the web and Android platforms. With these foundations in place, you’re ready to expand your app’s capabilities and target additional platforms. Stay tuned for the next part of this series, where we’ll dive deeper into building and deploying cross-platform features.
 
 ### References:
 
