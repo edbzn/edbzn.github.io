@@ -1,6 +1,6 @@
 ---
 title: A Practical guide to building cross-platform apps with Angular, Ionic, Capacitor, and Nx
-draft: true
+date: '2024-11-29T00:00:00.000Z'
 ---
 
 This article is part of a practical series on building cross-platform apps using **Angular**, **Ionic**, **Capacitor**, and **Nx**. In this first part, I'll guide you through setting up your workspace and running your app on the web and Android platforms.
