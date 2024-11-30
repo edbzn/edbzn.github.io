@@ -65,6 +65,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-meta-redirect`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,

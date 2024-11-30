@@ -3,28 +3,32 @@ const { GraphQLBoolean } = require('gatsby/graphql');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
+
+  createRedirect({
+    fromPath: `/a-practical-guide-to-building-cross-platform-apps-with-angular-ionic-capacitor-and-nx/`,
+    toPath: `/a-practical-guide-to-building-cross-platform-apps-with-angular-ionic-capacitor-and-nx-part-1/`,
+    isPermanent: true,
+  });
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
-          edges {
-            node {
-              published
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
+  const result = await graphql(`
+    {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+        edges {
+          node {
+            published
+            fields {
+              slug
+            }
+            frontmatter {
+              title
             }
           }
         }
       }
-    `
-  );
+    }
+  `);
 
   if (result.errors) {
     throw result.errors;
