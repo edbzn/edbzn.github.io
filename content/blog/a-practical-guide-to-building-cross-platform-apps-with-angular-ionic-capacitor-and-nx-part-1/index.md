@@ -1,15 +1,15 @@
 ---
-title: A Practical guide to building cross-platform apps with Angular, Ionic, Capacitor, and Nx
+title: "A Practical guide to building cross-platform apps with Angular, Ionic, Capacitor, and Nx · Part 1 · Workspace setup and app initialization"
 date: '2024-11-29T00:00:00.000Z'
 ---
 
 This article is part of a practical series on building cross-platform apps using **Angular**, **Ionic**, **Capacitor**, and **Nx**. In this first part, I'll guide you through setting up your workspace and running your app on the web and Android platforms.
 
-## Step 1: Initialize the Workspace and Application
+## Step 1: Initialize the workspace and application
 
 To begin, you'll create an Nx workspace, add Ionic and Capacitor configurations, and prepare your app for development.
 
-### 1.1 Initialize the Nx Workspace
+### 1.1 Initialize the Nx workspace
 
 Run the following command to set up your Nx workspace with the `angular-monorepo` preset:
 
@@ -35,7 +35,7 @@ Next, install the `@nxext/angular-ionic` package, which provides generators for 
 npm install @nxext/ionic-angular -D
 ```
 
-### 1.3 Configure Capacitor for Your App
+### 1.3 Configure Capacitor for your app
 
 Run the following command to add Capacitor configuration files for your app:
 
@@ -45,11 +45,11 @@ nx g @nxext/ionic-angular:configuration my-app
 
 At this point, your workspace is ready to build and run your app.
 
-## Step 2: Running `my-app` on the Web Platform
+## Step 2: Running `my-app` on the web platform
 
 Running your app in a web browser is straightforward.
 
-### 2.1 Serve the App in the Browser
+### 2.1 Serve the app in the browser
 
 Run the following command to serve your app:
 
@@ -63,7 +63,7 @@ Once the server starts, open the URL displayed in the terminal to view your app.
 
 🌈 **Ta-da!** Your app is now running in the browser.
 
-## Step 3: Running `my-app` on the Android Platform
+## Step 3: Running `my-app` on the Android platform
 
 To test your app on an Android device or emulator, follow these steps:
 
@@ -75,7 +75,7 @@ Download and install [Android Studio](https://developer.android.com/studio) to e
 
 > **Note:** 📌 <br> Check the installation guide for more information: https://developer.android.com/studio/install
 
-### 3.2 Add the Android Platform
+### 3.2 Add the Android platform
 
 Add the Android platform to your app by running:
 
@@ -85,7 +85,7 @@ nx run my-app:add:android
 
 This command generates platform-specific files needed to run your app on Android.
 
-### 3.3 Open the App in Android Studio
+### 3.3 Open the app in Android Studio
 
 Use Nx to open your app directly in Android Studio:
 
@@ -97,7 +97,7 @@ Android Studio will open, displaying a project view similar to this:
 
 ![Android Studio - Run the app](./run.png)
 
-### 3.4 Run the App on the Emulator
+### 3.4 Run the App on the emulator
 
 1. In Android Studio, click the **Run** button (the green triangle).
 2. Wait for the app to build and launch on the Android emulator.
@@ -106,7 +106,7 @@ Android Studio will open, displaying a project view similar to this:
 
 🌟 **Congratulations!** Your app is now running on an Android emulator.
 
-### 3.5 Run the App on your Connected Device (optional)
+### 3.5 Run the app on your connected device (optional)
 
 Testing on a real device provides the most accurate results, as it replicates real-world conditions. Follow these steps to set up and deploy your app to a physical Android device.
 
@@ -115,7 +115,7 @@ Testing on a real device provides the most accurate results, as it replicates re
 
 ![Physical Device](./device.png)
 
-### 4.0 Apply and Test Your Changes on Android
+### 4.0 Apply and test your changes on Android
 
 After making changes to your app, ensure that your modifications are reflected on the Android platform. Rebuild your app to generate the latest build files:
 
@@ -131,11 +131,11 @@ nx run my-app:sync:android
 
 This updates the Android project with the latest build and configuration changes. Now, open your app in Android Studio again and re-run it to see your changes.
 
-### 4.1 Live Reload for Faster Iteration
+### 4.1 Setting up live reload for faster iteration
 
 To enable live reload on an Android emulator or physical device, update your Capacitor configuration. This feature allows your app to reflect changes in real-time during development.
 
-#### Update the Capacitor Configuration
+#### Update the Capacitor configuration
 
 Replace your `capacitor.config.ts` with the following setup:
 
@@ -176,7 +176,7 @@ export default config;
 
 > **Note: 📌** <br> This configuration dynamically sets the server URL to your local network's IP address when live reload is enabled.
 
-#### Serve Your App with Live Reload
+#### Serve your app with live reload
 
 Set the `LIVE` environment variable to `true` before syncing the Android platform:
 
@@ -190,7 +190,7 @@ Run the app's development server and make it accessible on your local network:
 nx serve my-app --host 0.0.0.0
 ```
 
-Finally, re-run your app in Android Studio. The app will now automatically reload as you make changes.
+Finally, re-run your app in Android Studio. **The app will now automatically reload as you make changes.** 🚀
 
 ## Conclusion
 
