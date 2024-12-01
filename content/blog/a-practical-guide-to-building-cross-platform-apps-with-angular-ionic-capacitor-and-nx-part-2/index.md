@@ -262,21 +262,21 @@ Here's the improved implementation:
 export default class SocialFeedFeatureComponent {
   private readonly socialFeedDataAccess = inject(SocialFeedDataAccess);
   private readonly IonInfiniteScroll = viewChild.required(IonInfiniteScroll);
-  private readonly index = signal(0);
 
-  // highlight-start
+  private readonly index = signal(0);
   private readonly postsResource = rxResource({
     request: this.index,
-    loader: () => this.socialFeedDataAccess.getFeed(),
+    loader: () =>
+      this.socialFeedDataAccess
+        .getFeed()
+        .pipe(tap(() => this.IonInfiniteScroll().complete())),
   });
-  private readonly accumulatePosts = effect(() => {
-    const newPosts = this.postsResource.value() ?? [];
-    this.posts.update((posts) => [...posts, ...newPosts]);
-    this.IonInfiniteScroll().complete();
-  });
-  // highlight-end
 
-  readonly posts = signal<SocialPostModel[]>([]);
+  readonly posts = linkedSignal<SocialPostModel[], SocialPostModel[]>({
+    source: () => this.postsResource.value() ?? [],
+    computation: (newPosts, posts) => [...(posts?.value ?? []), ...newPosts],
+  });
+
   readonly trackById = trackById;
 
   loadPosts(): void {
@@ -294,13 +294,13 @@ export default class SocialFeedFeatureComponent {
 
 2. **Signals for state management**:
 
-   - `signal` and `effect` replace imperative constructs like `ngOnInit` and `subscribe`, making the logic declarative.
+   - `linkedSignal` replace imperative constructs like `ngOnInit` and `subscribe`, making the logic declarative.
    - `index` controls pagination reactively, triggering new fetches when updated.
 
 3. **Eliminating lifecycle hooks**:
    - The setup relies purely on reactive constructs, removing the need for lifecycle hooks like `ngOnInit`, making the component more concise and functional.
 
-> **Note: 📌** <br> While these features are exciting, keep in mind that, at the moment, `rxResource` is experimental, and `effect` is in developer preview. To learn more about the state of these features, check out the excellent [angular.courses/caniuse](https://www.angular.courses/caniuse?fflags=version-summary) interactive table.
+> **Note: 📌** <br> While these features are exciting, keep in mind that, at the moment, `rxResource` is experimental, and `linkedSignal` is in developer preview. To learn more about the state of these features, check out the excellent [angular.courses/caniuse](https://www.angular.courses/caniuse?fflags=version-summary) interactive table.
 
 #### Configuring feature routes
 
