@@ -1,7 +1,6 @@
 ---
 title: 'A practical guide to building cross-platform apps with Angular, Ionic, Capacitor, and Nx · Part 2 · Building a social feed'
-# date: '2024-11-29T00:00:00.000Z'
-draft: true
+date: '2024-12-01T00:00:00.000Z'
 ---
 
 This article is part of a practical series on building cross-platform apps using **Angular**, **Ionic**, **Capacitor**, and **Nx**.
