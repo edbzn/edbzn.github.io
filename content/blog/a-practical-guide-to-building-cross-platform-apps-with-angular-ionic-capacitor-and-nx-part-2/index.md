@@ -267,14 +267,12 @@ export default class SocialFeedFeatureComponent {
   // highlight-start
   private readonly postsResource = rxResource({
     request: this.index,
-    loader: () =>
-      this.socialFeedDataAccess
-        .getFeed()
-        .pipe(tap(() => this.IonInfiniteScroll().complete())),
+    loader: () => this.socialFeedDataAccess.getFeed(),
   });
   private readonly accumulatePosts = effect(() => {
     const newPosts = this.postsResource.value() ?? [];
     this.posts.update((posts) => [...posts, ...newPosts]);
+    this.IonInfiniteScroll().complete();
   });
   // highlight-end
 
