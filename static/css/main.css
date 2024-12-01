@@ -2,6 +2,23 @@ li {
   margin-bottom: 0;
 }
 
+summary {
+  cursor: pointer;
+  background-color: #007acc;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: 'Merriweather', serif;
+}
+
+details .gatsby-highlight {
+  margin: 0;
+}
+
+details {
+  margin-bottom: 1.5em;
+}
+
 .box {
   padding: 1.5rem;
   position: relative;

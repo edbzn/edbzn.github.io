@@ -1,9 +1,16 @@
 ---
-title: "A Practical guide to building cross-platform apps with Angular, Ionic, Capacitor, and Nx · Part 1 · Workspace setup and app initialization"
+title: "A practical guide to building cross-platform apps with Angular, Ionic, Capacitor, and Nx · Part 1 · Workspace setup and app initialization"
 date: '2024-11-29T00:00:00.000Z'
 ---
 
-This article is part of a practical series on building cross-platform apps using **Angular**, **Ionic**, **Capacitor**, and **Nx**. In this first part, I'll guide you through setting up your workspace and running your app on the web and Android platforms.
+This article is part of a practical series on building cross-platform apps using **Angular**, **Ionic**, **Capacitor**, and **Nx**.
+
+- Part 1 · Workspace setup and app initialization (📍 you are here)
+- [Part 2 · Building a social feed](/a-practical-guide-to-building-cross-platform-apps-with-angular-ionic-capacitor-and-nx-part-2/)
+
+---
+
+In this first part, I'll guide you through setting up your workspace and running your app on the web and Android platforms.
 
 ## Step 1: Initialize the workspace and application
 
