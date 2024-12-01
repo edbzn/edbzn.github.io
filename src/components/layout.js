@@ -64,7 +64,9 @@ class Layout extends React.Component {
                 }}
               />{' '}
               RSS feed
-            </a>
+            </a>{' '}
+            · See the{' '}
+            <a href="https://github.com/edbzn/edbzn.github.io">source code</a>
             <br /> This website is powered by{' '}
             <a href="https://www.gatsbyjs.com">Gatsby</a> and licensed under{' '}
             <a href="https://creativecommons.org/licenses/by-sa/4.0">
