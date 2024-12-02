@@ -38,8 +38,8 @@ To implement our architecture, we generate the necessary apps and libraries:
 
 ```bash
 # Generate the frontend app
-nx g @nx/angular:app apps/social-app --tags=type:app,platform:mobile,platform:web
-nx g @nxext/ionic-angular:configuration social-app
+nx g @nx/angular:app apps/social-feed-app --tags=type:app,platform:mobile,platform:web
+nx g @nxext/ionic-angular:configuration social-feed-app
 
 # Generate the backend API
 nx g @nx/express:app --directory=apps/social-feed-api --frontendProject=social-feed-app --tags=type:app,platform:node
@@ -63,7 +63,7 @@ This folder structure organizes the project into apps and libraries.
 
 ```bash
 apps/
-├── social-app/              # Cross-platform Angular app
+├── social-feed-app/         # Cross-platform Angular app
 ├── social-feed-api/         # Express backend API
 libs/
 ├── social-feed-feature/     # Library for social feed business logic
