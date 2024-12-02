@@ -63,7 +63,7 @@ class BlogPostTemplate extends React.Component {
             categoryId="DIC_kwDOBe3z384CkeQh"
             mapping="pathname"
             strict="0"
-            reactionsEnabled="1"
+            reactionsEnabled="0"
             emitMetadata="0"
             inputPosition="bottom"
             theme="light"
