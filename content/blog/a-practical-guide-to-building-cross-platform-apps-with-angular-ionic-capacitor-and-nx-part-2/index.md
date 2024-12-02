@@ -78,7 +78,7 @@ We've kept it relatively flat because **the project focuses on a single domain**
 
 Now that the workspace is set up, it's time to start coding! We'll approach this in a modular way, focusing on one part of the architecture at a time.
 
-### Create the model
+### Creating the model
 
 In the `social-feed-model` library, we'll start by defining the data model that will be shared between the frontend and backend. This ensures we have a consistent structure for the data.
 
@@ -95,7 +95,7 @@ export interface SocialPostModel {
 }
 ```
 
-### Build the data access layer
+### Building the data access layer
 
 In the `social-feed-data-access` library, we'll implement the service to fetch the data from the backend API. This service will handle HTTP requests.
 
