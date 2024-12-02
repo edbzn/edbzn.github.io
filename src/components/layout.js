@@ -51,7 +51,10 @@ class Layout extends React.Component {
           style={{ marginTop: rhythm(2), fontSize: 14, fontWeight: 100 }}
         >
           <div style={{ textAlign: 'center' }}>
-            &copy; {new Date().getFullYear()} · Edouard Bozon ·{' '}
+            <a href="https://creativecommons.org/licenses/by-sa/4.0">
+              CC BY-SA 4.0
+            </a>{' '}
+            {new Date().getFullYear()} &copy; Edouard Bozon ·{' '}
             <a href="/rss.xml">
               <img
                 src={rss}
@@ -63,16 +66,9 @@ class Layout extends React.Component {
                   marginLeft: 2,
                 }}
               />{' '}
-              RSS feed
+              RSS
             </a>{' '}
-            · See the{' '}
-            <a href="https://github.com/edbzn/edbzn.github.io">source code</a>
-            <br /> This website is powered by{' '}
-            <a href="https://www.gatsbyjs.com">Gatsby</a> and licensed under{' '}
-            <a href="https://creativecommons.org/licenses/by-sa/4.0">
-              CC BY-SA 4.0
-            </a>
-            .
+            · <a href="https://github.com/edbzn/edbzn.github.io">source code</a>
           </div>
         </footer>
       </div>
