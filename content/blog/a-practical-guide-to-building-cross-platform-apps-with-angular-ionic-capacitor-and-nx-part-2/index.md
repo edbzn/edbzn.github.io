@@ -249,7 +249,7 @@ This setup keeps the logic for fetching data, handling the scroll, and rendering
 
 #### Reactive refactoring
 
-While the original approach works, it relies on imperative constructs such as the `subscribe()` function call and the `ngOnInit()` lifecycle hook. To address this, we can leverage Angular 19's **reactive features**, such as `rxResource`, to create a cleaner, declarative solution.
+While the original approach works, it relies on imperative constructs such as the `subscribe()` function call and the `ngOnInit()` lifecycle hook. To address this, we can leverage Angular 19's **reactive features**, such as `rxResource` and `linkedSignal`, to create a cleaner, declarative solution.
 
 Here's the improved implementation:
 
@@ -263,9 +263,7 @@ export default class SocialFeedFeatureComponent {
   private readonly socialFeedDataAccess = inject(SocialFeedDataAccess);
   private readonly IonInfiniteScroll = viewChild.required(IonInfiniteScroll);
 
-  private readonly index = signal(0);
   private readonly postsResource = rxResource({
-    request: this.index,
     loader: () =>
       this.socialFeedDataAccess
         .getFeed()
@@ -280,7 +278,7 @@ export default class SocialFeedFeatureComponent {
   readonly trackById = trackById;
 
   loadPosts(): void {
-    this.index.update((index) => index + 1);
+    this.postsResource.reload();
   }
 }
 ```
@@ -294,8 +292,8 @@ export default class SocialFeedFeatureComponent {
 
 2. **Signals for state management**:
 
-   - `linkedSignal` replace imperative constructs like `ngOnInit` and `subscribe`, making the logic declarative.
-   - `index` controls pagination reactively, triggering new fetches when updated.
+   - `linkedSignal` accumulates new posts made from the HTTP request with previous posts.
+   - `postsResource.reload()` triggers fetching new posts.
 
 3. **Eliminating lifecycle hooks**:
    - The setup relies purely on reactive constructs, removing the need for lifecycle hooks like `ngOnInit`, making the component more concise and functional.
@@ -478,6 +476,19 @@ To ensure a clean architecture over time, we enforce module boundaries using the
 ```js
 // eslint.config.js
 
+const nx = require('@nx/eslint-plugin');
+
+const allowedFrontendExternalImports = [
+  'jest-preset-angular/setup-jest',
+  '@angular/*',
+  '@ionic/*',
+  'ionicons*',
+  '@capacitor/*',
+  'rxjs',
+];
+
+const allowedBackendExternalImports = ['express', '@faker-js/faker'];
+
 module.exports = [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
@@ -500,7 +511,15 @@ module.exports = [
                 'type:feature',
                 'type:ui',
                 'type:model',
+                'platform:mobile',
+                'platform:web',
               ],
+              allowedExternalImports: allowedFrontendExternalImports,
+            },
+            {
+              sourceTag: 'type:api',
+              onlyDependOnLibsWithTags: ['type:model', 'platform:node'],
+              allowedExternalImports: allowedBackendExternalImports,
             },
             {
               sourceTag: 'type:feature',
@@ -509,30 +528,37 @@ module.exports = [
                 'type:ui',
                 'type:model',
               ],
+              allowedExternalImports: allowedFrontendExternalImports,
             },
             {
               sourceTag: 'type:data-access',
               onlyDependOnLibsWithTags: ['type:model'],
+              allowedExternalImports: allowedFrontendExternalImports,
             },
             {
               sourceTag: 'type:ui',
               onlyDependOnLibsWithTags: ['type:model'],
+              allowedExternalImports: allowedFrontendExternalImports,
             },
             {
               sourceTag: 'type:model',
               onlyDependOnLibsWithTags: [],
+              bannedExternalImports: ['*'],
             },
             {
               sourceTag: 'platform:node',
               onlyDependOnLibsWithTags: ['platform:node'],
+              allowedExternalImports: allowedBackendExternalImports,
             },
             {
               sourceTag: 'platform:mobile',
               onlyDependOnLibsWithTags: ['platform:mobile'],
+              allowedExternalImports: allowedFrontendExternalImports,
             },
             {
               sourceTag: 'platform:web',
               onlyDependOnLibsWithTags: ['platform:web'],
+              allowedExternalImports: allowedFrontendExternalImports,
             },
           ],
         },
@@ -549,18 +575,23 @@ module.exports = [
 
 </details>
 
+Here's an example of the rule failing in my editor when importing a UI element in the backend API:
+
+![Lint Failure Example](./lint-fail.png)
+
 The configuration includes the following key rules:
 
-- **Apps (`type:app`)** can only depend on feature libraries, UI libraries, and model libraries.
-- **Feature libraries (`type:feature`)** can depend on data-access libraries, UI libraries, and model libraries.
-- **Data-access libraries (`type:data-access`)** are restricted to model libraries.
-- **UI libraries (`type:ui`)** can only depend on model libraries.
-- **Model libraries (`type:model`)** are pure and cannot depend on other libraries.
-- **Platform-specific constraints** ensure that, for example, Node.js libraries (`platform:node`) cannot depend on mobile or web libraries.
+- **Frontend apps** (`type:app`) can depend on feature, UI, and model libraries, as well as web and mobile platform-specific libraries.
+- **Backend APIs** (`type:api`) are limited to model libraries and Node.js platform-specific libraries.
+- **Feature libraries** (`type:feature`) can rely on data-access, UI, and model libraries.
+- **Data-access libraries** (`type:data-access`) are restricted to model libraries only.
+- **UI libraries** (`type:ui`) can only depend on model libraries.
+- **Model libraries** (`type:model`) are completely independent and cannot depend on any other libraries or external imports, making them platform and framework agnostic.
+- **Platform-specific libraries** (e.g., web, mobile, Node.js) can only use other libraries within their respective platforms, but if a library is tagged for multiple platforms, it can use dependencies from all relevant platforms.
 
 ![Lint target](./lint.png)
 
-> **Note: 📌** <br> These rules are subjective and may not represent the optimal choice for every situation. Adjust them based on your project's specific needs and constraints.
+> **Note: 📌** <br> These rules are fitting my own context and may not represent the optimal choice for every situation. Adjust them based on your project's specific needs and constraints.
 
 ### Wrapping up
 
@@ -570,7 +601,7 @@ The frontend app, built with Angular, Ionic, and Capacitor, delivers a seamless 
 
 ![Workspace Graph](./archi.png)
 
-**This project demonstrates the power of combining modern tools like Angular, Ionic, and Nx to build apps competitive apps efficiently.** With this solid foundation in place, you're ready to expand your app's capabilities, confident that the current architecture is flexible and can be adapted to meet your future needs.
+**This project demonstrates the power of combining modern tools like Angular, Ionic, and Nx to build apps efficiently.** With this solid foundation in place, you're ready to develop new features, confident that the current architecture is flexible and can be adapted to meet your future needs.
 
 The complete source code for this project is available in the [GitHub repository](https://github.com/edbzn/social-feed).
 
