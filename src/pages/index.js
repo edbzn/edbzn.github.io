@@ -4,6 +4,7 @@ import Bio from '../components/bio';
 import Layout from '../components/layout';
 import { Seo } from '../components/seo';
 import { PostPreview } from '../components/post-preview';
+import { Resume } from '../components/resume';
 import { rhythm } from '../utils/typography';
 
 class AboutMe extends React.Component {
@@ -51,6 +52,25 @@ class AboutMe extends React.Component {
       <Layout location={this.props.location} social={social} author={author}>
         <Seo title="About me" />
         <Bio />
+
+        <section style={{ marginTop: rhythm(2) }}>
+          <div
+            style={{
+              marginBottom: rhythm(1.4),
+              fontFamily: 'Montserrat, sans-serif',
+              textTransform: 'uppercase',
+            }}
+          >
+            <span
+              style={{
+                fontWeight: '200',
+              }}
+            >
+              Resume
+            </span>
+          </div>
+          <Resume />
+        </section>
 
         <section style={{ marginTop: rhythm(2) }}>
           <div
