@@ -57,13 +57,13 @@ class AboutMe extends React.Component {
           <div
             style={{
               marginBottom: rhythm(1.4),
-              fontFamily: 'Montserrat, sans-serif',
+              fontFamily: '"Public Sans", sans-serif',
               textTransform: 'uppercase',
             }}
           >
             <span
               style={{
-                fontWeight: '200',
+                fontWeight: '100',
               }}
             >
               Resume
@@ -76,13 +76,13 @@ class AboutMe extends React.Component {
           <div
             style={{
               marginBottom: rhythm(1.4),
-              fontFamily: 'Montserrat, sans-serif',
+              fontFamily: '"Public Sans", sans-serif',
               textTransform: 'uppercase',
             }}
           >
             <span
               style={{
-                fontWeight: '200',
+                fontWeight: '100',
               }}
             >
               Latest posts
@@ -103,13 +103,13 @@ class AboutMe extends React.Component {
           <div
             style={{
               marginBottom: rhythm(1.4),
-              fontFamily: 'Montserrat, sans-serif',
+              fontFamily: '"Public Sans", sans-serif',
               textTransform: 'uppercase',
             }}
           >
             <span
               style={{
-                fontWeight: '200',
+                fontWeight: '100',
               }}
             >
               Open source projects
@@ -119,6 +119,7 @@ class AboutMe extends React.Component {
 
           <ul
             style={{
+              margin: 0,
               listStyle: 'none',
               gap: rhythm(0.4),
             }}
@@ -129,8 +130,8 @@ class AboutMe extends React.Component {
                   href={project.url}
                   style={{
                     color: 'initial',
-                    fontWeight: 'bold',
-                    fontFamily: 'Montserrat, sans-serif',
+                    fontWeight: 400,
+                    fontFamily: '"Public Sans", sans-serif',
                   }}
                 >
                   <img

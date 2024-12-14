@@ -1095,6 +1095,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/merriweather@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-5.1.0.tgz#3644b3d19fc7f4171aff8d18dad113f595eec7d1"
+  integrity sha512-CliXFoCACKkrx8G93xGw6cD7RYCOytuY/Afe1W/htsRRlaSyGA6HGNQzQJc6NKzjs9XenBH2CcMQsONyppd+uQ==
+
+"@fontsource/public-sans@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/public-sans/-/public-sans-5.1.1.tgz#f2fbc565536d08cf19b4a34dcad5788b5e31e2ed"
+  integrity sha512-BEJEc9kpLBowHLqeOlex1lMJPZ/6mzKn3ArhbvWY9dvMcjSqH7jzJyTN44j0H78FTOrVjIW1g4A8nDdbx8VV5Q==
+
 "@gatsbyjs/parcel-namer-relative-to-cwd@2.14.0":
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-2.14.0.tgz#46556c54c7c958528c1fdf9bda2a3d96886bdd2c"
@@ -11713,16 +11723,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
-
-typeface-merriweather@1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/typeface-merriweather/-/typeface-merriweather-1.1.13.tgz#c6f0564bc0346174f4da8daf282d27bfa802f06f"
-  integrity sha512-ho6xe/y/uHIKVXsFtK+dJfRCD5KZqJCMYTCcXfuCwQHQbeQ83a7hVkxfRMTEIjZOSXw5SevOjnwJuZ5QgWEHiw==
-
-typeface-montserrat@1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/typeface-montserrat/-/typeface-montserrat-1.1.13.tgz#2a16729c174dd1a8c3fec05a851b7725412606cc"
-  integrity sha512-Pklkyj0e+K+6I/t0M6JBDBphpfJkF1k+3qd8qDnp9aVtCC7oGBQWTAcL6+5eArfGe7h73uPwyal73hEkf9YCUA==
 
 typography-breakpoint-constants@^0.16.19:
   version "0.16.19"

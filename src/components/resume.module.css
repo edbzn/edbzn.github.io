@@ -46,12 +46,14 @@
 }
 
 .content h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 200;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 100;
+  font-size: 1.2rem;
 }
 
 .position {
   font-size: 0.9rem;
+  font-weight: 200;
 }
 
 .partial {
@@ -73,11 +75,11 @@
 
 button {
   margin-top: 24px;
-  background-color: #f2f2f2;
+  background-color: #f6f6f6;
   border: none;
   padding: 6px 12px;
   font-size: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: '"Public Sans"', sans-serif;
   cursor: pointer;
   border-radius: 4px;
 }

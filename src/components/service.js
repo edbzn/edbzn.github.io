@@ -15,7 +15,7 @@ export const Service = () => {
         style={styles.contactLink}
         title="Mail to Edouard Bozon"
       >
-        📧 Contact Me
+        Contact Me
       </a>
     </section>
   );
@@ -27,12 +27,12 @@ const styles = {
     backgroundColor: 'rgb(10 25 47)',
     color: '#ccd6f6',
     textAlign: 'center',
-    fontFamily: 'Montserrat, sans-serif',
+    fontFamily: '"Public Sans", sans-serif',
     padding: '20px',
   },
   heading: {
     fontSize: '1.5rem',
-    fontFamily: 'Montserrat, sans-serif',
+    fontFamily: '"Public Sans", sans-serif',
     fontWeight: 'bold',
     color: 'rgb(232 236 248)',
     margin: '10px 0',
@@ -42,7 +42,7 @@ const styles = {
     color: '#64ffda',
     textDecoration: 'none',
     fontSize: '1.2rem',
-    fontWeight: 'bolder',
+    fontWeight: 400,
     marginBottom: '18px',
   },
   services: {

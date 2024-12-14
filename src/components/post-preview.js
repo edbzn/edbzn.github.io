@@ -11,7 +11,7 @@ export const PostPreview = ({ node }) => {
           style={{
             marginTop: 0,
             marginBottom: 0,
-            fontFamily: 'Montserrat, sans-serif',
+            fontFamily: '"Public Sans", sans-serif',
           }}
         >
           <Link style={{ color: 'initial' }} to={node.fields.slug}>

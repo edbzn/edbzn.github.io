@@ -1,8 +1,11 @@
 import Typography from 'typography';
 import wordpress2016 from 'typography-theme-wordpress-2016';
 
-wordpress2016.overrideThemeStyles = () => {
+wordpress2016.overrideThemeStyles = ({ rhythm }) => {
   return {
+    h1: {
+      fontFamily: "'Public Sans', sans-serif",
+    },
     'a.gatsby-resp-image-link': {
       boxShadow: `none`,
     },
@@ -14,8 +17,8 @@ wordpress2016.overrideThemeStyles = () => {
     code: {
       fontSize: 'inherit',
     },
-    pre: {
-      fontSize: 'inherit',
+    'ul,ol': {
+      marginLeft: rhythm(1),
     },
   };
 };

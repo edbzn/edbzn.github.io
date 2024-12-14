@@ -12,10 +12,11 @@ const style = {
   ul: {
     listStyle: 'none',
     padding: '0',
+    margin: 0,
   },
   nav: {
     margin: rhythm(2.4) + ' auto',
-    fontFamily: 'Montserrat, sans-serif',
+    fontFamily: '"Public Sans", sans-serif',
   },
 };
 
@@ -27,7 +28,7 @@ export const PostNav = ({ previous, next }) => (
         <li>
           <Link
             to={previous.fields.slug}
-            style={{ color: 'inherit', fontWeight: 'bold' }}
+            style={{ color: 'inherit', fontWeight: '900' }}
             rel="prev"
           >
             {previous.frontmatter.title}
@@ -38,7 +39,11 @@ export const PostNav = ({ previous, next }) => (
         <li>
           <Link
             to={next.fields.slug}
-            style={{ color: 'inherit', fontWeight: 'bold' }}
+            style={{
+              color: 'inherit',
+              fontWeight: '900',
+              marginTop: rhythm(0.6),
+            }}
             rel="next"
           >
             {next.frontmatter.title}

@@ -61,12 +61,6 @@ Seo.propTypes = {
   canonical: PropTypes.string,
 };
 
-Seo.defaultProps = {
-  title: null,
-  description: null,
-  article: false,
-};
-
 const query = graphql`
   query SEO {
     site {
