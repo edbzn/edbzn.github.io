@@ -1096,14 +1096,14 @@
     strip-json-comments "^3.1.1"
 
 "@fontsource/merriweather@^5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-5.1.0.tgz#3644b3d19fc7f4171aff8d18dad113f595eec7d1"
-  integrity sha512-CliXFoCACKkrx8G93xGw6cD7RYCOytuY/Afe1W/htsRRlaSyGA6HGNQzQJc6NKzjs9XenBH2CcMQsONyppd+uQ==
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-5.1.1.tgz#7e0b7e974dd8cd67517f727de79c400742bcadd5"
+  integrity sha512-GaO8ZHDCQAuoPJh0yiLK+NzL03OnGs64uFGKFRSouinZ1CtoEtO+3DHr4LZokFW+Au5MvWr4Am2MOhjdyvIRyA==
 
 "@fontsource/public-sans@^5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@fontsource/public-sans/-/public-sans-5.1.1.tgz#f2fbc565536d08cf19b4a34dcad5788b5e31e2ed"
-  integrity sha512-BEJEc9kpLBowHLqeOlex1lMJPZ/6mzKn3ArhbvWY9dvMcjSqH7jzJyTN44j0H78FTOrVjIW1g4A8nDdbx8VV5Q==
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/public-sans/-/public-sans-5.1.2.tgz#5e6dffc1f48ed988f39998b0246dbddbfc6268bb"
+  integrity sha512-VY/2N8hfhFgP/3lkk/WdGX27/0wp+ajX9/E4bb+O1BS5c+OUfJG7FChIqYRKZUe8n2jl8pOVjaB93PfyVQS9Hg==
 
 "@gatsbyjs/parcel-namer-relative-to-cwd@2.14.0":
   version "2.14.0"
