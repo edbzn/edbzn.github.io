@@ -3,10 +3,6 @@
   position: relative;
 }
 
-.container:last-child {
-  padding-bottom: 0;
-}
-
 .container:first-child {
   padding-top: 0;
 }
