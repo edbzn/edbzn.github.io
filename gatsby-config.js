@@ -139,7 +139,7 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://edbzn.github.io',
-        sitemap: 'https://edbzn.github.io/sitemap.xml',
+        sitemap: 'https://edbzn.github.io/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
