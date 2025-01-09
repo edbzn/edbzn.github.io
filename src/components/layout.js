@@ -24,25 +24,17 @@ class Layout extends React.Component {
             paddingTop: 18,
           }}
         >
-          <span
+          <Link
             style={{
-              marginBottom: 0,
-              marginTop: 0,
-              fontFamily: "'Merriweather', 'Georgia', serif",
-              fontSize: rhythm(0.9),
+              boxShadow: `none`,
+              color: `inherit`,
+              fontFamily: "'Public Sans', sans-serif",
+              fontSize: rhythm(1.4),
             }}
+            to={`/`}
           >
-            <Link
-              style={{
-                boxShadow: `none`,
-                color: `inherit`,
-                fontWeight: '100',
-              }}
-              to={`/`}
-            >
-              <strong>edbzn</strong>.github.io
-            </Link>
-          </span>
+            {window.location.pathname === '/' ? '/About me' : '/Blog'}
+          </Link>
         </header>
         <main style={{ marginTop: rhythm(1) }}>{children}</main>
         <Service />
