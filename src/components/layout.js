@@ -6,7 +6,7 @@ import { Service } from './service';
 
 class Layout extends React.Component {
   render() {
-    const { children } = this.props;
+    const { children, location } = this.props;
     return (
       <div
         style={{
@@ -33,7 +33,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {window.location.pathname === '/' ? '/About me' : '/Blog'}
+            {location.pathname === '/' ? '/About me' : '/Blog'}
           </Link>
         </header>
         <main style={{ marginTop: rhythm(1) }}>{children}</main>
