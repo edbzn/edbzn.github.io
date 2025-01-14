@@ -37,7 +37,7 @@ class AboutMe extends React.Component {
       {
         name: 'jscutlery/devkit',
         description: 'Cutleries to help you cook better apps.',
-        url: 'https://github.com/jscutlery/semver',
+        url: 'https://github.com/jscutlery/devkit',
         img: 'https://avatars.githubusercontent.com/u/55789006?s=200&v=4',
       },
       {
