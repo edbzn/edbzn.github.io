@@ -32,10 +32,6 @@ export function Seo({ title, description, article, canonical }) {
     >
       <html lang="en" />
       <meta name="description" content={seo.description} />
-      <meta
-        name="google-site-verification"
-        content="BGlXUIAFRj2VpaLA-G0g9Wf2ZmQ7imAmLsm52XvfhuQ"
-      />
       {seo.url && <meta property="og:url" content={seo.url} />}
       {(article ? true : null) && <meta property="og:type" content="article" />}
       {seo.title && <meta property="og:title" content={seo.title} />}
