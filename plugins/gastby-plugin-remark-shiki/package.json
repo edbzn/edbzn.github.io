@@ -1,0 +1,10 @@
+{
+  "name": "gatsby-plugin-remark-shiki",
+  "version": "0.0.0",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "shiki": "^1.27.2",
+    "unist-util-visit": "^5.0.0"
+  }
+}

@@ -99,7 +99,7 @@ export interface SocialPostModel {
 
 In the `social-feed-data-access` library, we'll implement the service to fetch the data from the backend API. This service will handle HTTP requests.
 
-```ts
+```angular-ts
 // libs/social-feed-data-access/src/lib/social-feed-data-access.service.ts
 
 @Injectable({ providedIn: 'root' })
@@ -127,7 +127,7 @@ export class SocialFeedDataAccess {
 
 In the `social-feed-ui` library, let's create the presentational component that displays individual posts in the feed. This component will receive a `SocialPostModel` object and render its content.
 
-```ts
+```angular-ts
 // libs/social-feed-ui/src/lib/social-post.component.ts
 
 @Component({
@@ -184,7 +184,7 @@ In the `social-feed-feature` library, we create a smart component to manage the 
 - Implementing infinite scroll using Ionic's `IonInfiniteScroll` to load more posts as the user scrolls.
 - Delegating the presentation of individual posts to the `social-post-ui` component.
 
-```ts
+```angular-ts
 // libs/social-feed-feature/src/lib/social-feed-feature.component.ts
 
 const trackById = <T extends { id: string }>(idx: number, item: T) => item.id;
@@ -253,7 +253,7 @@ While the original approach works, it relies on imperative constructs such as th
 
 Here's the improved implementation:
 
-```ts
+```angular-ts
 // libs/social-feed-feature/src/lib/social-feed-feature.component.ts
 
 @Component({
@@ -326,7 +326,7 @@ export const routes: Routes = [
 
 At this point, we can configure the main app to use the feature we just built. The app's tab layout includes a button to navigate to the feed. We'll use Ionic's tab navigation to set up the feed as one of the tabs.
 
-```ts
+```angular-ts
 // apps/social-feed-app/src/app/tabs/tabs.page.ts
 
 @Component({
@@ -374,7 +374,7 @@ export const routes: Routes = [
 
 Lastly, we configure the root routes for the app, so the app starts with the tabs component.
 
-```ts
+```angular-ts
 // apps/social-feed-app/src/app/app.component.ts
 
 @Component({
