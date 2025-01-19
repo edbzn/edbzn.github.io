@@ -1,4 +1,4 @@
-const siteUrl = `https://edbzn.github.io`;
+const siteUrl = `https://edbzn.dev`;
 
 module.exports = {
   siteMetadata: {
@@ -138,8 +138,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://edbzn.github.io',
-        sitemap: 'https://edbzn.github.io/sitemap-index.xml',
+        host: siteUrl,
+        sitemap: siteUrl + '/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
