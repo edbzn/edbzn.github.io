@@ -6,10 +6,10 @@ import { visit } from 'unist-util-visit';
 export default async function (
   { markdownAST },
   {
-    themes = ['aurora-x'],
+    theme = 'github-dark-default',
     langs = [
-      'angular-ts',
       'vue',
+      'angular-ts',
       'javascript',
       'typescript',
       'bash',
@@ -23,7 +23,7 @@ export default async function (
   let highlighter;
   try {
     highlighter = await createHighlighter({
-      themes,
+      themes: [theme],
       langs,
     });
   } catch (_) {
@@ -41,7 +41,7 @@ export default async function (
 
     node.value = highlighter.codeToHtml(node.value, {
       lang: node.lang,
-      theme: 'aurora-x',
+      theme,
     });
   });
 
