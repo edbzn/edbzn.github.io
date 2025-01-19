@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     siteUrl,
     url: siteUrl,
-    titleTemplate: '%s · edbzn.github.io',
+    titleTemplate: '%s · edbzn.dev',
     author: `Edouard Bozon`,
     description:
       'Edouard Bozon - Freelance software engineer specializing in Angular, Node.js, and modern web technologies. Explore insights on tech, development tips, and my freelance services to help bring your projects to life.',
@@ -120,7 +120,7 @@ module.exports = {
   }
 }`,
             output: '/rss.xml',
-            title: "edbzn.github.io's RSS Feed",
+            title: "edbzn.dev's RSS Feed",
             match: '^/blog/',
           },
         ],

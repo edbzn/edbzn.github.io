@@ -1,9 +1,32 @@
 {
-  "name": "edbzn.github.io",
+  "name": "edbzn.dev",
   "private": true,
-  "description": "Source code for the tech blog https://edbzn.github.io",
+  "description": "Source code for the tech blog https://edbzn.dev",
   "version": "0.0.0",
   "author": "Edouard Bozon <bozonedouard@gmail.com>",
+  "license": "CC-BY-SA-4.0",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json}\"",
+    "start": "yarn develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,json}": [
+      "prettier --write"
+    ]
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "engines": {
+    "node": ">=20.x"
+  },
   "dependencies": {
     "@fontsource/merriweather": "^5.1.0",
     "@fontsource/public-sans": "^5.1.1",
@@ -48,29 +71,5 @@
     "lint-staged": "15.4.1",
     "prettier": "3.4.2",
     "start-server-and-test": "^2.0.0"
-  },
-  "license": "CC-BY-SA-4.0",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json}\"",
-    "preload-fonts": "gatsby-preload-fonts",
-    "start": "yarn develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
-    "prepare": "husky"
-  },
-  "lint-staged": {
-    "*.{js,jsx,json}": [
-      "prettier --write"
-    ]
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
-  "engines": {
-    "node": ">=20.x"
   }
 }
