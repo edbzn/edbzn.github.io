@@ -3,9 +3,8 @@ import { Link } from 'gatsby';
 import { rhythm } from '../utils/typography';
 
 export const PostPreview = ({ node }) => {
-  const title = node.frontmatter.title || node.fields.slug;
   return (
-    <article key={node?.fields?.slug || node.frontmatter.slug}>
+    <article key={node.fields.slug}>
       <header>
         <h3
           style={{
@@ -14,11 +13,8 @@ export const PostPreview = ({ node }) => {
             fontFamily: '"Public Sans", sans-serif',
           }}
         >
-          <Link
-            style={{ color: 'initial' }}
-            to={node?.fields?.slug || node.frontmatter.slug}
-          >
-            {title}
+          <Link style={{ color: 'initial' }} to={node.fields.slug}>
+            {node.frontmatter.title}
           </Link>
         </h3>
       </header>

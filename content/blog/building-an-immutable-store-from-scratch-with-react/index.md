@@ -144,7 +144,7 @@ Here is the [complete working example](https://codesandbox.io/s/0193mp6kmp) of o
 
 <iframe
   src="https://codesandbox.io/embed/0193mp6kmp?fontsize=14"
-  class="iframe"
+  className="iframe"
   title="Meiosis state pattern using React"
   allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
   sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"

@@ -9,7 +9,7 @@ import { rhythm } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark;
+    const post = this.props.data.mdx;
     const { social, author } = this.props.data.site.siteMetadata;
     const { previous, next } = this.props.pageContext;
     const { location } = this.props;
@@ -51,10 +51,7 @@ class BlogPostTemplate extends React.Component {
               )}
             </p>
           </header>
-          <section
-            dangerouslySetInnerHTML={{ __html: post.html }}
-            style={{ marginBottom: rhythm(2) }}
-          />
+          <section style={{ marginBottom: rhythm(2) }}>{children}</section>
           <Giscus
             id="comments"
             repo="edbzn/edbzn.github.io"
@@ -97,10 +94,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    markdownRemark(published: { eq: true }, fields: { slug: { eq: $slug } }) {
+    mdx(published: { eq: true }, fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

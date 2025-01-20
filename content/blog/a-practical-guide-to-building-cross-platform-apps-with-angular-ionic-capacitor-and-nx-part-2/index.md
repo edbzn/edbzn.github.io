@@ -15,7 +15,7 @@ In this second part, we'll see how to create a social feed integrated into a cro
 Here's a demo on my Android phone:
 
 <video loop autoplay controls width="58%">
-  <source src="ui.mp4" type="video/mp4">
+  <source src="ui.mp4" type="video/mp4"></source>
 </video>
 
 ## Architecture overview
@@ -53,7 +53,7 @@ nx g @nx/angular:library libs/social-feed-ui --tags=type:ui,platform:mobile,plat
 
 Most of the code will reside in the libraries, as our goal is to keep the applications lightweight and focused solely on configuration and orchestration.
 
-> **Note: 📌** <br> If you need a deeper understanding of workspace setup and tooling configuration, refer to [Part 1 of this series](/a-practical-guide-to-building-cross-platform-apps-with-angular-ionic-capacitor-and-nx-part-1/) where we covered these topics in detail.
+> **Note: 📌** <br/> If you need a deeper understanding of workspace setup and tooling configuration, refer to [Part 1 of this series](/a-practical-guide-to-building-cross-platform-apps-with-angular-ionic-capacitor-and-nx-part-1/) where we covered these topics in detail.
 
 Let's forget about the `--tags` for now—I'll explain their purpose and how they help with project organization and dependency management later.
 
@@ -112,7 +112,7 @@ export class SocialFeedDataAccess {
 }
 ```
 
-> **Note: 📌** <br> The API is proxied under the same domain so we don't have to manage CORS issues, thanks to the `--frontendProject` option that we used when generating the API.
+> **Note: 📌** <br/> The API is proxied under the same domain so we don't have to manage CORS issues, thanks to the `--frontendProject` option that we used when generating the API.
 
 ```json
 {
@@ -298,7 +298,7 @@ export default class SocialFeedFeatureComponent {
 3. **Eliminating lifecycle hooks**:
    - The setup relies purely on reactive constructs, removing the need for lifecycle hooks like `ngOnInit`, making the component more concise and functional.
 
-> **Note: 📌** <br> While these features are exciting, keep in mind that, at the moment, `rxResource` is experimental, and `linkedSignal` is in developer preview. To learn more about the state of these features, check out the excellent [angular.courses/caniuse](https://www.angular.courses/caniuse?fflags=version-summary) interactive table.
+> **Note: 📌** <br/> While these features are exciting, keep in mind that, at the moment, `rxResource` is experimental, and `linkedSignal` is in developer preview. To learn more about the state of these features, check out the excellent [angular.courses/caniuse](https://www.angular.courses/caniuse?fflags=version-summary) interactive table.
 
 #### Configuring feature routes
 
@@ -320,7 +320,7 @@ export const routes: Routes = [
 ];
 ```
 
-> **Note: 📌** <br> Angular automatically unwraps the `default` exported component in the routing, so we don't have to use `.then((m) => m.myComponent)`.
+> **Note: 📌** <br/> Angular automatically unwraps the `default` exported component in the routing, so we don't have to use `.then((m) => m.myComponent)`.
 
 ### Setting up the app
 
@@ -370,7 +370,7 @@ export const routes: Routes = [
 ];
 ```
 
-> **Note: 📌** <br> The app acts as an orchestrator (shell), delegating the logic to the corresponding feature library using the router.
+> **Note: 📌** <br/> The app acts as an orchestrator (shell), delegating the logic to the corresponding feature library using the router.
 
 Lastly, we configure the root routes for the app, so the app starts with the tabs component.
 
@@ -462,7 +462,7 @@ nx run-many -t serve
 ```
 
 <video loop autoplay controls width="100%">
-  <source src="ui2.mp4" type="video/mp4">
+  <source src="ui2.mp4" type="video/mp4"></source>
 </video>
 
 ### Enforcing module boundaries
@@ -591,7 +591,7 @@ The configuration includes the following key rules:
 
 ![Lint target](./lint.png)
 
-> **Note: 📌** <br> These rules are fitting my own context and may not represent the optimal choice for every situation. Adjust them based on your project's specific needs and constraints.
+> **Note: 📌** <br/> These rules are fitting my own context and may not represent the optimal choice for every situation. Adjust them based on your project's specific needs and constraints.
 
 ### Wrapping up
 

@@ -12,13 +12,7 @@ class AboutMe extends React.Component {
     const { data } = this.props;
     const { siteMetadata } = data.site;
     const { social, author } = siteMetadata;
-    const blogPosts = [
-      ...data.allMarkdownRemark.edges,
-      ...data.allMdx.edges,
-    ].sort(
-      (a, b) =>
-        new Date(b.node.frontmatter.date) - new Date(a.node.frontmatter.date)
-    );
+    const blogPosts = data.allMdx.nodes;
     const ossProjects = [
       {
         name: ' rx-angular/rx-angular',
@@ -95,7 +89,7 @@ class AboutMe extends React.Component {
             </span>{' '}
             · <Link to="blog">All Posts</Link>
           </div>
-          {blogPosts.map(({ node }) => (
+          {blogPosts.map((node) => (
             <div
               key={node.frontmatter.title}
               style={{ marginTop: rhythm(1.4) }}
@@ -176,34 +170,20 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(
+    allMdx(
       limit: 5
       filter: { published: { eq: true } }
       sort: { frontmatter: { date: DESC } }
     ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            draft
-          }
+      nodes {
+        excerpt
+        fields {
+          slug
         }
-      }
-    }
-    allMdx(sort: { frontmatter: { date: DESC } }, limit: 1000) {
-      edges {
-        node {
-          id
-          published
-          frontmatter {
-            slug
-            title
-          }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          draft
         }
       }
     }

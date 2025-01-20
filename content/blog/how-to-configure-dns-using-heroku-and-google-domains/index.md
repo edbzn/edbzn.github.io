@@ -60,20 +60,20 @@ Last but not least I configured the SSL to automatically generates certificates,
 
 In the *DNS section* > *Synthetic records* panel I added :
 
-Sub-domain : `@` <br>
-Temporary redirection (302) : ✅ <br>
-Forward path : ✅ <br>
-Destination URL : `http://edbzn.github.io` <br>
-Activate SSL : ✅ <br>
+Sub-domain : `@` <br/>
+Temporary redirection (302) : ✅ <br/>
+Forward path : ✅ <br/>
+Destination URL : `http://edbzn.github.io` <br/>
+Activate SSL : ✅ <br/>
 
 Then in the *Custom Resources Records* panel I created two records :
 
-Name : `www` <br>
-Type : `CNAME` <br>
-TTL : `1h` <br>
-Data : `* paste Heroku DNS target *`Name : `www.api` <br>
-Type : `CNAME`<br>
-TTL : `1h` <br>
+Name : `www` <br/>
+Type : `CNAME` <br/>
+TTL : `1h` <br/>
+Data : `* paste Heroku DNS target *`Name : `www.api` <br/>
+Type : `CNAME`<br/>
+TTL : `1h` <br/>
 Data : `* paste Heroku DNS target *`
 
 I needed to wait a short time due to DNS propagation. To ensure DNS are well configured we can run :
