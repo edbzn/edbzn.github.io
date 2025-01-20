@@ -1,6 +1,9 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+/**
+ * @type {import('gatsby').GatsbyNode['createPages']}
+ */
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -59,6 +62,9 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 };
 
+/**
+ * @type {import('gatsby').GatsbyNode['onCreateNode']}
+ */
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
@@ -72,6 +78,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
+/**
+ * @type {import('gatsby').GatsbyNode['createSchemaCustomization']}
+ */
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions;
   const typeDefs = [
@@ -91,14 +100,11 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       },
       interfaces: ['Node'],
     }),
-    schema.buildObjectType({
-      name: 'MdxFrontmatter',
-      fields: {
-        canonical: {
-          type: 'String',
-        },
-      },
-    }),
+    `
+    type MdxFrontmatter {
+      canonical: String
+    }
+    `,
   ];
   createTypes(typeDefs);
 };
