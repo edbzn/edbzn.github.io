@@ -1,6 +1,6 @@
 // @ts-check
 
-import { createHighlighter } from 'shiki';
+import { getSingletonHighlighter } from 'shiki';
 import { visit } from 'unist-util-visit';
 
 export default async function (
@@ -8,6 +8,7 @@ export default async function (
   {
     theme = 'github-dark-default',
     langs = [
+      'text',
       'vue',
       'angular-ts',
       'javascript',
@@ -20,19 +21,15 @@ export default async function (
     ],
   }
 ) {
-  let highlighter;
-  try {
-    highlighter = await createHighlighter({
-      themes: [theme],
-      langs,
-    });
-  } catch (_) {
-    throw new Error('Unable to load theme');
+  if (!markdownAST) {
+    return markdownAST;
   }
+
+  const highlighter = await getSingletonHighlighter({ themes: [theme], langs });
 
   visit(markdownAST, 'code', (node) => {
     node.type = 'html';
-    node.children = undefined;
+    node.children = [];
 
     if (!node.lang) {
       node.value = `<pre class="shiki-unknown"><code>${node.value}</code></pre>`;

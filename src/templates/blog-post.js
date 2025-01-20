@@ -12,7 +12,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.mdx;
     const { social, author } = this.props.data.site.siteMetadata;
     const { previous, next } = this.props.pageContext;
-    const { location } = this.props;
+    const { location, children } = this.props;
     return (
       <Layout location={location} social={social} author={author}>
         <Seo
