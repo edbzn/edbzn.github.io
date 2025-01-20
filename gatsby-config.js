@@ -19,6 +19,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,6 +32,12 @@ module.exports = {
       options: {
         path: `${__dirname}/static/images`,
         name: `images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/content/blog`,
       },
     },
     {

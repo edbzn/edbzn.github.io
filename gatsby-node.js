@@ -1,5 +1,9 @@
 const path = require(`path`);
-const { GraphQLBoolean } = require('gatsby/graphql');
+const {
+  GraphQLBoolean,
+  GraphQLObjectType,
+  GraphQLString,
+} = require('gatsby/graphql');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -14,9 +18,22 @@ exports.createPages = async ({ graphql, actions }) => {
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
   const result = await graphql(`
     {
+      allMdx(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+        edges {
+          node {
+            id
+            published
+            frontmatter {
+              slug
+              title
+            }
+          }
+        }
+      }
       allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
         edges {
           node {
+            id
             published
             fields {
               slug
@@ -35,28 +52,44 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges;
+  const posts = [
+    ...result.data.allMdx.edges.map((edge) => ({
+      ...edge.node,
+      type: 'mdx',
+    })),
+    ...result.data.allMarkdownRemark.edges.map((edge) => ({
+      ...edge.node,
+      type: 'markdown',
+    })),
+  ];
+
+  console.log(posts);
+
+  posts.sort(
+    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  );
 
   posts.forEach((post, index) => {
     const hasNext = index > 0;
     const hasPrevious = index < posts.length - 1;
 
-    const nextNode = hasNext ? posts[index - 1].node : null;
-    const previousNode = hasPrevious ? posts[index + 1].node : null;
+    const nextNode = hasNext ? posts[index - 1] : null;
+    const previousNode = hasPrevious ? posts[index + 1] : null;
 
     const next = hasNext && nextNode.published ? nextNode : null;
     const previous =
       hasPrevious && previousNode.published ? previousNode : null;
 
-    if (!post.node.published) {
+    if (!post.published) {
       return;
     }
 
     createPage({
-      path: post.node.fields.slug,
+      path: post.fields.slug,
       component: blogPost,
       context: {
-        slug: post.node.fields.slug,
+        id: post.id,
+        slug: post.fields.slug || post.frontmatter.slug,
         previous,
         next,
       },
@@ -78,7 +111,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 };
 
 exports.setFieldsOnGraphQLNodeType = ({ type }) => {
-  if ('MarkdownRemark' === type.name) {
+  if ('MarkdownRemark' === type.name || 'Mdx' === type.name) {
     return {
       published: {
         type: GraphQLBoolean,

@@ -5,7 +5,7 @@ import { rhythm } from '../utils/typography';
 export const PostPreview = ({ node }) => {
   const title = node.frontmatter.title || node.fields.slug;
   return (
-    <article key={node.fields.slug}>
+    <article key={node?.fields?.slug || node.frontmatter.slug}>
       <header>
         <h3
           style={{
@@ -14,7 +14,10 @@ export const PostPreview = ({ node }) => {
             fontFamily: '"Public Sans", sans-serif',
           }}
         >
-          <Link style={{ color: 'initial' }} to={node.fields.slug}>
+          <Link
+            style={{ color: 'initial' }}
+            to={node?.fields?.slug || node.frontmatter.slug}
+          >
             {title}
           </Link>
         </h3>

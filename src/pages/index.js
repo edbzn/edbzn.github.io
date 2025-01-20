@@ -12,7 +12,13 @@ class AboutMe extends React.Component {
     const { data } = this.props;
     const { siteMetadata } = data.site;
     const { social, author } = siteMetadata;
-    const blogPosts = data.allMarkdownRemark.edges;
+    const blogPosts = [
+      ...data.allMarkdownRemark.edges,
+      ...data.allMdx.edges,
+    ].sort(
+      (a, b) =>
+        new Date(b.node.frontmatter.date) - new Date(a.node.frontmatter.date)
+    );
     const ossProjects = [
       {
         name: ' rx-angular/rx-angular',
@@ -185,6 +191,18 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             draft
+          }
+        }
+      }
+    }
+    allMdx(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+      edges {
+        node {
+          id
+          published
+          frontmatter {
+            slug
+            title
           }
         }
       }
