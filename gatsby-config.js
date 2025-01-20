@@ -72,7 +72,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-preload-fonts`,
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: `gatsby-plugin-feed-mdx`,
       options: {
         query: `
           {
@@ -95,7 +95,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.body }], // TODO fix
+                  custom_elements: [{ 'content:encoded': edge.node.excerpt }],
                 });
               });
             },
@@ -107,14 +107,12 @@ module.exports = {
     edges {
       node {
         excerpt
-        body
         fields {
           slug
         }
         frontmatter {
           title
           date
-          canonical
         }
       }
     }
@@ -122,7 +120,6 @@ module.exports = {
 }`,
             output: '/rss.xml',
             title: "edbzn.dev's RSS Feed",
-            match: '^/blog/',
           },
         ],
       },
