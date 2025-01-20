@@ -11,14 +11,14 @@ class BlogIndex extends React.Component {
     const { data } = this.props;
     const { siteMetadata } = data.site;
     const { social, author } = siteMetadata;
-    const blogPosts = data.allMarkdownRemark.edges;
+    const blogPosts = data.allMdx.nodes;
 
     return (
       <Layout location={this.props.location} social={social} author={author}>
         <Seo title="All posts" />
         <Bio />
         <section role="main" style={{ marginTop: rhythm(2) }}>
-          {blogPosts.map(({ node }) => (
+          {blogPosts.map((node) => (
             <div
               key={node.frontmatter.title}
               style={{ marginTop: rhythm(1.4) }}
@@ -47,21 +47,20 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(
+    allMdx(
       filter: { published: { eq: true } }
       sort: { frontmatter: { date: DESC } }
     ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            draft
-          }
+      nodes {
+        id
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          draft
         }
       }
     }

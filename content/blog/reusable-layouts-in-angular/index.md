@@ -118,7 +118,7 @@ Here is an interacting example created by [Josip Bojčić](https://github.com/jb
 
 <iframe
   src="https://layout-components.stackblitz.io"
-  class="iframe"
+  className="iframe"
   title="Layout components"
 ></iframe>
 

@@ -19,31 +19,11 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-mdx`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/static/images`,
-        name: `images`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-page-creator`,
-      options: {
-        path: `${__dirname}/content/blog`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
+        extensions: [`.md`, `.mdx`],
+        gatsbyRemarkPlugins: [
           {
             resolve: `@raae/gatsby-remark-oembed`,
             options: {
@@ -72,6 +52,26 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/images`,
+        name: `images`,
+      },
+    },
+    // {
+    //   resolve: `gatsby-plugin-page-creator`,
+    //   options: {
+    //     path: `${__dirname}/content/blog`,
+    //   },
+    // },
     `gatsby-plugin-meta-redirect`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -94,26 +94,25 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map((edge) => {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  // custom_elements: [{ 'content:encoded': edge.node.html }],
                 });
               });
             },
             query: `{
-  allMarkdownRemark(
+  allMdx(
     filter: {published: {eq: true}}
     sort: {frontmatter: {date: DESC}}
   ) {
     edges {
       node {
         excerpt
-        html
         fields {
           slug
         }
@@ -121,6 +120,9 @@ module.exports = {
           title
           date
           canonical
+        }
+        internal {
+          contentFilePath
         }
       }
     }

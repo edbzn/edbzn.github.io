@@ -1,46 +1,24 @@
 const path = require(`path`);
-const {
-  GraphQLBoolean,
-  GraphQLObjectType,
-  GraphQLString,
-} = require('gatsby/graphql');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions;
-
-  createRedirect({
-    fromPath: `/a-practical-guide-to-building-cross-platform-apps-with-angular-ionic-capacitor-and-nx/`,
-    toPath: `/a-practical-guide-to-building-cross-platform-apps-with-angular-ionic-capacitor-and-nx-part-1/`,
-    isPermanent: true,
-  });
+  const { createPage } = actions;
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
   const result = await graphql(`
     {
       allMdx(sort: { frontmatter: { date: DESC } }, limit: 1000) {
-        edges {
-          node {
-            id
-            published
-            frontmatter {
-              slug
-              title
-            }
+        nodes {
+          id
+          published
+          fields {
+            slug
           }
-        }
-      }
-      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
-        edges {
-          node {
-            id
-            published
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-            }
+          frontmatter {
+            title
+          }
+          internal {
+            contentFilePath
           }
         }
       }
@@ -51,23 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
-  // Create blog posts pages.
-  const posts = [
-    ...result.data.allMdx.edges.map((edge) => ({
-      ...edge.node,
-      type: 'mdx',
-    })),
-    ...result.data.allMarkdownRemark.edges.map((edge) => ({
-      ...edge.node,
-      type: 'markdown',
-    })),
-  ];
-
-  console.log(posts);
-
-  posts.sort(
-    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-  );
+  const posts = result.data.allMdx.nodes;
 
   posts.forEach((post, index) => {
     const hasNext = index > 0;
@@ -86,10 +48,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: post.fields.slug,
-      component: blogPost,
+      component: `${blogPost}?__contentFilePath=${post.internal.contentFilePath}`,
       context: {
         id: post.id,
-        slug: post.fields.slug || post.frontmatter.slug,
+        slug: post.fields.slug,
         previous,
         next,
       },
@@ -100,7 +62,7 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
@@ -110,20 +72,33 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.setFieldsOnGraphQLNodeType = ({ type }) => {
-  if ('MarkdownRemark' === type.name || 'Mdx' === type.name) {
-    return {
-      published: {
-        type: GraphQLBoolean,
-        resolve: ({ frontmatter }) => {
-          if (process.env.NODE_ENV !== 'production') {
-            return true;
-          }
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions;
+  const typeDefs = [
+    schema.buildObjectType({
+      name: 'Mdx',
+      fields: {
+        published: {
+          type: 'Boolean!',
+          resolve: ({ frontmatter }) => {
+            if (process.env.NODE_ENV !== 'production') {
+              return true;
+            }
 
-          return !frontmatter.draft;
+            return !frontmatter.draft;
+          },
         },
       },
-    };
-  }
-  return {};
+      interfaces: ['Node'],
+    }),
+    schema.buildObjectType({
+      name: 'MdxFrontmatter',
+      fields: {
+        canonical: {
+          type: 'String',
+        },
+      },
+    }),
+  ];
+  createTypes(typeDefs);
 };
