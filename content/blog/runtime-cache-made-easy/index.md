@@ -73,6 +73,6 @@ var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.regist
 
 It means that our service worker detects all static resources and automatically keep those resources up to date when changes are detected in builds.
 
-<img src="https://i.ibb.co/z8ncDKZ/Screenshot-from-2019-03-03-17-16-45.png" alt="Service worker cache storage" style="width: 100%" />
+<img src="https://i.ibb.co/z8ncDKZ/Screenshot-from-2019-03-03-17-16-45.png" alt="Service worker cache storage" />
 
 It's simple as is.
