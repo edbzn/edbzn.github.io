@@ -10,12 +10,15 @@ This article is part of a practical series on building cross-platform apps using
 
 ---
 
+import ui from "./ui.mp4";
+import ui2 from "./ui2.mp4";
+
 In this second part, we'll see how to create a social feed integrated into a cross-platform app, **featuring a virtual infinite scroll** for seamless content loading. We'll set up a **modular architecture** with services for data access, shared models, and reusable UI components to keep the app clean and maintainable.
 
 Here's a demo on my Android phone:
 
-<video loop autoplay controls width="58%">
-  <source src="ui.mp4" type="video/mp4"></source>
+<video loop autoPlay controls width="58%">
+  <source src={ui} type="video/mp4"></source>
 </video>
 
 ## Architecture overview
@@ -461,8 +464,8 @@ At this point, you can now run the app on different platforms (iOS, Android, and
 nx run-many -t serve
 ```
 
-<video loop autoplay controls width="100%">
-  <source src="ui2.mp4" type="video/mp4"></source>
+<video loop autoPlay controls width="100%">
+  <source src={ui2} type="video/mp4"></source>
 </video>
 
 ### Enforcing module boundaries

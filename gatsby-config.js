@@ -48,7 +48,7 @@ module.exports = {
           `gatsby-plugin-remark-shiki`, // custom plugin
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-remark-autolink-headers`, // TODO: fix this plugin
+          `gatsby-remark-autolink-headers`,
         ],
       },
     },
@@ -95,7 +95,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.body }],
+                  custom_elements: [{ 'content:encoded': edge.node.body }], // TODO fix
                 });
               });
             },
