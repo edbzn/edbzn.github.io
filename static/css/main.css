@@ -16,7 +16,11 @@ details .gatsby-highlight {
 }
 
 details {
-  margin-bottom: 1.5em;
+  margin: 2.25em 0;
+}
+
+.gatsby-resp-image-wrapper {
+  margin: 2.25em auto;
 }
 
 .box {
@@ -27,13 +31,15 @@ details {
 }
 
 .box:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  box-shadow:
+    rgba(17, 17, 26, 0.05) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
   z-index: -1;
 }
 
@@ -87,7 +93,6 @@ p > img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-
 
 @media screen and (max-width: 640px) {
   .box {
