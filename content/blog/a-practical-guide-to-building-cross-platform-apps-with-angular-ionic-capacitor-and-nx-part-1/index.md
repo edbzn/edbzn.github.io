@@ -8,8 +8,6 @@ This article is part of a practical series on building cross-platform apps using
 - Part 1 · Workspace setup and app initialization (📍 you are here)
 - [Part 2 · Building a social feed](/a-practical-guide-to-building-cross-platform-apps-with-angular-ionic-capacitor-and-nx-part-2/)
 
----
-
 In this first part, I'll guide you through setting up your workspace and running your app on the web and Android platforms.
 
 ## Step 1: Initialize the workspace and application
@@ -38,10 +36,6 @@ cd my-workspace
 
 Next, install the `@nxext/angular-ionic` package, which provides generators for configuring and running Ionic apps:
 
-```bash
-npm install @nxext/ionic-angular -D
-```
-
 ### 1.3 Configure Capacitor for your app
 
 Run the following command to add Capacitor configuration files for your app:
@@ -66,7 +60,7 @@ nx serve my-app
 
 Once the server starts, open the URL displayed in the terminal to view your app.
 
-![Dev Server](./serve.png)
+
 
 🌈 **Ta-da!** Your app is now running in the browser.
 
@@ -201,7 +195,7 @@ Finally, re-run your app in Android Studio. **The app will now automatically rel
 
 ## Conclusion
 
-In this article, you’ve set up an Nx workspace, configured Angular, Ionic, and Capacitor, and successfully ran your app on the web and Android platforms. With these foundations in place, you’re ready to expand your app’s capabilities and target additional platforms. Stay tuned for the next part of this series, where we’ll dive deeper into building and deploying cross-platform features.
+In this article, you've set up an Nx workspace, configured Angular, Ionic, and Capacitor, and successfully ran your app on the web and Android platforms. With these foundations in place, you're ready to expand your app's capabilities and target additional platforms. Stay tuned for the next part of this series, where we'll dive deeper into building and deploying cross-platform features.
 
 ### References:
 

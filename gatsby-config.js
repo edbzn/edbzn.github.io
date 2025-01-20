@@ -48,7 +48,7 @@ module.exports = {
           `gatsby-plugin-remark-shiki`, // custom plugin
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-autolink-headers`, // TODO: fix this plugin
         ],
       },
     },
@@ -66,12 +66,6 @@ module.exports = {
         name: `images`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-page-creator`,
-    //   options: {
-    //     path: `${__dirname}/content/blog`,
-    //   },
-    // },
     `gatsby-plugin-meta-redirect`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -101,7 +95,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  // custom_elements: [{ 'content:encoded': edge.node.html }],
+                  custom_elements: [{ 'content:encoded': edge.node.body }],
                 });
               });
             },
@@ -113,6 +107,7 @@ module.exports = {
     edges {
       node {
         excerpt
+        body
         fields {
           slug
         }
@@ -120,9 +115,6 @@ module.exports = {
           title
           date
           canonical
-        }
-        internal {
-          contentFilePath
         }
       }
     }
