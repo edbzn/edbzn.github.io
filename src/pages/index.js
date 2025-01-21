@@ -81,7 +81,7 @@ class AboutMe extends React.Component {
             >
               Open source projects
             </span>{' '}
-            · <a href={'https://github.com/sponsors/edbzn'}>Sponsor Me</a>
+            · <a href={githubSponsorUrl}>Sponsor Me</a>
           </div>
 
           <Projects ossProjects={ossProjects} />
@@ -98,6 +98,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         author
+        githubSponsorUrl
         social {
           twitter
           github
