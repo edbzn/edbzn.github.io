@@ -54,8 +54,9 @@ class Layout extends React.Component {
               style={{ boxShadow: 'none' }}
             >
               CC BY-SA 4.0
-            </a>{' '}
-            {new Date().getFullYear()} &copy; {author} ·{' '}
+            </a>
+            &nbsp;
+            {new Date().getFullYear()}&nbsp;&copy;&nbsp;{author} ·{' '}
             <a href="/rss.xml" style={{ boxShadow: 'none' }}>
               <img
                 src={rss}
@@ -71,11 +72,11 @@ class Layout extends React.Component {
             </a>{' '}
             ·{' '}
             <a href={github.repositoryUrl} style={{ boxShadow: 'none' }}>
-              🔑 Source code
+              🔑&nbsp;Source&nbsp;code
             </a>{' '}
             ·{' '}
             <a href={github.sponsorUrl} style={{ boxShadow: 'none' }}>
-              ❤️ Support me
+              ❤️&nbsp;Support&nbsp;me
             </a>
           </div>
         </footer>
