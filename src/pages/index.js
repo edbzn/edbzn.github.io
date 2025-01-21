@@ -12,7 +12,7 @@ class AboutMe extends React.Component {
   render() {
     const { data } = this.props;
     const { siteMetadata } = data.site;
-    const { social, author, ossProjects } = siteMetadata;
+    const { social, author, ossProjects, experiences } = siteMetadata;
     const blogPosts = data.allMdx.nodes;
 
     return (
@@ -36,7 +36,7 @@ class AboutMe extends React.Component {
               Resume
             </span>
           </div>
-          <Resume />
+          <Resume experiences={experiences} />
         </section>
 
         <section style={{ marginTop: rhythm(2) }}>
@@ -109,6 +109,11 @@ export const pageQuery = graphql`
           description
           img
           url
+        }
+        experiences {
+          company
+          position
+          period
         }
       }
     }
