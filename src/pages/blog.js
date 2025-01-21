@@ -10,11 +10,11 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
     const { siteMetadata } = data.site;
-    const { social, author } = siteMetadata;
+    const { author, github } = siteMetadata;
     const blogPosts = data.allMdx.nodes;
 
     return (
-      <Layout location={this.props.location} social={social} author={author}>
+      <Layout location={this.props.location} author={author} github={github}>
         <Seo title="All posts" />
         <Bio />
         <section role="main" style={{ marginTop: rhythm(2) }}>
@@ -39,11 +39,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         author
-        social {
-          twitter
-          github
-          linkedin
-          bluesky
+        github {
+          repositoryUrl
+          sponsorUrl
         }
       }
     }

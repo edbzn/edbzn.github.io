@@ -14,11 +14,11 @@ const shortcodes = { Note };
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx;
-    const { social, author } = this.props.data.site.siteMetadata;
+    const { author, github } = this.props.data.site.siteMetadata;
     const { previous, next } = this.props.pageContext;
     const { location, children } = this.props;
     return (
-      <Layout location={location} social={social} author={author}>
+      <Layout location={location} author={author} github={github}>
         <Seo
           title={post.frontmatter.title}
           description={post.frontmatter.description ?? post.excerpt}
@@ -92,11 +92,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         author
-        social {
-          twitter
-          linkedin
-          github
-          bluesky
+        github {
+          repositoryUrl
+          sponsorUrl
         }
       }
     }

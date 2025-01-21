@@ -16,7 +16,10 @@ export default {
     authorDescription:
       "I'm Edouard Bozon, a freelance software engineer with expertise in web technologies. My focus areas include Angular, Node.js, and more. I'm also an open-source contributor and a climber in my spare time.",
     twitterUsername: '@edbzn',
-    githubSponsorUrl: 'https://github.com/sponsors/edbzn',
+    github: {
+      sponsorUrl: 'https://github.com/sponsors/edbzn',
+      repositoryUrl: 'https://github.com/edbzn/edbzn.github.io',
+    },
     social: {
       twitter: `https://twitter.com/edbzn`,
       github: `https://github.com/edbzn`,

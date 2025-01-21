@@ -12,11 +12,11 @@ class AboutMe extends React.Component {
   render() {
     const { data } = this.props;
     const { siteMetadata } = data.site;
-    const { social, author, ossProjects, experiences } = siteMetadata;
+    const { author, ossProjects, experiences, github } = siteMetadata;
     const blogPosts = data.allMdx.nodes;
 
     return (
-      <Layout location={this.props.location} social={social} author={author}>
+      <Layout location={this.props.location} author={author} github={github}>
         <Seo title="About me" />
         <Bio />
 
@@ -54,7 +54,10 @@ class AboutMe extends React.Component {
             >
               Latest posts
             </span>{' '}
-            · <Link to="blog">All Posts</Link>
+            ·{' '}
+            <Link to="blog" style={{ boxShadow: 'none' }}>
+              📝 All Posts
+            </Link>
           </div>
           {blogPosts.map((node) => (
             <div
@@ -81,7 +84,10 @@ class AboutMe extends React.Component {
             >
               Open source projects
             </span>{' '}
-            · <a href={githubSponsorUrl}>Sponsor Me</a>
+            ·{' '}
+            <a href={github.sponsorUrl} style={{ boxShadow: 'none' }}>
+              ❤️ Sponsor Me
+            </a>
           </div>
 
           <Projects ossProjects={ossProjects} />
@@ -98,12 +104,9 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         author
-        githubSponsorUrl
-        social {
-          twitter
-          github
-          linkedin
-          bluesky
+        github {
+          sponsorUrl
+          repositoryUrl
         }
         ossProjects {
           name

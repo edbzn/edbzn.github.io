@@ -6,7 +6,7 @@ import { Service } from './service';
 
 class Layout extends React.Component {
   render() {
-    const { children, location } = this.props;
+    const { children, location, github, author } = this.props;
     return (
       <div
         style={{
@@ -42,12 +42,21 @@ class Layout extends React.Component {
           role="contentinfo"
           style={{ marginTop: rhythm(2), fontSize: 14, fontWeight: 100 }}
         >
-          <div style={{ textAlign: 'center' }}>
-            <a href="https://creativecommons.org/licenses/by-sa/4.0">
+          <div
+            style={{
+              textAlign: 'center',
+              fontFamily: '"Public Sans", sans-serif',
+              fontSize: 14,
+            }}
+          >
+            <a
+              href="https://creativecommons.org/licenses/by-sa/4.0"
+              style={{ boxShadow: 'none' }}
+            >
               CC BY-SA 4.0
             </a>{' '}
-            {new Date().getFullYear()} &copy; Edouard Bozon ·{' '}
-            <a href="/rss.xml">
+            {new Date().getFullYear()} &copy; {author} ·{' '}
+            <a href="/rss.xml" style={{ boxShadow: 'none' }}>
               <img
                 src={rss}
                 alt="RSS feed icon"
@@ -60,7 +69,14 @@ class Layout extends React.Component {
               />{' '}
               RSS
             </a>{' '}
-            · <a href="https://github.com/edbzn/edbzn.github.io">source code</a>
+            ·{' '}
+            <a href={github.repositoryUrl} style={{ boxShadow: 'none' }}>
+              🔑 Source code
+            </a>{' '}
+            ·{' '}
+            <a href={github.sponsorUrl} style={{ boxShadow: 'none' }}>
+              ❤️ Support me
+            </a>
           </div>
         </footer>
       </div>
