@@ -15,7 +15,7 @@ export const Service = () => {
         style={styles.contactLink}
         title="Mail to Edouard Bozon"
       >
-        Contact Me
+        Contact me
       </a>
     </section>
   );
@@ -40,7 +40,11 @@ const styles = {
   contactLink: {
     display: 'inline-block',
     color: '#64ffda',
+    border: '1px solid #64ffda',
+    borderRadius: '4px',
+    padding: '10px 20px',
     textDecoration: 'none',
+    boxShadow: 'none',
     fontSize: '1.2rem',
     fontWeight: 400,
     marginBottom: '18px',
