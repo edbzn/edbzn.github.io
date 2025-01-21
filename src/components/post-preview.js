@@ -27,7 +27,7 @@ export const PostPreview = ({ node }) => {
         <p
           style={{ marginBottom: 0 }}
           dangerouslySetInnerHTML={{
-            __html: node.frontmatter.description || node.excerpt,
+            __html: node.frontmatter.description ?? node.excerpt,
           }}
         />
       </section>

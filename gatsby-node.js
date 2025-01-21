@@ -103,6 +103,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     `
     type MdxFrontmatter {
       canonical: String
+      description: String
     }
     `,
   ];

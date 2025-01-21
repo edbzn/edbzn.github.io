@@ -21,7 +21,7 @@ class BlogPostTemplate extends React.Component {
       <Layout location={location} social={social} author={author}>
         <Seo
           title={post.frontmatter.title}
-          description={post.excerpt}
+          description={post.frontmatter.description ?? post.excerpt}
           article={true}
           canonical={post.frontmatter.canonical}
         />
@@ -104,6 +104,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       frontmatter {
+        description
         title
         date(formatString: "MMMM DD, YYYY")
         canonical

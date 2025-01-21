@@ -176,11 +176,13 @@ export const pageQuery = graphql`
       sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
-        excerpt
+        id
+        excerpt(pruneLength: 160)
         fields {
           slug
         }
         frontmatter {
+          description
           date(formatString: "MMMM DD, YYYY")
           title
           draft
