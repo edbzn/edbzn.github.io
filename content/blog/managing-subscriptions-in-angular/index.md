@@ -1,6 +1,7 @@
 ---
 title: Managing subscriptions in Angular
 date: '2019-12-22T00:00:00.000Z'
+description: Learn how to manage subscriptions in Angular to avoid memory leaks and ensure optimal performance with practical examples and common pitfalls.
 ---
 
 > This blog post was originally a talk I gave at [Angular Lyon meetup](https://www.meetup.com/fr-FR/Angular-Lyon/). Subscribe for further cool events.

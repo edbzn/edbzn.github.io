@@ -1,9 +1,10 @@
 ---
 title: Reusable layouts in Angular
 date: '2019-11-16T00:00:00.000Z'
+description: Layout components are used to hold common layout composition. This design enables reusing layouts across different parts of your application.
 ---
 
-> Edit 2020-11-23 : I still use this trick for my Angular projects and the more I use other technologies like Nuxt.js or Next.js, the more I think this pattern helps to design great front-end architectures.
+<Note>(2020-11-23) I still use this trick for my Angular projects and the more I use other technologies like Nuxt.js or Next.js, the more I think this pattern helps to design great front-end architectures.</Note>
 
 When building JavaScript applications we usually split components in different layers, each one responsible of its concern. You've certainly heard about presentational components, container components, or the less well known layout components?
 
@@ -17,7 +18,7 @@ The schema below illustrates the component tree using a layout component. Layout
 
 Now let's see what does it look like in code. Here is the root `AppComponent` that instantiates the first `<router-outlet>`.
 
-```ts
+```angular-ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -55,7 +56,7 @@ export const APP_ROUTES: Route[] = [
 
 At this point we have to bring this together in the `AppModule`.
 
-```ts
+```angular-ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -72,7 +73,7 @@ export class AppModule {}
 
 The next step is to create the layout component. Consider this simple scenario.
 
-```ts
+```angular-ts
 import { Component } from '@angular/core';
 
 @Component({

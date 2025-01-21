@@ -99,7 +99,7 @@ export async function getUsers() {
 
 Then we can just import it in our components.
 
-```html
+```vue
 <template>
   <div>
     <div v-for="user in users" :key="user.id">
@@ -151,7 +151,7 @@ export const useGetUsers = () => {
 
 Now inside the `setup` function I can call the `useGetUsers` function and bind it to the view.
 
-```html
+```vue
 <template>
   <div>
     <div v-for="user in users" :key="user.id">
