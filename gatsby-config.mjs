@@ -1,6 +1,11 @@
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import remarkGfm from 'remark-gfm';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const siteUrl = `https://edbzn.dev`;
 
-module.exports = {
+export default {
   siteMetadata: {
     siteUrl,
     url: siteUrl,
@@ -50,6 +55,9 @@ module.exports = {
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
         ],
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+        },
       },
     },
     {
