@@ -22,6 +22,40 @@ export default {
       linkedin: `https://www.linkedin.com/in/edouardbozon`,
       bluesky: `https://bsky.app/profile/edbzn.bsky.social`,
     },
+    ossProjects: [
+      {
+        name: 'rx-angular/rx-angular',
+        description: 'Reactive Extensions for Angular.',
+        img: 'https://avatars.githubusercontent.com/u/70377545?s=200&v=4',
+        url: 'https://github.com/rx-angular/rx-angular',
+      },
+      {
+        name: 'nxext/nx-extensions',
+        description:
+          'Nx Extensions for Stencil, Svelte, SolidJS, Preact, Ionic, and Capacitor.',
+        url: 'https://github.com/nxext/nx-extensions',
+        img: 'https://avatars.githubusercontent.com/u/67255711?s=200&v=4',
+      },
+      {
+        name: 'jscutlery/semver',
+        description:
+          'Nx plugin to automate semantic versioning and CHANGELOG generation.',
+        url: 'https://github.com/jscutlery/semver',
+        img: 'https://avatars.githubusercontent.com/u/55789006?s=200&v=4',
+      },
+      {
+        name: 'jscutlery/devkit',
+        description: 'Cutleries to help you cook better apps.',
+        url: 'https://github.com/jscutlery/devkit',
+        img: 'https://avatars.githubusercontent.com/u/55789006?s=200&v=4',
+      },
+      {
+        name: 'jscutlery/nx-completion',
+        description: 'Nx workspace completion plugin for Zsh.',
+        url: 'https://github.com/jscutlery/nx-completion',
+        img: 'https://avatars.githubusercontent.com/u/55789006?s=200&v=4',
+      },
+    ],
   },
   plugins: [
     {

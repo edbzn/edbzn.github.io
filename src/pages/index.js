@@ -3,6 +3,7 @@ import React from 'react';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import { Seo } from '../components/seo';
+import { Projects } from '../components/oss-projects';
 import { PostPreview } from '../components/post-preview';
 import { Resume } from '../components/resume';
 import { rhythm } from '../utils/typography';
@@ -11,42 +12,8 @@ class AboutMe extends React.Component {
   render() {
     const { data } = this.props;
     const { siteMetadata } = data.site;
-    const { social, author } = siteMetadata;
+    const { social, author, ossProjects } = siteMetadata;
     const blogPosts = data.allMdx.nodes;
-    const ossProjects = [
-      {
-        name: ' rx-angular/rx-angular',
-        description: 'Reactive Extensions for Angular.',
-        img: 'https://avatars.githubusercontent.com/u/70377545?s=200&v=4',
-        url: 'https://github.com/rx-angular/rx-angular',
-      },
-      {
-        name: 'nxext/nx-extensions',
-        description:
-          'Nx Extensions for Stencil, Svelte, SolidJS, Preact, Ionic, and Capacitor.',
-        url: 'https://github.com/nxext/nx-extensions',
-        img: 'https://avatars.githubusercontent.com/u/67255711?s=200&v=4',
-      },
-      {
-        name: 'jscutlery/semver',
-        description:
-          'Nx plugin to automate semantic versioning and CHANGELOG generation.',
-        url: 'https://github.com/jscutlery/semver',
-        img: 'https://avatars.githubusercontent.com/u/55789006?s=200&v=4',
-      },
-      {
-        name: 'jscutlery/devkit',
-        description: 'Cutleries to help you cook better apps.',
-        url: 'https://github.com/jscutlery/devkit',
-        img: 'https://avatars.githubusercontent.com/u/55789006?s=200&v=4',
-      },
-      {
-        name: 'jscutlery/nx-completion',
-        description: 'Nx workspace completion plugin for Zsh.',
-        url: 'https://github.com/jscutlery/nx-completion',
-        img: 'https://avatars.githubusercontent.com/u/55789006?s=200&v=4',
-      },
-    ];
 
     return (
       <Layout location={this.props.location} social={social} author={author}>
@@ -117,38 +84,7 @@ class AboutMe extends React.Component {
             · <a href={'https://github.com/sponsors/edbzn'}>Sponsor Me</a>
           </div>
 
-          <ul
-            style={{
-              margin: 0,
-              listStyle: 'none',
-              gap: rhythm(0.4),
-            }}
-          >
-            {ossProjects.map((project) => (
-              <li className="box" key={project.name}>
-                <a
-                  href={project.url}
-                  style={{
-                    color: 'initial',
-                    fontWeight: 400,
-                    fontFamily: '"Public Sans", sans-serif',
-                  }}
-                >
-                  <img
-                    style={{
-                      height: '34px',
-                      marginBottom: rhythm(0.3),
-                      display: 'block',
-                    }}
-                    alt="Project logo"
-                    src={project.img}
-                  />
-                  {project.name}
-                </a>
-                <p style={{ marginTop: rhythm(0.1) }}>{project.description}</p>
-              </li>
-            ))}
-          </ul>
+          <Projects ossProjects={ossProjects} />
         </section>
       </Layout>
     );
@@ -167,6 +103,12 @@ export const pageQuery = graphql`
           github
           linkedin
           bluesky
+        }
+        ossProjects {
+          name
+          description
+          img
+          url
         }
       }
     }
