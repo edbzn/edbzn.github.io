@@ -22,9 +22,10 @@ Run the following command to set up your Nx workspace with the `angular-monorepo
 npx create-nx-workspace@latest my-workspace --preset=angular-monorepo
 ```
 
-> **Note: 📌** <br/>
-> The `angular-monorepo` preset sets up a scalable workspace with Angular. <br/>
-> Choose **ESBuild** (recommended for faster builds) or **Webpack** during setup, and opt out of SSR, as Ionic apps use client-side rendering.
+<Note>
+The `angular-monorepo` preset sets up a scalable workspace with Angular. <br/>
+Choose **ESBuild** (recommended for faster builds) or **Webpack** during setup, and opt out of SSR, as Ionic apps use client-side rendering.
+</Note>
 
 Enter in `my-workspace` directory:
 
@@ -74,7 +75,7 @@ Download and install [Android Studio](https://developer.android.com/studio) to e
 
 ![Android Studio Icon](./studio.svg)
 
-> **Note:** 📌 <br/> Check the installation guide for more information: https://developer.android.com/studio/install
+<Note>Check the installation guide for more information: https://developer.android.com/studio/install</Note>
 
 ### 3.2 Add the Android platform
 
@@ -175,7 +176,7 @@ function getLocalIp() {
 export default config;
 ```
 
-> **Note: 📌** <br/> This configuration dynamically sets the server URL to your local network's IP address when live reload is enabled.
+<Note>This configuration dynamically sets the server URL to your local network's IP address when live reload is enabled.</Note>
 
 #### Serve your app with live reload
 

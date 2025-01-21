@@ -9,7 +9,7 @@ Nx 20 introduces a new [TS preset](https://nx.dev/nx-api/js/documents/typescript
 
 [Project references](https://www.typescriptlang.org/docs/handbook/project-references.html) were introduced in [TypeScript 3.0](https://devblogs.microsoft.com/typescript/announcing-typescript-3-0/#project-references) back in 2018. This feature allows you to _split the code into smaller units and define explicit relationships between them_. It ensures that only the changed units and their dependencies are recompiled, resulting in faster builds, improved code isolation, and a better IDE experience. This feature is well-suited for defining projects in a monorepo.
 
-> **Note: 📌** <br/> Project references are theoretically a better alternative to globally defined path aliases in the root `tsconfig.base.json` configuration.
+<Note>Project references are theoretically a better alternative to globally defined path aliases in the root `tsconfig.base.json` configuration.</Note>
 
 ## How to leverage project references in Nx?
 
@@ -59,7 +59,7 @@ This command automatically updates TypeScript references based on the project de
 
 ![nx sync](./out_of_sync.png)
 
-> **Note: 📌** <br/> Nx uses the standard `"workspaces": ["packages/*"]` property in the root `package.json` to analyze dependencies and sync references.
+<Note>Nx uses the standard `"workspaces": ["packages/*"]` property in the root `package.json` to analyze dependencies and sync references.</Note>
 
 You can tell Nx to [automatically sync references](https://nx.dev/concepts/sync-generators#task-sync-generators) when running the `build` and `typecheck` targets by setting up the `sync` property in `nx.json`:
 
@@ -105,7 +105,7 @@ Additionally, most Nx plugins (Angular, React, Vue, Node) are not yet compatible
 2. **Generate libraries:** Generate a few libraries to establish the desired structure.
 3. **Compare and apply configurations:** Compare the new workspace's setup with your existing one, applying necessary changes in one single refactoring.
 
-> **Warning: ⚠️** <br/> This process involves a big bang approach that is uncertain, risky, and time-consuming.
+<Note type="warning">This process involves a big bang approach that is uncertain, risky, and time-consuming.</Note>
 
 ## Clarifying confusing points
 
@@ -120,7 +120,7 @@ Both Nx and TypeScript incrementally recompile only the necessary parts of your 
 
 ### Package-based repos, integrated repos, and the `ts` preset
 
-> **Note: 📌** <br/> As of Nx 20, the distinction between integrated and package-based repositories is less relevant. Nx features can be enabled independently, offering flexibility in configuring your monorepo.
+<Note>As of Nx 20, the distinction between integrated and package-based repositories is less relevant. Nx features can be enabled independently, offering flexibility in configuring your monorepo.</Note>
 
 - **Package-based repos:** Traditional approach for monorepos where each package is an independent project with its own `package.json` and nested `node_modules`.
 - **Integrated repositories:** Nx's original approach, where dependencies are shared between projects at the root level in `tsconfig.base.json` using path aliases.
@@ -164,7 +164,7 @@ The table summarizes ecosystem support for TypeScript project references.
 | SWC     | [GitHub Discussion](https://github.com/swc-project/swc/discussions/2156)                   | 🔴 No support |
 | Angular | [GitHub Issue](https://github.com/angular/angular/issues/37276)                            | 🔴 No support |
 
-> **Note: 📌** <br/> React support is coming in Nx (**[nx/pull/28808](https://github.com/nrwl/nx/pull/28808))**, the new TS solution setup using project references will be the default when adding the React plugin `nx add @nx/react` or choosing the React stack with `npx create-nx-workspace`.
+<Note>React support is coming in Nx (**[nx/pull/28808](https://github.com/nrwl/nx/pull/28808))**, the new TS solution setup using project references will be the default when adding the React plugin `nx add @nx/react` or choosing the React stack with `npx create-nx-workspace`.</Note>
 
 ## A promising future for large TypeScript monorepos
 

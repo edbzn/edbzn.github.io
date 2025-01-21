@@ -56,7 +56,7 @@ nx g @nx/angular:library libs/social-feed-ui --tags=type:ui,platform:mobile,plat
 
 Most of the code will reside in the libraries, as our goal is to keep the applications lightweight and focused solely on configuration and orchestration.
 
-> **Note: 📌** <br/> If you need a deeper understanding of workspace setup and tooling configuration, refer to [Part 1 of this series](/a-practical-guide-to-building-cross-platform-apps-with-angular-ionic-capacitor-and-nx-part-1/) where we covered these topics in detail.
+<Note>If you need a deeper understanding of workspace setup and tooling configuration, refer to [Part 1 of this series](/a-practical-guide-to-building-cross-platform-apps-with-angular-ionic-capacitor-and-nx-part-1/) where we covered these topics in detail.</Note>
 
 Let's forget about the `--tags` for now—I'll explain their purpose and how they help with project organization and dependency management later.
 
@@ -115,7 +115,7 @@ export class SocialFeedDataAccess {
 }
 ```
 
-> **Note: 📌** <br/> The API is proxied under the same domain so we don't have to manage CORS issues, thanks to the `--frontendProject` option that we used when generating the API.
+<Note type="tip">The API is proxied under the same domain so we don't have to manage CORS issues, thanks to the `--frontendProject` option that we used when generating the API.</Note>
 
 ```json
 {
@@ -301,7 +301,7 @@ export default class SocialFeedFeatureComponent {
 3. **Eliminating lifecycle hooks**:
    - The setup relies purely on reactive constructs, removing the need for lifecycle hooks like `ngOnInit`, making the component more concise and functional.
 
-> **Note: 📌** <br/> While these features are exciting, keep in mind that, at the moment, `rxResource` is experimental, and `linkedSignal` is in developer preview. To learn more about the state of these features, check out the excellent [angular.courses/caniuse](https://www.angular.courses/caniuse?fflags=version-summary) interactive table.
+<Note type="warning">While these features are exciting, keep in mind that, at the moment, `rxResource` is experimental, and `linkedSignal` is in developer preview. To learn more about the state of these features, check out the excellent [angular.courses/caniuse](https://www.angular.courses/caniuse?fflags=version-summary) interactive table.</Note>
 
 #### Configuring feature routes
 
@@ -323,7 +323,7 @@ export const routes: Routes = [
 ];
 ```
 
-> **Note: 📌** <br/> Angular automatically unwraps the `default` exported component in the routing, so we don't have to use `.then((m) => m.myComponent)`.
+<Note type="tip">Angular automatically unwraps the `default` exported component in the routing, so we don't have to use `.then((m) => m.myComponent)`.</Note>
 
 ### Setting up the app
 
@@ -373,7 +373,7 @@ export const routes: Routes = [
 ];
 ```
 
-> **Note: 📌** <br/> The app acts as an orchestrator (shell), delegating the logic to the corresponding feature library using the router.
+<Note>The app acts as an orchestrator (shell), delegating the logic to the corresponding feature library using the router.</Note>
 
 Lastly, we configure the root routes for the app, so the app starts with the tabs component.
 
@@ -594,7 +594,7 @@ The configuration includes the following key rules:
 
 ![Lint target](./lint.png)
 
-> **Note: 📌** <br/> These rules are fitting my own context and may not represent the optimal choice for every situation. Adjust them based on your project's specific needs and constraints.
+<Note type="warning">These rules are fitting my own context and may not represent the optimal choice for every situation. Adjust them based on your project's specific needs and constraints.</Note>
 
 ### Wrapping up
 
