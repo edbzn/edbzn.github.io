@@ -1,0 +1,39 @@
+.container {
+  margin-bottom: 20px;
+  border-left: 0.31237rem solid rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  margin: 2.25em -1rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.container.warning {
+  background-color: #fff3cd;
+  border-left-color: #ecdfb7;
+  box-shadow: 0 0 0 1px #ecdfb7;
+}
+
+.container.tip {
+  background-color: #d4edda;
+  border-left-color: #c3e6cb;
+  box-shadow: 0 0 0 1px #c3e6cb;
+}
+
+.container p {
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Public Sans', sans-serif;
+  margin-bottom: 0.6rem;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    margin: 2.25em 0;
+  }
+}

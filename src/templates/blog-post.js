@@ -1,11 +1,15 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import Giscus from '@giscus/react';
+import { MDXProvider } from '@mdx-js/react';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
+import { Note } from '../components/note';
 import { PostNav } from '../components/post-nav';
 import { Seo } from '../components/seo';
 import { rhythm } from '../utils/typography';
+
+const shortcodes = { Note };
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -51,7 +55,9 @@ class BlogPostTemplate extends React.Component {
               )}
             </p>
           </header>
-          <section style={{ marginBottom: rhythm(2) }}>{children}</section>
+          <MDXProvider components={shortcodes}>
+            <section style={{ marginBottom: rhythm(2) }}>{children}</section>
+          </MDXProvider>
           <Giscus
             id="comments"
             repo="edbzn/edbzn.github.io"
