@@ -231,5 +231,11 @@ export default {
         showSpinner: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `static/images/me.jpg`,
+      },
+    },
   ],
 };
