@@ -41,12 +41,14 @@ These commands the generator to create two libraries within the `packages` direc
 // packages/my-lib/package.json
 {
   "dependencies": {
-    "@org/my-shared-lib": "*"
+    "@org/my-shared-lib": "workspace:*"
   }
 }
 ```
 
 Here, you explicitly declare dependencies in your `package.json` files. This tells Nx which projects your library relies on. Nx uses this information to manage project references.
+
+<Note type="tip">When declaring new dependencies, don't forget to run the install command from your package manager.</Note>
 
 4. **Update TypeScript references:**
 
