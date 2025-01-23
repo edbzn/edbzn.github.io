@@ -71,7 +71,7 @@
     "cypress": "^9.0.0",
     "cypress-axe": "^1.0.0",
     "husky": "^9.0.0",
-    "lint-staged": "15.4.1",
+    "lint-staged": "15.4.2",
     "prettier": "3.4.2",
     "start-server-and-test": "^2.0.0",
     "wrangler": "^3.103.2"
