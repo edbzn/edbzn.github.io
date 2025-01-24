@@ -6558,11 +6558,6 @@ gatsby-plugin-manifest@^5.14.0:
     semver "^7.5.3"
     sharp "^0.32.6"
 
-gatsby-plugin-mdx-embed@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx-embed/-/gatsby-plugin-mdx-embed-1.1.3.tgz#3e004a8c770e573fc891edd4634754b15c348503"
-  integrity sha512-4q6nil4GQrj5YsFV8it/TCL5I2W/WyYzfxtxVrV5tVwBcI2mRYjPT6wbSOnirt12SdQqFdLWO+Kiwv5IQw/qog==
-
 gatsby-plugin-mdx@^5.14.0:
   version "5.14.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-5.14.0.tgz#5f95124cae148bd5e91559198d983c562a88b0a4"

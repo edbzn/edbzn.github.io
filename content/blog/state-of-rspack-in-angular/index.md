@@ -22,7 +22,7 @@ Integrating new build tools has always been a significant challenge:
 
 Some time ago [I was naive enough to ignore these limitations and tried to integrate Rspack for Angular](https://github.com/edbzn/ng-rspack). I had to reverse-engineer the CLI, read the source code, and understand how it works internally—it was a great and painful learning experience.
 
-<Tweet tweetLink="mgechev/status/1869510279782170847"/>
+`oembed: https://twitter.com/mgechev/status/1869510279782170847`
 
 Hopefully in 2025 we can expect some progress in this area.
 
@@ -206,7 +206,7 @@ Rsbuild supports TypeScript project references out-of-the-box, so you can use th
 
 ## The future is bright
 
-<Tweet tweetLink="victorsavkin/status/1880770676128362584"/>
+`oembed: https://twitter.com/victorsavkin/status/1880770676128362584`
 
 Rspack is a promising tool; I'm deeply convinced that it will be a game-changer in the Angular ecosystem. **Shout out to [Colum Ferry](https://x.com/FerryColum) for his amazing work on integrating Rspack for Angular**.
 

@@ -144,7 +144,6 @@ export default {
         name: `images`,
       },
     },
-    `gatsby-plugin-mdx-embed`,
     `gatsby-plugin-meta-redirect`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
