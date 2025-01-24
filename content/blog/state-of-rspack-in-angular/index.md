@@ -94,7 +94,7 @@ Now let's enter in the concrete part.
 ### Usage in Angular
 
 <Note type="warning">
-Rspack is not officially supported by Angular, while it is possible to use it, [Angular Rspack](https://angular-rspack.dev/) is still a POC that is **not recommended for production applications**.
+Rspack is not officially supported by Angular, while it is possible to use it, [Angular Rspack](https://angular-rspack.dev/) is not feature complete, might contain bugs, and is **not recommended for production applications**. Keep in mind that it is still a POC.
 </Note>
 
 ```bash
@@ -151,7 +151,7 @@ export default createConfig({
 
 #### SSR setup
 
-SSR is supported with incremental hydration, here's the setup for Rsbuild:
+SSR is supported as well, here's the setup for Rsbuild:
 
 ```ts
 // rsbuild.config.ts
