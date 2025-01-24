@@ -56,7 +56,7 @@ class AboutMe extends React.Component {
             </span>{' '}
             ·{' '}
             <Link to="blog" style={{ boxShadow: 'none' }}>
-              📝 All Posts
+              All Posts
             </Link>
           </div>
           {blogPosts.map((node) => (
@@ -86,7 +86,7 @@ class AboutMe extends React.Component {
             </span>{' '}
             ·{' '}
             <a href={github.sponsorUrl} style={{ boxShadow: 'none' }}>
-              ❤️ Sponsor Me
+              Sponsor Me
             </a>
           </div>
 
