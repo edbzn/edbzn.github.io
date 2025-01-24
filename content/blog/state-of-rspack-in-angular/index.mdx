@@ -8,11 +8,11 @@ Recently real progress has been made around Rspack and Angular. This post will c
 
 Let's start with a brief history of compiling and bundling in Angular.
 
-## Angular CLI my good old friend
+## Angular CLI, my good old friend
 
 Angular CLI **handles the build process and provides an easy interface for compiling and bundling Angular applications**. While powerful, the CLI has its limitations, particularly for _extending the build process_ or _integrating new tools_.
 
-Integrating new build tools has always been a great challenge:
+Integrating new build tools has always been a significant challenge:
 
 - the CLI is doing a lot of work under the hood
 - it is not trivial to understand
@@ -20,7 +20,7 @@ Integrating new build tools has always been a great challenge:
 - underlying functions are not exposed
 - every single release can break your integration
 
-Some time ago [I was young and naive enough to ignore these limitations and tried to integrate Rspack for Angular](https://github.com/edbzn/ng-rspack). I had to reverse-engineer the CLI, read the source code, and understand how it works internally. It was a great learning experience but it was painful.
+Some time ago [I was naive enough to ignore these limitations and tried to integrate Rspack for Angular](https://github.com/edbzn/ng-rspack). I had to reverse-engineer the CLI, read the source code, and understand how it works internally—it was a great and painful learning experience.
 
 <Tweet tweetLink="mgechev/status/1869510279782170847"/>
 
@@ -28,7 +28,7 @@ Hopefully in 2025 we can expect some progress in this area.
 
 ### Esbuild
 
-Esbuild is the default bundler used internally by the CLI since Angular v17, it is **drastically faster than Webpack but it is not as feature-rich**.
+Esbuild is the default bundler used internally by the CLI since Angular v17. It is **drastically faster than Webpack** but it is **not as feature-rich**.
 
 #### Code-splitting
 
@@ -39,14 +39,14 @@ One limitation with Esbuild is its **lack of support for customizing the chunkin
 - [**Degraded Web Vitals after switching a universal app to esbuild** #27321](https://github.com/angular/angular-cli/issues/27321)
 - [**Creating unnecessary excessive chunks** #27715](https://github.com/angular/angular-cli/issues/27715)
 
-This can lead to excessive chunks loading and degraded Web Vitals, it is a major issue for performance-sensitive applications.
+This can lead to excessive chunks loading and degraded Web Vitals, which is a major issue for performance-sensitive applications.
 
 #### Module Federation
 
-When building a micro-frontend architecture, we might want to use the [Module Federation 2.0](https://module-federation.io/guide/start/index.html), which is not supported by Esbuild and Angular, so we're stuck with Webpack and everything it implies.
+When building a micro-frontend architecture, we might want to use [Module Federation 2.0](https://module-federation.io/guide/start/index.html), which is not supported by Esbuild and Angular, so we're stuck with Webpack and everything it implies.
 
 <Note>
-Shout out to [Native Federation](https://www.npmjs.com/package/@angular-architects/native-federation) which provides a bundler agnostic solution compatible with Esbuild, it is inspired by Module Federation's mental model, but keep in mind that it is a different tool maintained by another team.
+Shout out to [Native Federation](https://www.npmjs.com/package/@angular-architects/native-federation) which provides a bundler agnostic solution compatible with Esbuild. It is inspired by Module Federation's mental model, but keep in mind that it is a different tool maintained by another team.
 </Note>
 
 #### TypeScript Project References
@@ -63,7 +63,7 @@ In the [State of JavaScript 2024 survey](https://2024.stateofjs.com/en-US/librar
 
 ## Rspack to the rescue
 
-It is where [Rspack](https://rspack.dev/) and [Angular Rspack](https://angular-rspack.dev/) come into play.
+This is where [Rspack](https://rspack.dev/) and [Angular Rspack](https://angular-rspack.dev/) come into play.
 
 > Rspack is a high performance JavaScript bundler written in Rust. It offers strong compatibility with the Webpack ecosystem, allowing for seamless replacement of Webpack, and provides lightning fast build speeds.
 
@@ -78,7 +78,7 @@ Rspack offers control over the chunking strategy and supports Module Federation 
 | 🥈 Rsbuild    | 24.690       | 20.490   | 19.675  |
 | 🏆 Rspack     | 19.974       | 18.239   | 16.477  |
 
-Note that these results should be taken carefully and might not represent every use cases, see the [benchmarks](https://github.com/Coly010/ng-bundler-benchmark) for more details.
+Note that these results should be taken carefully and might not represent every use case, see the [benchmarks](https://github.com/Coly010/ng-bundler-benchmark) for more details.
 
 #### Interest sentiment
 
@@ -92,7 +92,7 @@ Now let's enter in the concrete part.
 ### Usage in Angular
 
 <Note type="warning">
-Rspack is not officially supported by Angular, while it is possible to use it, [Angular Rspack](https://angular-rspack.dev/) is still a POC that is not recommended for production applications.
+Rspack is not officially supported by Angular, while it is possible to use it, [Angular Rspack](https://angular-rspack.dev/) is still a POC that is **not recommended for production applications**.
 </Note>
 
 ```bash
@@ -204,7 +204,7 @@ Rsbuild supports TypeScript project references out-of-the-box, so you can use th
 
 <Tweet tweetLink="victorsavkin/status/1880770676128362584"/>
 
-Rspack is a promising tool, I'm deeply convinced that it will be a game-changer in the Angular ecosystem. **Shout out to [Colum Ferry](https://x.com/FerryColum) for his amazing work on integrate Rspack for Angular**.
+Rspack is a promising tool; I'm deeply convinced that it will be a game-changer in the Angular ecosystem. **Shout out to [Colum Ferry](https://x.com/FerryColum) for his amazing work on integrating Rspack for Angular**.
 
 ## References
 
