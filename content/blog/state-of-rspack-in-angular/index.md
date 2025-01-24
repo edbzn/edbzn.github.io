@@ -175,7 +175,7 @@ npx rsbuild build # or npx rsbuild dev
 
 ### Rsbuild with Nx (recommended)
 
-The best way to use Rsbuild is with Nx. It provides an inference plugin for Rsbuild that detects the configuration and infer the `build`, `dev`, and others targets.
+The best way to use Rsbuild is with Nx. It provides an inference plugin for Rsbuild that detects the configuration file and infers the `build`, `dev`, and others targets.
 
 ```json
 // nx.json
@@ -237,7 +237,7 @@ module.exports = {
 };
 ```
 
-Learn more about the [`SplitChunksPlugin`](https://rspack.dev/plugins/webpack/split-chunks-plugin).
+Note that this configuration is matching what we had previously with Webpack, which resolve the code-splitting issues mentioned above with Esbuild. Learn more about the [`SplitChunksPlugin`](https://rspack.dev/plugins/webpack/split-chunks-plugin) and how to customize it.
 
 ### Module Federation
 
@@ -245,11 +245,11 @@ Learn more about the [`SplitChunksPlugin`](https://rspack.dev/plugins/webpack/sp
 
 Check-out the [official documentation for Module Federation with Rspack](https://rspack.dev/guide/features/module-federation).
 
-<Note type="tip">In the following article [Nx and Angular with Rspack and Module Federation](https://www.angulararchitects.io/blog/nx-with-rspack-and-module-federation/), Manfred Steyer explains how to use Module Federation with Rsbuild and Nx. It is a great resource to get started with this setup.</Note>
+<Note type="tip">In the following article [Nx and Angular with Rspack and Module Federation](https://www.angulararchitects.io/blog/nx-with-rspack-and-module-federation/), Manfred Steyer explains how to use Module Federation with Rspack and Nx. It is a great resource to get started with this setup.</Note>
 
 ### TypeScript project references
 
-Rsbuild supports TypeScript project references out-of-the-box, so you can use the new TS preset with Angular and benefit from the performance improvements without waiting for Angular to officially support it.
+Rspack supports TypeScript project references out-of-the-box, so you can use the new TS preset with Angular and benefit from the performance improvements without waiting for Angular to officially support it.
 
 ## The future is bright
 
