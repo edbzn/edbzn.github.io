@@ -144,7 +144,7 @@ Configuring Rsbuild with a CSR Angular application is straightforward:
 ```ts
 // rsbuild.config.ts
 
-import { createConfig } from '@ng-rsbuild/plugin-angular';
+import { createConfig } from '@ng-rspack/plugin-angular';
 
 export default createConfig({
   browser: './src/main.ts',
@@ -158,7 +158,7 @@ SSR is supported as well, here's the setup for Rsbuild:
 ```ts
 // rsbuild.config.ts
 
-import { createConfig } from '@ng-rsbuild/plugin-angular';
+import { createConfig } from '@ng-rspack/plugin-angular';
 
 export default createConfig({
   browser: './src/main.ts',
