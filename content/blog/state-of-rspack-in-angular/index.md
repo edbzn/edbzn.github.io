@@ -134,7 +134,7 @@ npx rspack build # or npx rspack dev
 Start by installing the dependencies:
 
 ```bash
-npm i @rsbuild/core @ng-rspack/plugin-angular -D
+npm i @rsbuild/core @ng-rsbuild/plugin-angular -D
 ```
 
 #### CSR setup
@@ -144,7 +144,7 @@ Configuring Rsbuild with a CSR Angular application is straightforward:
 ```ts
 // rsbuild.config.ts
 
-import { createConfig } from '@ng-rspack/plugin-angular';
+import { createConfig } from '@ng-rsbuild/plugin-angular';
 
 export default createConfig({
   browser: './src/main.ts',
@@ -158,7 +158,7 @@ SSR is supported as well, here's the setup for Rsbuild:
 ```ts
 // rsbuild.config.ts
 
-import { createConfig } from '@ng-rspack/plugin-angular';
+import { createConfig } from '@ng-rsbuild/plugin-angular';
 
 export default createConfig({
   browser: './src/main.ts',
