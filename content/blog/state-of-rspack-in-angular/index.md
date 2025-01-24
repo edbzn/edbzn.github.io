@@ -129,7 +129,9 @@ npx rspack build # or npx rspack dev
 
 ### Rsbuild usage
 
-Rsbuild is a superset of Rspack, providing pre-configured setups with best practices.
+<Note>Rsbuild is a superset of Rspack, providing pre-configured setups with best practices.</Note>
+
+Start by installing the dependencies:
 
 ```bash
 npm i @rsbuild/core @ng-rspack/plugin-angular -D
@@ -200,9 +202,50 @@ You can configure Rsbuild like described in the previous section, and now you ju
 nx build demo # or nx dev demo
 ```
 
+### Code-splitting
+
+> Rspack supports code splitting, which allows splitting the code into other chunks. You have the full control about size and number of generated assets, which allow you to gain performance improvements in loading time.
+
+Here's the default strategy:
+
+```js
+// rspack.config.js
+
+module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minChunks: 1,
+      minSize: 20000,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          reuseExistingChunk: true,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+  },
+};
+```
+
+Learn more about the [`SplitChunksPlugin`](https://rspack.dev/plugins/webpack/split-chunks-plugin).
+
 ### Module Federation
 
-In this article [Nx and Angular with Rspack and Module Federation](https://www.angulararchitects.io/blog/nx-with-rspack-and-module-federation/), Manfred Steyer explains how to use Module Federation with Rsbuild and Nx. It is a great resource to get started with this setup.
+> The Rspack team works closely with the Module Federation development team and provides first-class support for Module Federation.
+
+Check-out the [official documentation for Module Federation with Rspack](https://rspack.dev/guide/features/module-federation).
+
+<Note type="tip">In the following article [Nx and Angular with Rspack and Module Federation](https://www.angulararchitects.io/blog/nx-with-rspack-and-module-federation/), Manfred Steyer explains how to use Module Federation with Rsbuild and Nx. It is a great resource to get started with this setup.</Note>
 
 ### TypeScript project references
 
@@ -212,7 +255,9 @@ Rsbuild supports TypeScript project references out-of-the-box, so you can use th
 
 `oembed: https://twitter.com/victorsavkin/status/1880770676128362584`
 
-Rspack is a promising tool; I'm deeply convinced that it will be a game-changer in the Angular ecosystem. **Shout out to [Colum Ferry](https://x.com/FerryColum) for his amazing work on integrating Rspack for Angular**.
+Rspack is a promising tool; I'm deeply convinced that it will be a game-changer in the Angular ecosystem. Let's see how it's going to progress in 2025.
+
+**Shout out to [Colum Ferry](https://x.com/FerryColum) for his amazing work on integrating Rspack for Angular**.
 
 ## References
 
