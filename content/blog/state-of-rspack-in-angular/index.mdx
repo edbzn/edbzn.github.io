@@ -1,24 +1,32 @@
 ---
 title: State of Rspack in Angular
 draft: true
-description: TODO
+description: Exploring the current state of Rspack in Angular, its benefits, limitations, and future potential for faster builds and enhanced performance.
 ---
 
 Recently real progress has been made around Rspack and Angular. This post will cover the current state of Rspack in Angular and what the future holds.
 
-<Tweet tweetLink="victorsavkin/status/1880770676128362584"/>
-
 Let's start with a brief history of compiling and bundling in Angular.
 
-## Angular CLI
+## Angular CLI my good old friend
 
-Angular CLI handles the build process and provides an easy interface for compiling and bundling Angular applications. While powerful, the CLI has its limitations, particularly for customizing the underlying tools, or extending the build process.
+Angular CLI **handles the build process and provides an easy interface for compiling and bundling Angular applications**. While powerful, the CLI has its limitations, particularly for _extending the build process_ or _integrating new tools_.
 
-> The CLI abstracts the underlying tools through builders, treating them as implementation details.
+Integrating new build tools has always been a great challenge:
+
+- the CLI is doing a lot of work under the hood
+- it is not trivial to understand
+- it is not documented
+- underlying functions are not exposed
+- every single release can break your integration
+
+Some time ago [I was young and naive enough to ignore these limitations and tried to integrate Rspack for Angular](https://github.com/edbzn/ng-rspack). I had to reverse-engineer the CLI, read the source code, and understand how it works internally. It was a great learning experience but it was painful.
 
 <Tweet tweetLink="mgechev/status/1869510279782170847"/>
 
-### Esbuild limitations
+Hopefully in 2025 we can expect some progress in this area.
+
+### Esbuild
 
 Esbuild is the default bundler used internally by the CLI since Angular v17, it is **drastically faster than Webpack but it is not as feature-rich**.
 
@@ -47,6 +55,12 @@ Another limitation is the lack of support for TypeScript Project References, whi
 
 See my article on this topic: [Nx 20: Exploring the new TS preset and TypeScript project references](/nx-20-exploring-the-new-ts-preset-and-typescript-project-references/).
 
+#### Positivity sentiment
+
+In the [State of JavaScript 2024 survey](https://2024.stateofjs.com/en-US/libraries/build_tools/#build_tools_ratios), Esbuild positivity (proportion of positive sentiment among respondents who expressed a sentiment) is **slowly decreasing**.
+
+![Esbuild positivity chart](./esbuild-positivity.png)
+
 ## Rspack to the rescue
 
 It is where [Rspack](https://rspack.dev/) and [Angular Rspack](https://angular-rspack.dev/) come into play.
@@ -54,6 +68,8 @@ It is where [Rspack](https://rspack.dev/) and [Angular Rspack](https://angular-r
 > Rspack is a high performance JavaScript bundler written in Rust. It offers strong compatibility with the Webpack ecosystem, allowing for seamless replacement of Webpack, and provides lightning fast build speeds.
 
 Rspack offers control over the chunking strategy and supports Module Federation out-of-the-box while being faster than Webpack. Sounds promising, right?
+
+#### benchmarks
 
 | Bundler       | Prod SSR     | Prod     | Dev     |
 |---------------|--------------|----------|---------|
@@ -63,6 +79,15 @@ Rspack offers control over the chunking strategy and supports Module Federation 
 | 🏆 Rspack     | 19.974       | 18.239   | 16.477  |
 
 Note that these results should be taken carefully and might not represent every use cases, see the [benchmarks](https://github.com/Coly010/ng-bundler-benchmark) for more details.
+
+#### Interest sentiment
+
+In the [State of JavaScript 2024 survey](https://2024.stateofjs.com/en-US/libraries/build_tools/#build_tools_ratios), Rspack interest (proportion of positive sentiment among respondents having heard about an item) is **starting high in the charts**.
+
+![Rspack interest chart](./rspack-interest.png)
+
+
+Now let's enter in the concrete part.
 
 ### Usage in Angular
 
@@ -74,9 +99,11 @@ Rspack is not officially supported by Angular, while it is possible to use it, [
 npm install @rspack/cli @ng-rspack/build -D
 ```
 
-Configure Rspack with a `rspack.config.js` file:
+Configuring Rspack should remind you the options of the Angular CLI:
 
 ```js
+// rspack.config.js
+
 const { createConfig } = require('@ng-rspack/build');
 
 module.exports = createConfig({
@@ -98,17 +125,21 @@ Build and serve the application:
 npx rspack build # or npx rspack dev
 ```
 
-### Rsbuild
+### Rsbuild usage
 
-Rsbuild is a superset of Rspack, providing pre-configured setups.
+Rsbuild is a superset of Rspack, providing pre-configured setups with best practices.
 
 ```bash
 npm i @rsbuild/core @ng-rspack/plugin-angular -D
 ```
 
-#### CSR
+#### CSR setup
+
+Configuring Rsbuild with a CSR Angular application is straightforward:
 
 ```ts
+// rsbuild.config.ts
+
 import { createConfig } from '@ng-rsbuild/plugin-angular';
 
 export default createConfig({
@@ -116,9 +147,11 @@ export default createConfig({
 });
 ```
 
-#### SSR
+#### SSR setup
 
 ```ts
+// rsbuild.config.ts
+
 import { createConfig } from '@ng-rsbuild/plugin-angular';
 
 export default createConfig({
@@ -128,11 +161,53 @@ export default createConfig({
 });
 ```
 
+Build and serve the application:
+
+```bash
+npx rsbuild build # or npx rsbuild dev
+```
+
 ### Rsbuild with Nx (recommended)
 
+The best way to use Rsbuild is with Nx. It provides an inference plugin for Rsbuild that detects the configuration and infer the `build`, `dev`, and others targets.
 
+```json
+// nx.json
 
-### Strenghts
+{
+  "plugins": [
+    {
+      "plugin": "@nx/rsbuild",
+      "options": {
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "previewTargetName": "preview",
+        "inspectTargetName": "inspect",
+        "typecheckTargetName": "typecheck"
+      }
+    }
+  ]
+}
+```
 
-TypeScript Project References Support
-SSR Support (with Incremental Hydration)
+You can configure Rsbuild like described in the previous section, and now you just need to run the Nx commands:
+
+```bash
+nx build demo # or nx dev demo
+```
+
+### TypeScript project references
+
+Rsbuild supports TypeScript project references out-of-the-box, so you can use the new TS preset with Angular and benefit from the performance improvements without waiting for Angular to officially support it.
+
+## The future is bright
+
+<Tweet tweetLink="victorsavkin/status/1880770676128362584"/>
+
+Rspack is a promising tool, I'm deeply convinced that it will be a game-changer in the Angular ecosystem. **Shout out to [Colum Ferry](https://x.com/FerryColum) for his amazing work on integrate Rspack for Angular**.
+
+## References
+
+- [Rspack](https://rspack.dev/) and [Rsbuild](https://rsbuild.dev/) by ByteDance
+- [Angular Rspack](https://github.com/Coly010/ng-rspack-build) by Colum Ferry
+- [Nx and Angular with Rspack and Module Federation](https://www.angulararchitects.io/blog/nx-with-rspack-and-module-federation/) by Manfred Steyer
