@@ -4,6 +4,8 @@ date: '2025-01-24'
 description: Exploring the current state of Rspack in Angular, its benefits, limitations, and future potential for faster builds and enhanced performance.
 ---
 
+![Rspack and Angular logo](./logo.png)
+
 Recently real progress has been made around Rspack and Angular. This post will cover the current state of Rspack in Angular and what the future holds.
 
 Let's start with a brief history of compiling and bundling in Angular.
@@ -149,6 +151,8 @@ export default createConfig({
 
 #### SSR setup
 
+SSR is supported with incremental hydration, here's the setup for Rsbuild:
+
 ```ts
 // rsbuild.config.ts
 
@@ -198,7 +202,7 @@ nx build demo # or nx dev demo
 
 ### Module Federation
 
-In his article [Nx and Angular with Rspack and Module Federation](https://www.angulararchitects.io/blog/nx-with-rspack-and-module-federation/), Manfred Steyer explains how to use Module Federation with Rsbuild and Nx. It is a great resource to get started with this setup.
+In this article [Nx and Angular with Rspack and Module Federation](https://www.angulararchitects.io/blog/nx-with-rspack-and-module-federation/), Manfred Steyer explains how to use Module Federation with Rsbuild and Nx. It is a great resource to get started with this setup.
 
 ### TypeScript project references
 
