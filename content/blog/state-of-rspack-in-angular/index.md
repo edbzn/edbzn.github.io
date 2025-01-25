@@ -266,6 +266,7 @@ Despite all the advantages of using Rspack with Angular, there are currently **s
 
 I created an [issue to document everything](https://github.com/Coly010/ng-rspack-build/issues/79) so we can have an overview of the limitations. Keep in mind that Rspack and Angular is still in POC status which means it is not bug-free.
 
+<Note>To drive progress, we must come together as a community and actively contribute to [Angular Rspack](https://github.com/Coly010/ng-rspack-build/).</Note>
 
 ## The future is bright
 
