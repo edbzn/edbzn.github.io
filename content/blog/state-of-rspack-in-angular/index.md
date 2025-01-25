@@ -249,7 +249,23 @@ Check-out the [official documentation for Module Federation with Rspack](https:/
 
 ### TypeScript project references
 
-Rspack supports TypeScript project references out-of-the-box, so you can use the new TS preset with Angular and benefit from the performance improvements without waiting for Angular to officially support it.
+**Rspack supports TypeScript project references out-of-the-box**, so you can use the new TS preset with Angular and benefit from the performance improvements without waiting for Angular to officially support it.
+
+### Known limitations
+
+Despite all the advantages of using Rspack with Angular, there are currently **some limitations and missing features**. Here are some examples:
+
+- Deferred Views
+- Hybrid Rendering
+- App Engine APIs
+- HMR
+- Build-time Prerendering (SSG)
+- Internationalization
+- Build-time value replacement (define)
+- Angular CLI Builder
+
+I created an [issue to document everything](https://github.com/Coly010/ng-rspack-build/issues/79) so we can have an overview of the limitations. Keep in mind that Rspack and Angular is still in POC status which means it is not bug-free.
+
 
 ## The future is bright
 
