@@ -31,8 +31,35 @@ export const PostPreview = ({ node }) => {
           }}
         />
       </section>
-      <footer style={{ marginTop: rhythm(1 / 6), fontWeight: 'lighter' }}>
-        <span style={{ fontSize: '14px' }}>
+      <footer
+        style={{
+          fontSize: '14px',
+          fontWeight: '100',
+        }}
+      >
+        <div
+          style={{
+            marginTop: rhythm(1 / 4),
+            fontStyle: 'italic',
+          }}
+        >
+          {node.frontmatter.tags &&
+            node.frontmatter.tags.map((tag) => (
+              <Link
+                key={tag}
+                to={`/tags/${tag}`}
+                style={{
+                  boxShadow: 'none',
+                  color: 'hsla(0,0%,0%,0.9)',
+                  fontWeight: '400',
+                }}
+              >
+                {' '}
+                #{tag}
+              </Link>
+            ))}
+        </div>
+        <div style={{ fontSize: '14px' }}>
           {node.frontmatter.draft ? (
             <span>
               <span role="img" aria-label="emoji" alt="wip">
@@ -43,7 +70,7 @@ export const PostPreview = ({ node }) => {
           ) : (
             node.frontmatter.date
           )}
-        </span>
+        </div>
       </footer>
     </article>
   );
