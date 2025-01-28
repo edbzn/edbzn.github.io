@@ -8,6 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
+  const blogList = path.resolve(`./src/pages/blog.js`);
   const result = await graphql(`
     {
       allMdx(sort: { frontmatter: { date: DESC } }, limit: 1000) {
@@ -24,6 +25,9 @@ exports.createPages = async ({ graphql, actions }) => {
             contentFilePath
           }
         }
+        group(field: { frontmatter: { tags: SELECT } }) {
+          fieldValue
+        }
       }
     }
   `);
@@ -33,6 +37,7 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   const posts = result.data.allMdx.nodes;
+  const tags = result.data.allMdx.group;
 
   posts.forEach((post, index) => {
     const hasNext = index > 0;
@@ -48,7 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
     if (!post.published) {
       return;
     }
-
+    // TODO: create redirect
     createPage({
       path: post.fields.slug,
       component: `${blogPost}?__contentFilePath=${post.internal.contentFilePath}`,
@@ -57,6 +62,16 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: post.fields.slug,
         previous,
         next,
+      },
+    });
+  });
+
+  tags.forEach((tag) => {
+    createPage({
+      path: `/tags/${tag.fieldValue}`,
+      component: blogList,
+      context: {
+        tag: tag.fieldValue,
       },
     });
   });
@@ -101,9 +116,10 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       interfaces: ['Node'],
     }),
     `
-    type MdxFrontmatter {
+    type MdxFrontmatter implements Node {
       canonical: String
       description: String
+      tags: [String]
     }
     `,
   ];

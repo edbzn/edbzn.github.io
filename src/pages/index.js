@@ -55,7 +55,7 @@ class AboutMe extends React.Component {
               Latest posts
             </span>{' '}
             ·{' '}
-            <Link to="blog" style={{ boxShadow: 'none' }}>
+            <Link to="blog" style={{ boxShadow: 'none', color: 'inherit' }}>
               All Posts
             </Link>
           </div>
@@ -85,7 +85,10 @@ class AboutMe extends React.Component {
               Open source projects
             </span>{' '}
             ·{' '}
-            <a href={github.sponsorUrl} style={{ boxShadow: 'none' }}>
+            <a
+              href={github.sponsorUrl}
+              style={{ boxShadow: 'none', color: 'inherit' }}
+            >
               Sponsor Me
             </a>
           </div>
@@ -137,6 +140,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           draft
+          tags
         }
       }
     }
