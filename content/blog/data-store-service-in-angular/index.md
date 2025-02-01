@@ -1,6 +1,8 @@
 ---
 title: Data store service in Angular
 date: '2018-12-10T00:00:00.000Z'
+tags: [angular, state-management]
+description: Learn how to manage state in Angular using a simple data store service.
 ---
 
 Managing state is challenging when building modern web applications.

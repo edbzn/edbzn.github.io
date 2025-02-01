@@ -1,6 +1,8 @@
 ---
 title: Vue.js programmatic rendering example
 date: '2020-08-30T00:00:00.000Z'
+description: Learn how to use Vue.js render function to programmatically render elements.
+tags: [vuejs]
 ---
 
 I recently started working on a Vue.js components library and I ran into the following rendering problem.
@@ -87,5 +89,5 @@ Now the inner button element is programmatically created, this **removes the rep
 
 Concretely we can replace all the template functionalities like `v-if` and `v-for` by a `if` / `else` statement or a `Array.prototype.map` in the `render` function.
 
-This can be useful in many other situations, like for rendering a list without a root element which is not allowed in the template. 
+This can be useful in many other situations, like for rendering a list without a root element which is not allowed in the template.
 
