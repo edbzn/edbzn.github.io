@@ -14,7 +14,13 @@ class BlogIndex extends React.Component {
     } = this.props;
     const { siteMetadata } = data.site;
     const { author, github } = siteMetadata;
-    const blogPosts = data.allMdx.nodes;
+
+    let blogPosts = data.allMdx.nodes;
+    if (tag) {
+      blogPosts = blogPosts.filter((post) =>
+        (post.frontmatter.tags ?? []).includes(tag)
+      );
+    }
 
     return (
       <Layout location={this.props.location} author={author} github={github}>
@@ -40,7 +46,6 @@ class BlogIndex extends React.Component {
               fontFamily: '"Public Sans", sans-serif',
               textTransform: 'uppercase',
               boxShadow: 'none',
-              color: 'inherit',
             }}
             to="/"
           >
@@ -56,7 +61,6 @@ class BlogIndex extends React.Component {
                   fontFamily: '"Public Sans", sans-serif',
                   textTransform: 'uppercase',
                   boxShadow: 'none',
-                  color: 'inherit',
                 }}
                 to="/blog"
               >
@@ -81,7 +85,7 @@ class BlogIndex extends React.Component {
 export default BlogIndex;
 
 export const pageQuery = graphql`
-  query ($tag: String) {
+  {
     site {
       siteMetadata {
         author
@@ -92,7 +96,7 @@ export const pageQuery = graphql`
       }
     }
     allMdx(
-      filter: { published: { eq: true }, frontmatter: { tags: { in: [$tag] } } }
+      filter: { published: { eq: true } }
       sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
