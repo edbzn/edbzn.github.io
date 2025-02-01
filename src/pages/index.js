@@ -55,7 +55,7 @@ class AboutMe extends React.Component {
               Latest posts
             </span>{' '}
             ·{' '}
-            <Link to="blog" style={{ boxShadow: 'none', color: 'inherit' }}>
+            <Link to="blog" style={{ boxShadow: 'none' }}>
               All Posts
             </Link>
           </div>
@@ -85,10 +85,7 @@ class AboutMe extends React.Component {
               Open source projects
             </span>{' '}
             ·{' '}
-            <a
-              href={github.sponsorUrl}
-              style={{ boxShadow: 'none', color: 'inherit' }}
-            >
+            <a href={github.sponsorUrl} style={{ boxShadow: 'none' }}>
               Sponsor Me
             </a>
           </div>

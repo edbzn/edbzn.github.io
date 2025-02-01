@@ -37,8 +37,28 @@ class BlogPostTemplate extends React.Component {
             </h1>
             <p
               style={{
-                display: `block`,
                 marginTop: rhythm(0.2),
+                marginBottom: rhythm(0),
+                fontWeight: 'lighter',
+              }}
+            >
+              {post.frontmatter.tags &&
+                post.frontmatter.tags.map((tag) => (
+                  <span key={tag}>
+                    <a
+                      href={`/tags/${tag}`}
+                      style={{
+                        boxShadow: 'none',
+                        fontWeight: '400',
+                      }}
+                    >
+                      #{tag}
+                    </a>{' '}
+                  </span>
+                ))}
+            </p>
+            <p
+              style={{
                 marginBottom: rhythm(2),
                 fontWeight: 'lighter',
               }}
@@ -107,6 +127,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         canonical
         draft
+        tags
       }
     }
   }
