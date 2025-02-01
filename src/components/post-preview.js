@@ -40,7 +40,6 @@ export const PostPreview = ({ node }) => {
         <div
           style={{
             marginTop: rhythm(1 / 4),
-            fontStyle: 'italic',
           }}
         >
           {node.frontmatter.tags &&
@@ -50,7 +49,6 @@ export const PostPreview = ({ node }) => {
                 to={`/tags/${tag}`}
                 style={{
                   boxShadow: 'none',
-                  color: 'hsla(0,0%,0%,0.9)',
                   fontWeight: '400',
                 }}
               >
