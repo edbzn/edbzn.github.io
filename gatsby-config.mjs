@@ -68,27 +68,27 @@ export default {
       },
       {
         company: 'Notilo Plus',
-        position: 'Software Engineer',
+        position: 'Front-end Engineer',
         period: '2021 - 2021',
       },
       {
         company: 'Groupama',
-        position: 'Software Engineer',
+        position: 'Full-stack Engineer',
         period: '2020 - 2021',
       },
       {
         company: 'Geolid',
-        position: 'Software Engineer',
+        position: 'Front-end Engineer',
         period: '2019 - 2020',
       },
       {
         company: 'CoSpirit MediaTrack',
-        position: 'Software Engineer',
+        position: 'Full-stack Engineer',
         period: '2016 - 2019',
       },
       {
         company: 'Cybergraph',
-        position: 'Designer & Web Developer',
+        position: 'Web Developer',
         period: ' 2014 - 2015',
       },
     ],
