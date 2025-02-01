@@ -1,6 +1,8 @@
 ---
 title: Building an immutable store from scratch with React
 date: '2019-03-13T00:00:00.000Z'
+tags: [react, state-management]
+description: Learn how to build a simple store using React and Meiosis pattern.
 ---
 
 We're going to create a store using React and [Meiosis](https://meiosis.js.org/).

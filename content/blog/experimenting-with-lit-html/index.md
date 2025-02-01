@@ -1,6 +1,7 @@
 ---
 title: Experimenting with lit-html
 date: '2018-12-21T00:00:00.000Z'
+tags: [lit-html, web-components]
 ---
 
 The Polymer team at Google work on a [higher abstraction over web components](https://www.polymer-project.org/blog/2018-12-13-lit-html-rc). I use that library from the `0.10.0` version and today I migrated an app to the `1.0.0-rc.1`.
@@ -111,11 +112,11 @@ Like every SPA components will be rendered only when the `bundle.js` file will b
 
 ### What differences with the rest of the market?
 
-Lit offers a nice alternative to the classic Angular, Vue and React with some different ideas. Lit Element relies on native web components, which is the only one to do this today. **Web components come with a bunch of pros and cons**, it's up to you to decide when it's appropriate or not. 
+Lit offers a nice alternative to the classic Angular, Vue and React with some different ideas. Lit Element relies on native web components, which is the only one to do this today. **Web components come with a bunch of pros and cons**, it's up to you to decide when it's appropriate or not.
 
 Lit is fresh, it uses modern JavaScript to run extremely fast in the browser while keeping our bundle light.
 
-However I do not recommend using lit for any use cases. You will need to compose with a bunch of others libraries (HTTP client, routing...) to build a real-world SPA, which leads in high maintenance costs. 
+However I do not recommend using lit for any use cases. You will need to compose with a bunch of others libraries (HTTP client, routing...) to build a real-world SPA, which leads in high maintenance costs.
 
 Also we take the risk to build our app in a non-conventional way since we can stick with every library.
 
