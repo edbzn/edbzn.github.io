@@ -11,10 +11,7 @@ export default {
     url: siteUrl,
     titleTemplate: '%s · edbzn.dev',
     author: `Edouard Bozon`,
-    description:
-      'Edouard Bozon - Freelance software engineer specializing in Angular, Node.js, and modern web technologies. Explore insights on tech, development tips, and my freelance services to help bring your projects to life.',
-    authorDescription:
-      "I'm Edouard Bozon, a freelance software engineer with expertise in web technologies. My focus areas include Angular, Node.js, and more. I'm also an open-source contributor and a climber in my spare time.",
+    description: 'Edouard Bozon · A software engineer specializing in modern web development. I work extensively with Angular, Node.js, and Nx to build scalable applications. As an open source contributor, I focus on collaboration—whether improving code, sharing knowledge, or helping others learn. I enjoy solving problems with clean solutions and love working with teams and communities that innovate in web technology.',
     twitterUsername: '@edbzn',
     github: {
       sponsorUrl: 'https://github.com/sponsors/edbzn',

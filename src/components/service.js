@@ -6,10 +6,11 @@ export const Service = () => {
   return (
     <section style={styles.section} className="box">
       <img style={styles.img} src={nxBadge} alt="Nx Badge" />
-      <h2 style={styles.heading}>Looking for an experienced developer?</h2>
-      <p style={styles.services}>
-        Mobile & Web Development, Consulting, Auditing.
-      </p>
+      <h2 style={styles.heading}>Looking for an Angular expert?</h2>
+      <ul style={styles.services}>
+        Feature development, architectural audits, code refactoring, dependency
+        upgrades, automated testing, CI/CD, and performance optimization.
+      </ul>
       <a
         href="mailto:bozonedouard@gmail.com"
         style={styles.contactLink}

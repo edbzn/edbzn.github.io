@@ -16,7 +16,6 @@ const Bio = () => {
       site {
         siteMetadata {
           author
-          authorDescription
           social {
             twitter
             github
@@ -28,7 +27,7 @@ const Bio = () => {
     }
   `);
 
-  const { author, social, authorDescription } = data.site.siteMetadata;
+  const { author, social } = data.site.siteMetadata;
 
   return (
     <div
@@ -57,7 +56,14 @@ const Bio = () => {
       </div>
       <div>
         <p style={{ margin: 0, fontSize: 14, fontWeight: 'lighter' }}>
-          {authorDescription}
+          <strong>I’m Edouard Bozon</strong>, a software engineer specializing
+          in modern web development. I work extensively with{' '}
+          <strong>Angular</strong>, <strong>Node.js</strong>, and{' '}
+          <strong>Nx</strong> to build scalable applications. As an open source
+          contributor, <em>I focus on collaboration</em>—whether improving code,
+          sharing knowledge, or helping others learn. I enjoy solving problems
+          with clean solutions and love working with teams and communities that
+          innovate in web technology.
         </p>
         <div style={{ marginTop: rhythm(0.4) }}>
           <Social social={social} />

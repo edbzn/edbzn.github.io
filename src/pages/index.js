@@ -84,10 +84,6 @@ class AboutMe extends React.Component {
             >
               Open source projects
             </span>{' '}
-            ·{' '}
-            <a href={github.sponsorUrl} style={{ boxShadow: 'none' }}>
-              Sponsor Me
-            </a>
           </div>
 
           <Projects ossProjects={ossProjects} />
@@ -105,7 +101,6 @@ export const pageQuery = graphql`
       siteMetadata {
         author
         github {
-          sponsorUrl
           repositoryUrl
         }
         ossProjects {

@@ -76,7 +76,7 @@ class Layout extends React.Component {
             </a>{' '}
             ·{' '}
             <a href={github.sponsorUrl} style={{ boxShadow: 'none' }}>
-              ❤️&nbsp;Support&nbsp;me
+              ❤️&nbsp;Become&nbsp;a&nbsp;GitHub&nbsp;Sponsor
             </a>
           </div>
         </footer>
