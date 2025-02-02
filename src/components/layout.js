@@ -28,9 +28,7 @@ class Layout extends React.Component {
             aria-label="Home"
             style={{
               boxShadow: `none`,
-              color: `inherit`,
               fontFamily: "'Public Sans', sans-serif",
-              fontSize: rhythm(1.4),
             }}
             to={`/`}
           >

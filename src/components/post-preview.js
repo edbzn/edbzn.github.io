@@ -37,11 +37,7 @@ export const PostPreview = ({ node }) => {
           fontWeight: '100',
         }}
       >
-        <div
-          style={{
-            marginTop: rhythm(1 / 4),
-          }}
-        >
+        <div>
           {node.frontmatter.tags &&
             node.frontmatter.tags.map((tag) => (
               <Link

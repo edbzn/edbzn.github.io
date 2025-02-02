@@ -102,6 +102,7 @@ export const pageQuery = graphql`
         author
         github {
           repositoryUrl
+          sponsorUrl
         }
         ossProjects {
           name
