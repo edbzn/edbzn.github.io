@@ -1,3 +1,13 @@
+/* Rotate on hover */
+.logo-inner {
+  transition: transform 0.2s ease;
+  transform-origin: 50%;
+}
+
+.logo-inner:hover {
+  transform: rotate(62deg);
+}
+
 li {
   margin-bottom: 0;
 }

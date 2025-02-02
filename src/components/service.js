@@ -8,8 +8,8 @@ export const Service = () => {
       <img style={styles.img} src={nxBadge} alt="Nx Badge" />
       <h2 style={styles.heading}>Looking for an Angular expert?</h2>
       <p style={styles.services}>
-        Feature development, architectural audits, code refactoring, dependency
-        upgrades, automated testing, CI/CD, and performance optimization.
+        Feature development, architecture audit, code refactoring, dependency
+        upgrade, automated testing, CI/CD, performance optimization, and more.
       </p>
       <a
         href="mailto:bozonedouard@gmail.com"
