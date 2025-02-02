@@ -25,6 +25,7 @@ class Layout extends React.Component {
           }}
         >
           <Link
+            aria-label="Home"
             style={{
               boxShadow: `none`,
               color: `inherit`,
