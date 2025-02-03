@@ -42,7 +42,7 @@
 }
 
 .content h3 {
-  font-family: "Public Sans", sans-serif;
+  font-family: 'Public Sans', sans-serif;
   font-weight: 100;
   font-size: 1.2rem;
 }
@@ -65,17 +65,27 @@
   right: 0;
   height: 70px;
   width: 100%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
   z-index: 1;
 }
 
 button {
   margin-top: 24px;
-  background-color: #f6f6f6;
+  background-color: #f1f1f1;
   border: none;
   padding: 6px 12px;
   font-size: 1rem;
   font-family: '"Public Sans"', sans-serif;
   cursor: pointer;
   border-radius: 4px;
+}
+
+button:last-child {
+  margin-left: 12px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
 }

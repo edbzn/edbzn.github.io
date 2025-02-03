@@ -5,6 +5,15 @@ export const Resume = ({ experiences }) => {
   const [showAll, setShowAll] = useState(false);
   const displayedExperiences = showAll ? experiences : experiences.slice(0, 3);
 
+  const downloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/cv-edouard-bozon.pdf';
+    link.download = 'cv-edouard-bozon.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <section>
@@ -21,7 +30,10 @@ export const Resume = ({ experiences }) => {
         ))}
       </section>
       <button type="button" onClick={() => setShowAll(!showAll)}>
-        {showAll ? 'Show Less' : 'Show More'}
+        {showAll ? 'Show Less' : 'Show more'}
+      </button>
+      <button type="button" onClick={() => downloadCV()}>
+        Download CV
       </button>
     </>
   );
