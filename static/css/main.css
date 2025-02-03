@@ -1,11 +1,11 @@
 /* Rotate on hover */
 .logo-inner {
-  transition: transform 0.2s ease;
+  transition: transform 1.3s cubic-bezier(0.41, 0.57, 0, 1.41);
   transform-origin: 50%;
 }
 
 .logo-inner:hover {
-  transform: rotate(62deg);
+  transform: rotate(345deg);
 }
 
 li {
