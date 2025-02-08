@@ -1,0 +1,157 @@
+---
+title: 'Running Angular without build tools, Node.js or npm'
+date: '2025-02-08'
+description: 'Learn how to run Angular applications without a build step using ES modules and TypeScript in the browser.'
+tags: ['angular']
+---
+
+Node.js v22.6.0 introduced an interesting [**type stripping feature**](https://nodejs.org/docs/v22.13.1/api/typescript.html#type-stripping), which allows you to **run TypeScript files without compiling them first**. Additionally, the TypeScript team has been working to improve support for this feature with the **[erasable syntax flag](https://www.totaltypescript.com/erasable-syntax-only)**, introduced in v5.8 beta.
+
+These efforts push the "nobuild" workflow to the next level. But what about the front-end space? Can we run Angular applications without a build step?
+
+## Loading ES modules in the browser
+
+In order to use Angular, we need to load modules in the browser at runtime, like so:
+
+```ts
+import { bootstrapApplication } from '@angular/platform-browser';
+```
+
+To be able to import ES Modules, we have to specify the `type="module"` attribute in the script tag.
+
+```html
+<script type="module">
+  /* Here we can import ES Modules */
+</script>
+```
+
+### Loading dependencies from a CDN using import maps
+
+For a modern approach, we can leverage import maps to map the module names to actual files served from a CDN via an URL.
+
+```html
+<script type="importmap">
+  {
+    "imports": {
+      "@angular/core": "https://ga.jspm.io/npm:@angular/core@19.1.0/fesm2022/core.mjs",
+      "@angular/core/primitives/signals": "https://ga.jspm.io/npm:@angular/core@19.1.0/fesm2022/primitives/signals.mjs",
+      "@angular/core/primitives/event-dispatch": "https://ga.jspm.io/npm:@angular/core@19.1.0/fesm2022/primitives/event-dispatch.mjs",
+      "@angular/compiler": "https://ga.jspm.io/npm:@angular/compiler@19.1.0/fesm2022/compiler.mjs",
+      "@angular/platform-browser": "https://ga.jspm.io/npm:@angular/platform-browser@19.1.0/fesm2022/platform-browser.mjs",
+      "@angular/common": "https://ga.jspm.io/npm:@angular/common@19.1.0/fesm2022/common.mjs",
+      "@angular/common/http": "https://ga.jspm.io/npm:@angular/common@19.1.0/fesm2022/http.mjs",
+      "rxjs": "https://cdn.jsdelivr.net/npm/rxjs@7.8.1/+esm",
+      "rxjs/operators": "https://cdn.jsdelivr.net/npm/rxjs@7.8.1/operators/+esm"
+    }
+  }
+</script>
+```
+
+This way we get rid of the need to install and bundle the Angular dependencies, and we can load them directly from a CDN.
+
+### Loading ES modules from TypeScript files
+
+Now that we have the Angular modules loaded, we want to be able to _load our TypeScript source files as ES Modules_. We can do this by using the **[es-module-shims](https://github.com/guybedford/es-module-shims) polyfill library**.
+
+<Note>Runtime TypeScript features such as enums are not supported, and type only imports should be used where possible, per the Node.js guidance for TypeScript.</Note>
+
+It is quite simple to use, we just need to include the library in our HTML file, and enable the TypeScript support.
+
+```html
+<script async src="https://ga.jspm.io/npm:es-module-shims@2.0.9/dist/es-module-shims.js"></script>
+<script type="esms-options">
+  { "polyfillEnable": ["typescript"] }
+</script>
+```
+
+Under the hood, ES Module Shims will strip the types using WebAssembly, and load the resulting JavaScript code in the browser.
+
+
+## Bootstrapping the Angular application
+
+Finally, we can bootstrap our Angular application by importing the main module and calling the `bootstrapApplication` function.
+
+```html
+<body>
+  <script type="module" lang="ts">
+    import "@angular/compiler";
+    import { bootstrapApplication } from "@angular/platform-browser";
+    import { provideExperimentalZonelessChangeDetection } from "@angular/core";
+    import { AppComponent } from "./app.component.ts";
+
+    bootstrapApplication(AppComponent, {
+      providers: [provideExperimentalZonelessChangeDetection()],
+    }).catch((err) => console.error(err));
+  </script>
+  <app-root></app-root>
+</body>
+```
+
+To run Angular without build step we have to import the `@angular/compiler` module to **enable JIT compilation**.
+
+<Note>Just like dealing with ESM in Node.js, **file extension is mandatory** when importing a module, so we need to specify the `.ts` or `.mts` in the import statement.</Note>
+
+### Decorators and metadata
+
+Angular uses experimental decorators and metadata to define components, services, and other entities.
+
+```ts
+@Component({
+  selector: 'app-root',
+  template: '<h1>{{ title() }}</h1>',
+  styles: `h1 { text-align: center; }`,
+})
+export class AppComponent {
+  readonly title = signal('Hello, Angular!');
+}
+```
+
+However these are not supported in the browser, resulting in a runtime error:
+
+```text
+Uncaught SyntaxError: Invalid or unexpected token (at app.component.ts:22:5)
+```
+
+To work around this, we can polyfill decorators using the following `_ts_decorate` function.
+
+```ts
+function _ts_decorate(decorators, target, key, desc) {
+  var c = arguments.length,
+    r =
+      c < 3
+        ? target
+        : desc === null
+        ? (desc = Object.getOwnPropertyDescriptor(target, key))
+        : desc,
+    d: (arg0: any, arg1: undefined, arg2: undefined) => any;
+  if (typeof Reflect === 'object' && typeof Reflect.decorate === 'function')
+    r = Reflect.decorate(decorators, target, key, desc);
+  else
+    for (var i = decorators.length - 1; i >= 0; i--)
+      if ((d = decorators[i]))
+        r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+export const AppComponent = _ts_decorate(
+  [
+    Component({
+      selector: 'app-root',
+      template: '<h1>{{ title() }}</h1>',
+      styles: `h1 { text-align: center; }`,
+    }),
+  ],
+  class {
+    readonly title = signal('Hello, Angular!');
+  }
+);
+
+```
+
+This helper function is produced by TypeScript when compiling decorators, and it can be used to **apply decorators at runtime**.
+
+That's it! 🚀 We have now an Angular application up and running, with no build step, no Node.js, and no npm.
+
+## Demo
+
+<iframe loading="lazy" width="100%" height="600px" src="https://stackblitz.com/edit/stackblitz-starters-rsqjggqj?embed=1&file=index.html"></iframe>
