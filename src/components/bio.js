@@ -60,9 +60,8 @@ const Bio = () => {
           in modern web development. I work extensively with{' '}
           <strong>Angular</strong>, <strong>Node.js</strong>, and{' '}
           <strong>Nx</strong> to build scalable applications. As an open source
-          contributor, I love collaborating with teams and communities that
-          innovate in web technology and enjoy solving problems with clean
-          solutions.
+          contributor, I love collaborating with people and enjoy solving
+          problems with clean solutions.
         </p>
         <div style={{ marginTop: rhythm(0.4) }}>
           <Social social={social} />
