@@ -72,6 +72,8 @@ It is quite simple to use, we just need to include the library in our HTML file,
 
 Under the hood, ES Module Shims will **strip the types using WebAssembly**, and load the resulting JavaScript code in the browser.
 
+![Fetch requests](./fetch-requests.png)
+
 <Note>Runtime TypeScript features such as enums are not supported, and type only imports should be used where possible, per the Node.js guidance for TypeScript.</Note>
 
 ## Bootstrapping the Angular application
