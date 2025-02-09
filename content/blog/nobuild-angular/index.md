@@ -5,9 +5,17 @@ description: 'Learn how to run Angular applications without a build step using E
 tags: ['angular']
 ---
 
+## Introduction
+
+Recently I have been experimenting with running TypeScript code in directly the browser, my tweet got a some attention, so I decided to write a blog post about it.
+
+`oembed: https://twitter.com/edbzn/status/1887993578158166501`
+
+### A bit of context
+
 Node.js v22.6.0 introduced an interesting [**type stripping feature**](https://nodejs.org/docs/v22.13.1/api/typescript.html#type-stripping), which allows you to **run TypeScript files without compiling them first**. Additionally, the TypeScript team has been working to improve support for this feature with the **[erasable syntax flag](https://www.totaltypescript.com/erasable-syntax-only)**, introduced in v5.8 beta.
 
-These efforts push the "nobuild" workflow to the next level. But what about the front-end space? Can we run Angular applications without a build step?
+These efforts push the **nobuild workflow** to the next level. But what about the front-end space? Can we run Angular applications without a build step?
 
 ## Loading ES modules in the browser
 
@@ -27,7 +35,7 @@ To be able to import ES Modules, we have to specify the `type="module"` attribut
 
 ### Loading dependencies from a CDN using import maps
 
-For a modern approach, we can leverage import maps to map the module names to actual files served from a CDN via an URL.
+For a modern approach, we can leverage import maps to map the module names to actual files served remotely via an URL.
 
 ```html
 <script type="importmap">
@@ -53,8 +61,6 @@ This way we get rid of the need to install and bundle the Angular dependencies, 
 
 Now that we have the Angular modules loaded, we want to be able to _load our TypeScript source files as ES Modules_. We can do this by using the **[es-module-shims](https://github.com/guybedford/es-module-shims) polyfill library**.
 
-<Note>Runtime TypeScript features such as enums are not supported, and type only imports should be used where possible, per the Node.js guidance for TypeScript.</Note>
-
 It is quite simple to use, we just need to include the library in our HTML file, and enable the TypeScript support.
 
 ```html
@@ -64,12 +70,13 @@ It is quite simple to use, we just need to include the library in our HTML file,
 </script>
 ```
 
-Under the hood, ES Module Shims will strip the types using WebAssembly, and load the resulting JavaScript code in the browser.
+Under the hood, ES Module Shims will **strip the types using WebAssembly**, and load the resulting JavaScript code in the browser.
 
+<Note>Runtime TypeScript features such as enums are not supported, and type only imports should be used where possible, per the Node.js guidance for TypeScript.</Note>
 
 ## Bootstrapping the Angular application
 
-Finally, we can bootstrap our Angular application by importing the main module and calling the `bootstrapApplication` function.
+Finally, we can bootstrap our Angular application by calling the `bootstrapApplication` function and passing the `AppComponent`.
 
 ```html
 <body>
@@ -87,13 +94,13 @@ Finally, we can bootstrap our Angular application by importing the main module a
 </body>
 ```
 
-To run Angular without build step we have to import the `@angular/compiler` module to **enable JIT compilation**.
+To run Angular without build step we have to import the `@angular/compiler` module to **enable JIT compilation**. Of course, this has a **performance impact**, but it can be useful for development purposes, or highly dynamic applications.
 
 <Note>Just like dealing with ESM in Node.js, **file extension is mandatory** when importing a module, so we need to specify the `.ts` or `.mts` in the import statement.</Note>
 
 ### Decorators and metadata
 
-Angular uses experimental decorators and metadata to define components, services, and other entities.
+By default Angular uses experimental decorators and metadata to define components, services, and other entities.
 
 ```ts
 @Component({
