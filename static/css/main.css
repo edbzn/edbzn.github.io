@@ -30,7 +30,11 @@ details {
 }
 
 .gatsby-resp-image-wrapper {
-  margin: 2.25em auto;
+  margin: 2.25em -1rem !important; /* Override margin injected inline by the gatsby-remark-images plugin. */
+}
+
+.gatsby-resp-image-wrapper img {
+  border-radius: 4px;
 }
 
 .box {
@@ -105,6 +109,10 @@ p > img {
 }
 
 @media screen and (max-width: 640px) {
+  .gatsby-resp-image-wrapper {
+    margin: 2.25em auto;
+  }
+
   .box {
     padding: 1rem;
   }
