@@ -73,7 +73,7 @@
     "cypress-axe": "^1.0.0",
     "husky": "^9.0.0",
     "lint-staged": "15.4.3",
-    "prettier": "3.5.0",
+    "prettier": "3.5.1",
     "start-server-and-test": "^2.0.0",
     "wrangler": "^3.103.2"
   }
