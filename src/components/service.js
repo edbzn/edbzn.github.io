@@ -6,17 +6,17 @@ export const Service = () => {
   return (
     <section style={styles.section} className="box">
       <img style={styles.img} src={nxBadge} alt="Nx Badge" />
-      <h2 style={styles.heading}>Looking for an Angular expert?</h2>
+      <h2 style={styles.heading}>Looking for a top notch engineer?</h2>
       <p style={styles.services}>
-        Feature development, architecture audit, code refactoring, dependency
-        upgrade, automated testing, CI/CD, performance optimization, and more.
+        I provide architecture, web development, and infrastructure services to
+        help you build scalable applications.
       </p>
       <a
         href="mailto:bozonedouard@gmail.com"
         style={styles.contactLink}
         title="Mail to Edouard Bozon"
       >
-        Contact me
+        Let's discuss
       </a>
     </section>
   );
