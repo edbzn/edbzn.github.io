@@ -59,8 +59,8 @@ export default {
     ],
     experiences: [
       {
-        company: 'Rosa.be',
-        position: 'Front-end Infrastructure Engineer',
+        company: 'Rosa',
+        position: 'Software Engineer',
         period: '2025 - today',
       },
       {
