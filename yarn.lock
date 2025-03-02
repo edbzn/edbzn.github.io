@@ -1270,14 +1270,14 @@
   integrity sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==
 
 "@fontsource/merriweather@^5.1.0":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-5.1.1.tgz#7e0b7e974dd8cd67517f727de79c400742bcadd5"
-  integrity sha512-GaO8ZHDCQAuoPJh0yiLK+NzL03OnGs64uFGKFRSouinZ1CtoEtO+3DHr4LZokFW+Au5MvWr4Am2MOhjdyvIRyA==
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-5.2.5.tgz#8dbcccc12eaa986ac0c4f8bc6f79a3c8530a89d9"
+  integrity sha512-5LHr2QYcpovXZc3iLsD2BLqpuwDUNxOSH6hDLDatferd++7xTEHPLHRPheyBECUU+KiXv/CBFs+amz9eh8U+Bw==
 
 "@fontsource/public-sans@^5.1.1":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@fontsource/public-sans/-/public-sans-5.1.2.tgz#5e6dffc1f48ed988f39998b0246dbddbfc6268bb"
-  integrity sha512-VY/2N8hfhFgP/3lkk/WdGX27/0wp+ajX9/E4bb+O1BS5c+OUfJG7FChIqYRKZUe8n2jl8pOVjaB93PfyVQS9Hg==
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/public-sans/-/public-sans-5.2.5.tgz#bcbbfed4b1ceca80652aa3adedbb46bc8e1b38fb"
+  integrity sha512-WSRBuKX8dwHxc35s/Q1arB7vkGL2A9YHB93gRP9OTu/nYgat0CBHfsAOUSDehBnREHa0rYZvWDDS08w5qPoWvg==
 
 "@gatsbyjs/parcel-namer-relative-to-cwd@2.14.0":
   version "2.14.0"
