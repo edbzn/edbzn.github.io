@@ -9837,10 +9837,10 @@ mini-css-extract-plugin@1.6.2:
     schema-utils "^3.0.0"
     webpack-sources "^1.1.0"
 
-miniflare@3.20250214.1:
-  version "3.20250214.1"
-  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-3.20250214.1.tgz#8afeaa37126a94756e9e4ca40d4e6665a66e8088"
-  integrity sha512-NE66QV+2n9ZndaP5jgPlcVref3Arvizb+l2QqhgeXtKM5Orhi8UU2mijoiN3mHEUexKaBES2S1VubT4LDPqkxQ==
+miniflare@3.20250214.2:
+  version "3.20250214.2"
+  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-3.20250214.2.tgz#ce22f9d0ffb3a3939821890567229063762ea53c"
+  integrity sha512-t+lT4p2lbOcKv4PS3sx1F/wcDAlbEYZCO2VooLp4H7JErWWYIi9yjD3UillC3CGOpiBahVg5nrPCoFltZf6UlA==
   dependencies:
     "@cspotcode/source-map-support" "0.8.1"
     acorn "8.14.0"
@@ -13934,16 +13934,16 @@ workerd@1.20250214.0:
     "@cloudflare/workerd-windows-64" "1.20250214.0"
 
 wrangler@^3.103.2:
-  version "3.111.0"
-  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-3.111.0.tgz#42596417f64fae6fe89fb86cbdd42ac64f0a5d23"
-  integrity sha512-3j/Wq5aj/sCQRSmkjBLxbkIH7LCx0h2UnaxmhOplDjJmZty10lGRs/jGgaG/M/GEsDg5TJ7UHvBh3hSldgjfKg==
+  version "3.112.0"
+  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-3.112.0.tgz#5d7264c643c1ebb703d2761709518f22df2e04cd"
+  integrity sha512-PNQWGze3ODlWwG33LPr8kNhbht3eB3L9fogv+fapk2fjaqj0kNweRapkwmvtz46ojcqWzsxmTe4nOC0hIVUfPA==
   dependencies:
     "@cloudflare/kv-asset-handler" "0.3.4"
     "@esbuild-plugins/node-globals-polyfill" "0.2.3"
     "@esbuild-plugins/node-modules-polyfill" "0.2.2"
     blake3-wasm "2.1.5"
     esbuild "0.17.19"
-    miniflare "3.20250214.1"
+    miniflare "3.20250214.2"
     path-to-regexp "6.3.0"
     unenv "2.0.0-rc.1"
     workerd "1.20250214.0"
