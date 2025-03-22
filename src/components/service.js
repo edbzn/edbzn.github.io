@@ -6,10 +6,12 @@ export const Service = () => {
   return (
     <section style={styles.section} className="box">
       <img style={styles.img} src={nxBadge} alt="Nx Badge" />
-      <h2 style={styles.heading}>Looking for a top notch engineer?</h2>
+      <h2 style={styles.heading}>Looking for a senior developer?</h2>
       <p style={styles.services}>
-        I provide architecture, web development, and infrastructure services to
-        help you build scalable applications.
+        I provide <span style={styles.underline}>web development</span> and{' '}
+        <span style={styles.underline}>platform engineering</span> services{' '}
+        <br />
+        to help you build scalable applications.
       </p>
       <a
         href="mailto:bozonedouard@gmail.com"
@@ -23,6 +25,9 @@ export const Service = () => {
 };
 
 const styles = {
+  underline: {
+    textDecoration: 'underline',
+  },
   section: {
     margin: rhythm(2.4) + ' auto',
     backgroundColor: 'rgb(10 25 47)',

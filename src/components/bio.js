@@ -56,9 +56,9 @@ const Bio = () => {
       </div>
       <div>
         <p style={{ margin: 0, fontSize: 14, fontWeight: 'lighter' }}>
-          <strong>I’m Edouard Bozon</strong>, a software engineer specializing
-          in web development and front-end infrastructure. I work extensively
-          with <strong>Angular</strong>, <strong>Node.js</strong>, and{' '}
+          <strong>I’m Edouard Bozon</strong>, a software engineer focusing on
+          web development and platform engineering. I work extensively with{' '}
+          <strong>Angular</strong>, <strong>Node.js</strong>, and{' '}
           <strong>Nx</strong> to build scalable applications. As an open source
           contributor, I love collaborating with people and enjoy solving
           problems with clean solutions.
