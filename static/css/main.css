@@ -109,6 +109,10 @@ p > img {
 }
 
 @media screen and (max-width: 640px) {
+  .gatsby-resp-image-wrapper img {
+    border-radius: 0px;
+  }
+
   .gatsby-resp-image-wrapper {
     margin: 2.25em auto;
   }

@@ -15,6 +15,11 @@ class Layout extends React.Component {
           marginTop: rhythm(0.4),
           marginBottom: rhythm(1.4),
           maxWidth: '698px',
+          hyphens: 'auto',
+          hyphenateLimitChars: '6 3 3',
+          hyphenateLimitLines: 2,
+          hyphenateLimitLast: 'always',
+          hyphenateLimitZone: '8%',
         }}
       >
         <header
