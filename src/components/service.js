@@ -1,17 +1,16 @@
 import React from 'react';
-import nxBadge from '../../static/images/nx-badge.png';
+import nxBadge2025 from '../../static/images/nx-badge-2025.png';
 import { rhythm } from '../utils/typography';
 
 export const Service = () => {
   return (
     <section style={styles.section} className="box">
-      <img style={styles.img} src={nxBadge} alt="Nx Badge" />
+      <img style={styles.img} src={nxBadge2025} alt="Nx Badge 2025" />
       <h2 style={styles.heading}>Looking for a senior developer?</h2>
       <p style={styles.services}>
         I provide <span style={styles.underline}>web development</span> and{' '}
-        <span style={styles.underline}>platform engineering</span> services{' '}
-        <br />
-        to help you build scalable applications.
+        <span style={styles.underline}>platform engineering</span> services to
+        help you build scalable applications.
       </p>
       <a
         href="mailto:bozonedouard@gmail.com"
@@ -56,6 +55,8 @@ const styles = {
     marginBottom: '18px',
   },
   services: {
+    maxWidth: '472px',
+    margin: '0 auto',
     marginBottom: '22px',
   },
   img: {
