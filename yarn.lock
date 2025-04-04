@@ -4531,6 +4531,11 @@ cookie@^0.5.0:
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.5.0.tgz#d1f5d71adec6558c58f389987c366aa47e994f8b"
   integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
 
+cookie@^0.7.1:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.7.2.tgz#556369c472a2ba910f2979891b526b3436237ed7"
+  integrity sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==
+
 cookie@~0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.2.tgz#0e41f24de5ecf317947c82fc789e06a884824432"
@@ -9833,10 +9838,10 @@ mini-css-extract-plugin@1.6.2:
     schema-utils "^3.0.0"
     webpack-sources "^1.1.0"
 
-miniflare@4.20250321.1:
-  version "4.20250321.1"
-  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-4.20250321.1.tgz#680688eb0f07ec7939da9857bc322b4d7b97d0e5"
-  integrity sha512-pQuVtF6vQ1zMvPCo3Z19mzSFjgnlEnybzNzAJZipsqIk6kMXpYBZq+d8cWmeQFkBYlgeZKeKJ4EBKT6KapfTNg==
+miniflare@4.20250321.2:
+  version "4.20250321.2"
+  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-4.20250321.2.tgz#33cbc7178809a051cc0b2dee0b236993cffa9531"
+  integrity sha512-1HPrKb0qBWe2vvbabIciJAhydLlqwXwJEuM3tWlhQPwWZtySzfb69Knadr3l1evGG9RB2qMML4yrowzdyUoOwg==
   dependencies:
     "@cspotcode/source-map-support" "0.8.1"
     acorn "8.14.0"
@@ -9847,7 +9852,7 @@ miniflare@4.20250321.1:
     undici "^5.28.5"
     workerd "1.20250321.0"
     ws "8.18.0"
-    youch "3.2.3"
+    youch "3.3.4"
     zod "3.22.3"
 
 minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
@@ -13886,15 +13891,15 @@ workerd@1.20250321.0:
     "@cloudflare/workerd-windows-64" "1.20250321.0"
 
 wrangler@^4.0.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-4.7.0.tgz#01b87d330f6a912052d6ec8a79c7234088b78dca"
-  integrity sha512-5LoyNxpPG8K0kcU43Ossyj7+Hq78v8BNtu7ZNNSxDOUcairMEDwcbrbUOqzu/iM4yHiri5wCjl4Ja57fKED/Sg==
+  version "4.7.1"
+  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-4.7.1.tgz#555990fca94bb2967d3ca884713fcfe39988db02"
+  integrity sha512-1vprXQxb0YqhO+xSXsYUlFBXl0D4YEJRNGaT6n9bM53GsFB+FgE7afxW57sSmiZsWiMpUVeMn4PlBVEzjLy4tA==
   dependencies:
     "@cloudflare/kv-asset-handler" "0.4.0"
     "@cloudflare/unenv-preset" "2.3.1"
     blake3-wasm "2.1.5"
     esbuild "0.24.2"
-    miniflare "4.20250321.1"
+    miniflare "4.20250321.2"
     path-to-regexp "6.3.0"
     unenv "2.0.0-rc.15"
     workerd "1.20250321.0"
@@ -14073,12 +14078,12 @@ yoga-layout-prebuilt@^1.10.0:
   dependencies:
     "@types/yoga-layout" "1.9.2"
 
-youch@3.2.3:
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/youch/-/youch-3.2.3.tgz#63c94ea504950a1a5bf1d5969439addba6c726e2"
-  integrity sha512-ZBcWz/uzZaQVdCvfV4uk616Bbpf2ee+F/AvuKDR5EwX/Y4v06xWdtMluqTD7+KlZdM93lLm9gMZYo0sKBS0pgw==
+youch@3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/youch/-/youch-3.3.4.tgz#f13ee0966846c6200e7fb9ece89306d95df5e489"
+  integrity sha512-UeVBXie8cA35DS6+nBkls68xaBBXCye0CNznrhszZjTbRVnJKQuNsyLKBTTL4ln1o1rh2PKtv35twV7irj5SEg==
   dependencies:
-    cookie "^0.5.0"
+    cookie "^0.7.1"
     mustache "^4.2.0"
     stacktracey "^2.1.8"
 
