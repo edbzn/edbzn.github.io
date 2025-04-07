@@ -5278,9 +5278,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.5.73:
-  version "1.5.132"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.132.tgz#081b8086d7cecc58732f7cc1f1c19306c5510c5f"
-  integrity sha512-QgX9EBvWGmvSRa74zqfnG7+Eno0Ak0vftBll0Pt2/z5b3bEGYL6OUXLgKPtvx73dn3dvwrlyVkjPKRRlhLYTEg==
+  version "1.5.133"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.133.tgz#1e0aba775a9ae51a42d70a2c5e562fab515105f4"
+  integrity sha512-mrR+g6Y1at0GKDlPlMMwLAkI6c47q3d7U/vKS3rGTa3V4xStu18oT4UCPg5ErcAhUqk7swSjXSPUGstOYd2qBw==
 
 emoji-regex-xs@^1.0.0:
   version "1.0.0"
@@ -6604,10 +6604,10 @@ gatsby-core-utils@^4.14.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-graphiql-explorer@^3.14.0:
-  version "3.14.0"
-  resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-3.14.0.tgz#9a10f040ede72c104cf5af23561ba4fc01d43161"
-  integrity sha512-t+PpMu+6GkCdyGDw8S4pd1FBZVwFdpn6Jb2BLZtNJ2z1hOSxHKGoZO1sW2mwZ8/H1VuiSPb2XtXwHYo5CcYgAg==
+gatsby-graphiql-explorer@^3.14.1:
+  version "3.14.1"
+  resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-3.14.1.tgz#592d81f64a17d429386b3dd21e026e22e7800d39"
+  integrity sha512-QC6XSIIrg4wp5Tb4qE7dkMpC+XDQDDIkQ3dkxajLn8P02tHHAUDLYlJGVHKILp5QQRlTXCPqk4AFZwh21NtJBw==
 
 gatsby-legacy-polyfills@^3.14.0:
   version "3.14.0"
@@ -6711,9 +6711,9 @@ gatsby-plugin-manifest@^5.14.0:
     sharp "^0.32.6"
 
 gatsby-plugin-mdx@^5.14.0:
-  version "5.14.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-5.14.0.tgz#5f95124cae148bd5e91559198d983c562a88b0a4"
-  integrity sha512-tJJmR+sRrWFRuUKUq5bJLWcLXo6FTP06tfE+7yN2foKcW6+SphY3EVvqiTnCzNAkpvUCP3EASLMg2WGWIVzi4A==
+  version "5.14.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx/-/gatsby-plugin-mdx-5.14.1.tgz#08ee4149278386c66205cffa5fa5669ccdbb2494"
+  integrity sha512-BkrK10XqWkvYJNraSnPt/Ih/TmSjEzSWOEyWMSOJhHC+xpdqGakKKbkHButGQLMwC4W+v7jjQ3ZCbDQLXxZ5ZQ==
   dependencies:
     "@mdx-js/mdx" "^2.3.0"
     acorn "^8.8.2"
@@ -6989,9 +6989,9 @@ gatsby-worker@^2.14.0:
     signal-exit "^3.0.7"
 
 gatsby@^5.0.0:
-  version "5.14.1"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-5.14.1.tgz#8d2babbe1d007dcfe10dacb2b6e8b677fbb13644"
-  integrity sha512-xumIbDl0bk/Het+9wDQETNSHtkobXaeUQTciwzbT42RW/zIoPkKTjNzdDrWOBzzpmR0RU/qEnLa0udDhzS01Ww==
+  version "5.14.2"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-5.14.2.tgz#ee0be91a42fc37bd64db1043e0a88a5521114539"
+  integrity sha512-McJqgO7nz9ktSN4MOoKbN5GitlS/HmUIOvj04gn1X78tD4jb0LoX8MqjElSF/+FQziKqSjkofTE8fDbD3z+1sg==
   dependencies:
     "@babel/code-frame" "^7.18.6"
     "@babel/core" "^7.20.12"
@@ -7076,7 +7076,7 @@ gatsby@^5.0.0:
     fs-extra "^11.2.0"
     gatsby-cli "^5.14.0"
     gatsby-core-utils "^4.14.0"
-    gatsby-graphiql-explorer "^3.14.0"
+    gatsby-graphiql-explorer "^3.14.1"
     gatsby-legacy-polyfills "^3.14.0"
     gatsby-link "^5.14.1"
     gatsby-page-utils "^3.14.0"
@@ -7152,7 +7152,7 @@ gatsby@^5.0.0:
     type-of "^2.0.1"
     url-loader "^4.1.1"
     uuid "^8.3.2"
-    webpack "^5.88.1"
+    webpack "~5.98.0"
     webpack-dev-middleware "^5.3.4"
     webpack-merge "^5.9.0"
     webpack-stats-plugin "^1.1.3"
@@ -13748,7 +13748,7 @@ webpack-virtual-modules@^0.5.0:
   resolved "https://registry.yarnpkg.com/webpack-virtual-modules/-/webpack-virtual-modules-0.5.0.tgz#362f14738a56dae107937ab98ea7062e8bdd3b6c"
   integrity sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==
 
-webpack@^5.88.1:
+webpack@~5.98.0:
   version "5.98.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.98.0.tgz#44ae19a8f2ba97537978246072fb89d10d1fbd17"
   integrity sha512-UFynvx+gM44Gv9qFgj0acCQK2VE1CtdfwFdimkapco3hlPCJ/zeq73n2yVKimVbtm+TnApIugGhLJnkU6gjYXA==
