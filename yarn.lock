@@ -1277,9 +1277,9 @@
   integrity sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==
 
 "@fontsource/merriweather@^5.1.0":
-  version "5.2.6"
-  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-5.2.6.tgz#95ce8e2d42635a9f2025ae5b342dbe23af625e64"
-  integrity sha512-lPFH6+Kz3V7MK9SRDI/Y9hxMc+2Sjb/FjyNHlotRjL7eFRhJ8/LnnWsDTGAccTuoGEmfdaaia7SHw6LoNtoIyg==
+  version "5.2.7"
+  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-5.2.7.tgz#99ff11785f481584bcdd2f5c83a512e2b9725409"
+  integrity sha512-ryOP1w5L0bZCFm1YoITndy18N+4Z07sJFkWEl9XxCAbqx88gkUO/F/vjPMw4Uup20w6plDD5w6xmsRiAI3+1NA==
 
 "@fontsource/public-sans@^5.1.1":
   version "5.2.5"
