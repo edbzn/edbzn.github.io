@@ -6106,9 +6106,9 @@ express@^4.18.2:
     vary "~1.1.2"
 
 exsolve@^1.0.4:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/exsolve/-/exsolve-1.0.6.tgz#91bf02c61511d72d780528a04aef98550b9845c6"
-  integrity sha512-Q05uIdxhPBVBwK29gcPsl2K220xSBy52TZQPdeYWE0zOs8jM+yJ6y5h7jm6cpAo1p+OOMZRIj/Ftku4EQQBLnQ==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/exsolve/-/exsolve-1.0.7.tgz#3b74e4c7ca5c5f9a19c3626ca857309fa99f9e9e"
+  integrity sha512-VO5fQUzZtI6C+vx4w/4BWJpg3s/5l+6pRQEHzFRM8WFi4XffSP1Z+4qi7GbjWbvRQEbdIco5mIMq+zX4rPuLrw==
 
 ext@^1.7.0:
   version "1.7.0"
@@ -9837,10 +9837,10 @@ mini-css-extract-plugin@1.6.2:
     schema-utils "^3.0.0"
     webpack-sources "^1.1.0"
 
-miniflare@4.20250617.1:
-  version "4.20250617.1"
-  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-4.20250617.1.tgz#36c3c391b452cf153a81db64d187368f7377711c"
-  integrity sha512-NjwKVzPGCAUgkCOJxHBwgV2Obu3g4/wAJE0JaA9whcYip4VAJwQ1fU9TMtoKLY91jD9ANR221+CqLyqxennjqg==
+miniflare@4.20250617.3:
+  version "4.20250617.3"
+  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-4.20250617.3.tgz#ac152ce430759f55a86fb485feff442049c3e860"
+  integrity sha512-j+LZycT11UdlVeNdaqD0XdNnYnqAL+wXmboz+tNPFgTq6zhD489Ujj3BfSDyEHDCA9UFBLbkc5ByGWBh+pYZ5Q==
   dependencies:
     "@cspotcode/source-map-support" "0.8.1"
     acorn "8.14.0"
@@ -13853,15 +13853,15 @@ workerd@1.20250617.0:
     "@cloudflare/workerd-windows-64" "1.20250617.0"
 
 wrangler@^4.0.0:
-  version "4.20.3"
-  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-4.20.3.tgz#80538f949b4a40e7b78861f456d7290f0a9d9072"
-  integrity sha512-ugvmi43CFPbjeQFfhU7EqE1V0ek6ZFv80jzwHcPk/7jPFmOA4ahT5uUU1ga5ZP6vz6lUuG2bLnyl1T5qJah0cg==
+  version "4.20.5"
+  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-4.20.5.tgz#2d33ab0103984b14e23dcacdb82f14b49731d646"
+  integrity sha512-tmiyt2vBHszhdzJEDbCpFLU2RiV7/QzvGMV07Zaz4ptqiU2h/lTojyNJAugPpSFNiOuY+k0g3ENNTDQqoUkMFA==
   dependencies:
     "@cloudflare/kv-asset-handler" "0.4.0"
     "@cloudflare/unenv-preset" "2.3.3"
     blake3-wasm "2.1.5"
     esbuild "0.25.4"
-    miniflare "4.20250617.1"
+    miniflare "4.20250617.3"
     path-to-regexp "6.3.0"
     unenv "2.0.0-rc.17"
     workerd "1.20250617.0"
