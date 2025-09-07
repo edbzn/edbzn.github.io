@@ -1300,9 +1300,9 @@
   integrity sha512-HHQigo3rQWKMDzYDLkubN5WQOYXJJE2eNqIQC2axC2iO3mHdwnIR7FgZVvHWtBwAdzBgAP0ECp8KqS8TiMKvgw==
 
 "@fontsource/merriweather@^5.1.0":
-  version "5.2.9"
-  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-5.2.9.tgz#ef0a238533fd5455fd23e5bd4d75f6c783631f05"
-  integrity sha512-amd5Wp7BM5U0HE/FUgsJmf/dvfqSKYf55HrxR1tMlpT3BqQmVZHB9RJDBpNqqf3/yF6fkryCbx5H9fEMa4mY3g==
+  version "5.2.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/merriweather/-/merriweather-5.2.10.tgz#a2d5030923ae3cc5f513ba8d11021d4d7acb3636"
+  integrity sha512-jZFajhfv5K8BSz8SVXY450BPa3C/WBYXwCHehi9sdqSsfEo9k4GorNidPX2CViNTnBqg6kt+3+D/oricLD5uDg==
 
 "@fontsource/public-sans@^5.1.1":
   version "5.2.6"
