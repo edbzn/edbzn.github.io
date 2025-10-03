@@ -1044,10 +1044,10 @@
   dependencies:
     mime "^3.0.0"
 
-"@cloudflare/unenv-preset@2.7.5":
-  version "2.7.5"
-  resolved "https://registry.yarnpkg.com/@cloudflare/unenv-preset/-/unenv-preset-2.7.5.tgz#3de4ba9df091839575e088da474554d180f26257"
-  integrity sha512-eB3UAIVhrvY+CMZrRXS/bAv5kWdNiH+dgwu+1M1S7keDeonxkfKIGVIrhcCLTkcqYlN30MPURPuVFUEzIWuuvg==
+"@cloudflare/unenv-preset@2.7.6":
+  version "2.7.6"
+  resolved "https://registry.yarnpkg.com/@cloudflare/unenv-preset/-/unenv-preset-2.7.6.tgz#36755d140c71b10a0a09f61ff0d1d8ab50d25250"
+  integrity sha512-ykG2nd3trk6jbknRCH69xL3RpGLLbKCrbTbWSOvKEq7s4jH06yLrQlRr/q9IU+dK9p1JY1EXqhFK7VG5KqhzmQ==
 
 "@cloudflare/workerd-darwin-64@1.20251001.0":
   version "1.20251001.0"
@@ -13878,12 +13878,12 @@ workerd@1.20251001.0:
     "@cloudflare/workerd-windows-64" "1.20251001.0"
 
 wrangler@^4.0.0:
-  version "4.41.0"
-  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-4.41.0.tgz#06ee2560613d2dacf030206f88c79171398d2702"
-  integrity sha512-SPiBk/5SgCSIdcWw8EXc8DzqtrjbIU+/n22fQjyz4RnULAqCFJjy84F5crcWnb1J/iPiOzm7mS9bMGFFtpwS/w==
+  version "4.42.0"
+  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-4.42.0.tgz#afee11ca1dd9be095ffefc5532d0168a30bce4c9"
+  integrity sha512-OZXiUSfGD66OVkncDbjZtqrsH6bWPRQMYc6RmMbkzYm/lEvJ8lvARKcqDgEyq8zDAgJAivlMQLyPtKQoVjQ/4g==
   dependencies:
     "@cloudflare/kv-asset-handler" "0.4.0"
-    "@cloudflare/unenv-preset" "2.7.5"
+    "@cloudflare/unenv-preset" "2.7.6"
     blake3-wasm "2.1.5"
     esbuild "0.25.4"
     miniflare "4.20251001.0"
