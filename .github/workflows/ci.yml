@@ -11,7 +11,7 @@ jobs:
       - name: Use Node.js v20
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
       - run: yarn --frozen-lock
       - run: yarn build
 
@@ -22,7 +22,7 @@ jobs:
       - name: Use Node.js v20
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
       - run: yarn --frozen-lock
       - run: yarn test:e2e:ci
 
@@ -37,7 +37,7 @@ jobs:
       - name: Use Node.js v20
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
       - run: yarn --frozen-lock
       - run: yarn build
       - name: Deploy
