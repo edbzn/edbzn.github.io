@@ -27,6 +27,9 @@ class Layout extends React.Component {
             background: '#fff',
             paddingBottom: 18,
             paddingTop: 18,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
         >
           <Link
@@ -183,6 +186,48 @@ class Layout extends React.Component {
               </span>
             </div>
           </Link>
+          <nav
+            style={{
+              display: 'flex',
+              gap: '24px',
+              alignItems: 'center',
+            }}
+          >
+            <Link
+              to="/"
+              style={{
+                boxShadow: 'none',
+                fontFamily: '"Public Sans", sans-serif',
+                textTransform: 'uppercase',
+                fontSize: '14px',
+                fontWeight: '500',
+                color: 'rgba(0, 0, 0, 0.9)',
+                textDecoration: 'none',
+              }}
+              activeStyle={{
+                fontWeight: '700',
+              }}
+            >
+              About
+            </Link>
+            <Link
+              to="/blog"
+              style={{
+                boxShadow: 'none',
+                fontFamily: '"Public Sans", sans-serif',
+                textTransform: 'uppercase',
+                fontSize: '14px',
+                fontWeight: '500',
+                color: 'rgba(0, 0, 0, 0.9)',
+                textDecoration: 'none',
+              }}
+              activeStyle={{
+                fontWeight: '700',
+              }}
+            >
+              Posts
+            </Link>
+          </nav>
         </header>
         <main style={{ marginTop: rhythm(1) }}>{children}</main>
         <Service />

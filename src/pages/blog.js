@@ -27,47 +27,32 @@ class BlogIndex extends React.Component {
         <Seo title={tag ? `${tag} posts` : 'All posts'} />
         <Bio />
         <section role="main" style={{ marginTop: rhythm(2) }}>
-          <span
+          <div
             style={{
               marginBottom: rhythm(1.4),
               fontFamily: '"Public Sans", sans-serif',
               textTransform: 'uppercase',
-              boxShadow: 'none',
               fontWeight: '100',
             }}
-            to="/blog"
           >
             {tag ? `#${tag}` : 'All posts'}
-          </span>{' '}
-          ·{' '}
-          <Link
-            style={{
-              marginBottom: rhythm(1.4),
-              fontFamily: '"Public Sans", sans-serif',
-              textTransform: 'uppercase',
-              boxShadow: 'none',
-            }}
-            to="/"
-          >
-            About me
-          </Link>
-          {tag && (
-            <>
-              {' '}
-              ·{' '}
-              <Link
-                style={{
-                  marginBottom: rhythm(1.4),
-                  fontFamily: '"Public Sans", sans-serif',
-                  textTransform: 'uppercase',
-                  boxShadow: 'none',
-                }}
-                to="/blog"
-              >
-                All posts
-              </Link>
-            </>
-          )}
+            {tag && (
+              <>
+                {' '}
+                ·{' '}
+                <Link
+                  style={{
+                    fontFamily: '"Public Sans", sans-serif',
+                    textTransform: 'uppercase',
+                    boxShadow: 'none',
+                  }}
+                  to="/blog"
+                >
+                  All posts
+                </Link>
+              </>
+            )}
+          </div>
           {blogPosts.map((node) => (
             <div
               key={node.frontmatter.title}

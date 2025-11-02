@@ -45,19 +45,10 @@ class AboutMe extends React.Component {
               marginBottom: rhythm(1.4),
               fontFamily: '"Public Sans", sans-serif',
               textTransform: 'uppercase',
+              fontWeight: '100',
             }}
           >
-            <span
-              style={{
-                fontWeight: '100',
-              }}
-            >
-              Latest posts
-            </span>{' '}
-            ·{' '}
-            <Link to="blog" style={{ boxShadow: 'none' }}>
-              All Posts
-            </Link>
+            Latest posts
           </div>
           {blogPosts.map((node) => (
             <div
