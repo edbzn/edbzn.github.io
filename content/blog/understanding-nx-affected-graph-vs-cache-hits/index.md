@@ -66,7 +66,7 @@ graph TD
 
 <Note> Projects `B` and `C` are affected because they depend on `A`, which was changed.</Note>
 
-## Nx Computation Caching and Cache Hits: Reusing Previous Results
+## Nx Cache Hits: Reusing Previous Results
 
 Nx also ensures that when a task is required, you don't redo work unnecessarily. This is thanks to **computation caching**.
 
@@ -84,13 +84,13 @@ Before executing any cacheable task, Nx computes a **hash** based on the task’
 This hash uniquely identifies the state of the project for that task. Nx then checks if it has seen this exact computation before:
 
 
-- If a **matching hash exists in the cache** (a cache hit), Nx will skip executing the task and instead retrieve the previously saved results. It pulls from the cache the task’s outputs (e.g. build artifacts) and even replays the terminal logs.
-- If **no cached result is found** (a cache miss), Nx will run the task as normal. Once the task completes, Nx stores the output files and terminal output in the cache for future use.
+- If a **matching hash exists in the cache**, Nx will skip executing the task and instead retrieve the previously saved results. It pulls from the cache the task’s outputs (e.g. build artifacts) and even replays the terminal logs.
+- If **no cached result is found**, Nx will run the task as normal. Once the task completes, Nx stores the output files and terminal output in the cache for future use.
 
 
 <Note>
 
-By default, Nx caches task results locally on your machine. For even greater benefit in team environments and CI pipelines, Nx can use **remote caching** (Nx Cloud) so that if one developer or CI job has already built a project, others can get a cache hit and skip rebuilding it.
+By default, Nx caches task results locally on your machine. For even greater benefit in team environments and CI pipelines, Nx can use **remote caching** so that if one developer or CI job has already built a project, others can get a cache hit and skip rebuilding it.
 
 </Note>
 
@@ -132,7 +132,7 @@ Cache ensures repeated work isn't done if inputs haven't changed.
 
 ## Conclusion
 
-The **affected graph** answers “_What needs to run?_" while **cache hits** answer “_Has this work already been done?_". Combining both ensures that you:
+The **affected graph** answers _What needs to run?_ while **cache hits** answer _Has this work already been done?_". Combining both ensures that you:
 
 - Skip unaffected projects entirely.
 - Skip execution for tasks with unchanged inputs.
