@@ -15,13 +15,13 @@ Thanks to [Antoine Pairet](https://x.com/antoinepairet) for suggesting this blog
 
 ## Nx Affected Graph: running only what's changed
 
-One of Nx's most impactful features is the **affected graph**, which allows you to run tasks only on projects impacted by recent changes.
+One of Nx's most impactful features is the affected graph, which allows you to run tasks only on projects impacted by recent changes.
 
 <Note type="tip">In simple terms, the affected graph helps us **to skip unnecessary work** and **focus only on the things that have been changed**.</Note>
 
 ### How is the affected graph computed?
 
-When you run an **affected** command (e.g. `nx affected -t build`), Nx will:
+When you run an affected command (e.g. `nx affected -t build`), Nx will:
 
 1. **Finds changed files** using Git.
 2. **Maps files to projects** using Nx's project graph.
@@ -102,9 +102,17 @@ graph TD
   CMD[nx build project-a] --> Inputs[Collect Task Inputs]
   Inputs --> Hash[Compute Hash]
   Hash --> Check{Hash in Cache?}
-  Check -- Yes --> Replay[Cache Hit: Replay Cached Output]
-  Check -- No --> Run[Cache Miss: Run Task]
+  Check -->|Yes| Replay[Cache Hit: Replay Cached Output]
+  Check -->|No| Run[Cache Miss: Run Task]
   Run --> Store[Store Output in Cache]
+
+  style CMD fill:#e1f5ff,stroke:#01579b
+  style Inputs fill:#fff4e6,stroke:#e65100
+  style Hash fill:#fff4e6,stroke:#e65100
+  style Check fill:#ffffcc,stroke:#f57f17
+  style Replay fill:#ccffcc,stroke:#2e7d32
+  style Run fill:#ffcccc,stroke:#c62828
+  style Store fill:#e1bee7,stroke:#6a1b9a
 ```
 
 <Note type="tip">
