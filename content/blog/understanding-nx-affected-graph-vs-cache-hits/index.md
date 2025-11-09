@@ -90,7 +90,7 @@ This hash uniquely identifies the state of the project for that task. Nx then ch
 
 <Note>
 
-By default, Nx caches task results locally on your machine. For even greater benefit in team environments and CI pipelines, Nx can use **remote caching** so that if one developer or CI job has already built a project, others can get a cache hit and skip rebuilding it.
+By default, Nx caches task results locally on your machine. For greater benefit in team environments and CI pipelines, Nx can use **remote caching** so that if one developer or CI job has already built a project, others can get a cache hit and skip rebuilding it.
 
 </Note>
 
@@ -128,7 +128,7 @@ Cache ensures repeated work isn't done if inputs haven't changed.
 
 ## Conclusion
 
-The **affected graph** answers _What needs to run?_ while **cache hits** answer _Has this work already been done?_". Combining both ensures that you:
+The **affected graph** answers _"What needs to run?"_ while **cache hits** answer _"Has this work already been done?"_. Combining both ensures that you:
 
 - Skip unaffected projects entirely.
 - Skip execution for tasks with unchanged inputs.
