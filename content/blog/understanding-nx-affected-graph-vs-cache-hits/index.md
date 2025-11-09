@@ -108,10 +108,6 @@ graph TD
   Run --> Store[Store Output in Cache]
 
   style CMD fill:#e1f5ff,stroke:#01579b,stroke-width:2px
-  style Inputs fill:#fff4e6,stroke:#e65100
-  style Hash fill:#fff4e6,stroke:#e65100
-  style Check fill:#ffffcc,stroke:#f57f17
-  style Replay fill:#ccffcc,stroke:#2e7d32
   style Run fill:#ffcccc,stroke:#c62828
   style Store fill:#e1bee7,stroke:#6a1b9a
 ```
