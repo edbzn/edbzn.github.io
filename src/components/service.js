@@ -6,7 +6,7 @@ export const Service = () => {
   return (
     <section style={styles.section} className="box">
       <img style={styles.img} src={nxBadge2025} alt="Nx Badge 2025" />
-      <h2 style={styles.heading}>Looking for a senior developer?</h2>
+      <h2 style={styles.heading}>Interested in collaborating?</h2>
       <p style={styles.services}>
         I provide <span style={styles.underline}>web development</span> and{' '}
         <span style={styles.underline}>platform engineering</span> services to
