@@ -13,6 +13,8 @@ jobs:
         with:
           node-version: 24
       - run: yarn --frozen-lock
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps
       - run: yarn build
 
   e2e:
@@ -24,6 +26,8 @@ jobs:
         with:
           node-version: 24
       - run: yarn --frozen-lock
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps
       - run: yarn test:e2e:ci
 
   deploy:
@@ -39,6 +43,8 @@ jobs:
         with:
           node-version: 24
       - run: yarn --frozen-lock
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps
       - run: yarn build
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
