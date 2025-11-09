@@ -18,6 +18,12 @@ export default async function (
       'json',
       'docker',
       'tsx',
+      'yaml',
+      'yml',
+      'css',
+      'scss',
+      'shellscript',
+      'bash',
     ],
   }
 ) {
