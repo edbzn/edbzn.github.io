@@ -9,6 +9,10 @@ tags: [nx, monorepo]
 
 This post will clarify what each concept means, how they work, and how they differ.
 
+<Note>
+Thanks to [Antoine Pairet](https://x.com/antoinepairet) for suggesting this blog post topic!
+</Note>
+
 ## Nx Affected Graph: running only what's changed
 
 One of Nx's most impactful features is the **affected graph**, which allows you to run tasks only on projects impacted by recent changes.
