@@ -39,7 +39,7 @@ nx graph --affected
 
 ```mermaid
 graph TD
-  CMD[nx affected -t build] --> Git[Find Changed Files via Git]
+  CMD[`nx affected -t build`] --> Git[Find Changed Files via Git]
   Git --> Changed[Changed: project-a files]
   Changed --> Graph[Analyze Project Graph]
 
@@ -53,6 +53,7 @@ graph TD
   C --> Run3[✓ Build project-c]
   D --> Skip[✗ Skip project-d]
 
+  style CMD fill:#e1f5ff,stroke:#01579b,stroke-width:2px
   style A fill:#ffcccc
   style B fill:#ffffcc
   style C fill:#ffffcc
@@ -99,14 +100,14 @@ By default, Nx caches task results locally on your machine. For even greater ben
 
 ```mermaid
 graph TD
-  CMD[nx build project-a] --> Inputs[Collect Task Inputs]
+  CMD[`nx build project-a`] --> Inputs[Collect Task Inputs]
   Inputs --> Hash[Compute Hash]
   Hash --> Check{Hash in Cache?}
   Check -->|Yes| Replay[Cache Hit: Replay Cached Output]
   Check -->|No| Run[Cache Miss: Run Task]
   Run --> Store[Store Output in Cache]
 
-  style CMD fill:#e1f5ff,stroke:#01579b
+  style CMD fill:#e1f5ff,stroke:#01579b,stroke-width:2px
   style Inputs fill:#fff4e6,stroke:#e65100
   style Hash fill:#fff4e6,stroke:#e65100
   style Check fill:#ffffcc,stroke:#f57f17
