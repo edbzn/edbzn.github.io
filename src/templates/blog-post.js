@@ -15,7 +15,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx;
     const { author, github } = this.props.data.site.siteMetadata;
-    const { previous, next } = this.props.pageContext;
+    const { previous, next, relatedPosts } = this.props.pageContext;
     const { location, children } = this.props;
     return (
       <Layout location={location} author={author} github={github}>
@@ -95,7 +95,11 @@ class BlogPostTemplate extends React.Component {
             crossorigin="anonymous"
             async
           />
-          <PostNav previous={previous} next={next} />
+          <PostNav
+            previous={previous}
+            next={next}
+            relatedPosts={relatedPosts}
+          />
           <footer>
             <Bio />
           </footer>

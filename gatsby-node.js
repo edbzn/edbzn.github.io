@@ -40,19 +40,32 @@ exports.createPages = async ({ graphql, actions }) => {
   const tags = result.data.allMdx.group;
 
   posts.forEach((post, index) => {
-    const hasNext = index > 0;
-    const hasPrevious = index < posts.length - 1;
-
-    const nextNode = hasNext ? posts[index - 1] : null;
-    const previousNode = hasPrevious ? posts[index + 1] : null;
-
-    const next = hasNext && nextNode.published ? nextNode : null;
-    const previous =
-      hasPrevious && previousNode.published ? previousNode : null;
-
     if (!post.published) {
       return;
     }
+
+    // Collect related posts to ensure at least 3 articles in navigation
+    const relatedPosts = [];
+
+    // Add next posts (newer)
+    for (let i = index - 1; i >= 0 && relatedPosts.length < 3; i--) {
+      if (posts[i].published) {
+        relatedPosts.push({ ...posts[i], relation: 'next' });
+      }
+    }
+
+    // Add previous posts (older) if we don't have 3 yet
+    for (let i = index + 1; i < posts.length && relatedPosts.length < 3; i++) {
+      if (posts[i].published) {
+        relatedPosts.push({ ...posts[i], relation: 'previous' });
+      }
+    }
+
+    // For compatibility, extract next and previous
+    const next = relatedPosts.find((p) => p.relation === 'next') || null;
+    const previous =
+      relatedPosts.find((p) => p.relation === 'previous') || null;
+
     // TODO: create redirect
     createPage({
       path: post.fields.slug,
@@ -62,6 +75,11 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: post.fields.slug,
         previous,
         next,
+        relatedPosts: relatedPosts.map((p) => ({
+          id: p.id,
+          fields: p.fields,
+          frontmatter: p.frontmatter,
+        })),
       },
     });
   });

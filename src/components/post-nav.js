@@ -20,41 +20,52 @@ const style = {
   },
 };
 
-export const PostNav = ({ previous, next }) => (
-  <nav role="navigation" style={style.nav} className="post-nav">
-    <div style={style.title}>More from Edouard Bozon</div>
-    <ul style={style.ul}>
-      {previous && (
-        <li>
-          <Link
-            to={previous.fields.slug}
-            style={{ color: 'inherit', fontWeight: '900' }}
-            rel="prev"
-          >
-            {previous.frontmatter.title}
-          </Link>
-        </li>
-      )}
-      {next && (
-        <li>
-          <Link
-            to={next.fields.slug}
-            style={{
-              color: 'inherit',
-              fontWeight: '900',
-              marginTop: rhythm(0.6),
-            }}
-            rel="next"
-          >
-            {next.frontmatter.title}
-          </Link>
-        </li>
-      )}
-    </ul>
-  </nav>
-);
+export const PostNav = ({ previous, next, relatedPosts }) => {
+  // Use relatedPosts if available, otherwise fall back to previous/next
+  const posts =
+    relatedPosts && relatedPosts.length > 0
+      ? relatedPosts
+      : [next, previous].filter(Boolean);
+
+  if (posts.length === 0) {
+    return null;
+  }
+
+  return (
+    <nav role="navigation" style={style.nav} className="post-nav">
+      <div style={style.title}>More from Edouard Bozon</div>
+      <ul style={style.ul}>
+        {posts.map((post, index) => (
+          <li key={post.id || post.fields.slug}>
+            <Link
+              to={post.fields.slug}
+              style={{
+                color: 'inherit',
+                fontWeight: '900',
+                marginTop: index > 0 ? rhythm(0.6) : 0,
+              }}
+            >
+              {post.frontmatter.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
 PostNav.propTypes = {
   previous: PropTypes.object,
   next: PropTypes.object,
+  relatedPosts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      fields: PropTypes.shape({
+        slug: PropTypes.string.isRequired,
+      }).isRequired,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+      }).isRequired,
+    })
+  ),
 };
