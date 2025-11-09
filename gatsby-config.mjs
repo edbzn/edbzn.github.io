@@ -122,7 +122,15 @@ export default {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-plugin-remark-shiki`, // custom plugin
+          {
+            resolve: `gatsby-remark-mermaid`,
+            options: /** @type {import('gatsby-remark-mermaid').Options} */ ({
+              mermaidConfig: {
+                theme: 'neutral'
+              }
+            })
+          },
+          `gatsby-plugin-remark-shiki`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
