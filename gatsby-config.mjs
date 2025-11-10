@@ -11,7 +11,8 @@ export default {
     url: siteUrl,
     titleTemplate: '%s · edbzn.dev',
     author: `Edouard Bozon`,
-    description: 'Edouard Bozon · A software engineer focusing on web development and platform engineering. I work extensively with Angular, Node.js, and Nx to build scalable applications. As an open source contributor, I focus on collaboration—whether improving code, sharing knowledge, or helping others learn. I enjoy solving problems with clean solutions and love working with teams and communities that innovate in web technology.',
+    description:
+      'Edouard Bozon · A software engineer focusing on web development and platform engineering. I work extensively with Angular, Node.js, and Nx to build scalable applications. As an open source contributor, I focus on collaboration—whether improving code, sharing knowledge, or helping others learn. I enjoy solving problems with clean solutions and love working with teams and communities that innovate in web technology.',
     twitterUsername: '@edbzn',
     github: {
       sponsorUrl: 'https://github.com/sponsors/edbzn',
@@ -126,9 +127,10 @@ export default {
             resolve: `gatsby-remark-mermaid`,
             options: /** @type {import('gatsby-remark-mermaid').Options} */ ({
               mermaidConfig: {
-                theme: 'neutral'
-              }
-            })
+                theme: 'neutral',
+                look: 'handDrawn',
+              },
+            }),
           },
           `gatsby-plugin-remark-shiki`,
           `gatsby-remark-copy-linked-files`,
