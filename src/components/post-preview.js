@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { rhythm } from '../utils/typography';
+import { Tags } from './tags';
 
 export const PostPreview = ({ node }) => {
   return (
@@ -37,22 +38,13 @@ export const PostPreview = ({ node }) => {
           fontWeight: '100',
         }}
       >
-        <div>
-          {node.frontmatter.tags &&
-            node.frontmatter.tags.map((tag) => (
-              <Link
-                key={tag}
-                to={`/tags/${tag}`}
-                style={{
-                  boxShadow: 'none',
-                  fontWeight: '400',
-                }}
-              >
-                {' '}
-                #{tag}
-              </Link>
-            ))}
-        </div>
+        <Tags
+          tags={node.frontmatter.tags}
+          style={{
+            marginTop: rhythm(1 / 4),
+            marginBottom: rhythm(1 / 4),
+          }}
+        />
         <div style={{ fontSize: '14px' }}>
           {node.frontmatter.draft ? (
             <span>

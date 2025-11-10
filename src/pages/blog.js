@@ -36,22 +36,6 @@ class BlogIndex extends React.Component {
             }}
           >
             {tag ? `#${tag}` : 'All posts'}
-            {tag && (
-              <>
-                {' '}
-                ·{' '}
-                <Link
-                  style={{
-                    fontFamily: '"Public Sans", sans-serif',
-                    textTransform: 'uppercase',
-                    boxShadow: 'none',
-                  }}
-                  to="/blog"
-                >
-                  All posts
-                </Link>
-              </>
-            )}
           </div>
           {blogPosts.map((node) => (
             <div

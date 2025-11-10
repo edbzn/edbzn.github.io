@@ -58,7 +58,7 @@ details {
   transition: box-shadow 0.2s ease;
 }
 
-.box:hover:not(.sponsor-card):after {
+.box:hover:not(.sponsor-card):not(.bio):after {
   box-shadow:
     rgba(17, 17, 26, 0.1) 0px 8px 24px,
     rgba(17, 17, 26, 0.1) 0px 16px 48px;

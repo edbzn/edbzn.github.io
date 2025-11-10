@@ -7,6 +7,7 @@ import Layout from '../components/layout';
 import { Note } from '../components/note';
 import { PostNav } from '../components/post-nav';
 import { Seo } from '../components/seo';
+import { Tags } from '../components/tags';
 import { rhythm } from '../utils/typography';
 
 const shortcodes = { Note };
@@ -35,28 +36,13 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.title}
             </h1>
-            <p
+            <Tags
+              tags={post.frontmatter.tags}
               style={{
-                marginTop: rhythm(0.2),
-                marginBottom: rhythm(0),
-                fontWeight: 'lighter',
+                marginTop: rhythm(0.5),
+                marginBottom: rhythm(0.5),
               }}
-            >
-              {post.frontmatter.tags &&
-                post.frontmatter.tags.map((tag) => (
-                  <span key={tag}>
-                    <a
-                      href={`/tags/${tag}`}
-                      style={{
-                        boxShadow: 'none',
-                        fontWeight: '400',
-                      }}
-                    >
-                      #{tag}
-                    </a>{' '}
-                  </span>
-                ))}
-            </p>
+            />
             <p
               style={{
                 marginBottom: rhythm(2),
