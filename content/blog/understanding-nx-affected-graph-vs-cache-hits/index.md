@@ -17,7 +17,7 @@ Thanks to [Antoine Pairet](https://x.com/antoinepairet) for suggesting this blog
 
 One of Nx's most impactful features is the affected graph, which allows you to run tasks only on projects impacted by recent changes.
 
-<Note type="tip">In simple terms, the affected graph helps us **to skip unnecessary work** and **focus only on the things that have been changed**.</Note>
+<Note type="tip">In simple terms, the affected graph helps us to skip unnecessary work and focus only on the things that have been changed.</Note>
 
 ### How is the affected graph computed?
 
@@ -66,7 +66,7 @@ graph TD
 
 <Note> Projects `B` and `C` are affected because they depend on `A`, which was changed.</Note>
 
-## Nx Cache Hits: Reusing Previous Results
+## Nx Cache Computation: reusing previous results
 
 Nx also ensures that when a task is required, you don't redo work unnecessarily. This is thanks to **computation caching**.
 
