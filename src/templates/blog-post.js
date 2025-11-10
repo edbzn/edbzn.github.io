@@ -80,7 +80,7 @@ class BlogPostTemplate extends React.Component {
           </MDXProvider>
           <Giscus
             id="comments"
-            repo="edbzn/edbzn.github.io"
+            repo="edbzn/edbzn.dev"
             repoId="MDEwOlJlcG9zaXRvcnk5OTQ4MDU0Mw=="
             category="Comments"
             categoryId="DIC_kwDOBe3z384CkeQh"
