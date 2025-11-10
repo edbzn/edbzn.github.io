@@ -77,7 +77,7 @@ class AboutMe extends React.Component {
             </span>{' '}
           </div>
 
-          <Projects ossProjects={ossProjects} />
+          <Projects ossProjects={ossProjects} sponsorUrl={github.sponsorUrl} />
         </section>
       </Layout>
     );

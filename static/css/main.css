@@ -55,6 +55,35 @@ details {
     rgba(17, 17, 26, 0.05) 0px 4px 16px,
     rgba(17, 17, 26, 0.05) 0px 8px 32px;
   z-index: -1;
+  transition: box-shadow 0.2s ease;
+}
+
+.box:hover:not(.sponsor-card):after {
+  box-shadow:
+    rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.sponsor-card {
+  background: linear-gradient(135deg, #e63946 0%, #d62828 100%);
+  transition: transform 0.2s ease;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-4px);
+}
+
+.sponsor-card:after {
+  box-shadow:
+    rgba(230, 57, 70, 0.3) 0px 4px 16px,
+    rgba(230, 57, 70, 0.2) 0px 8px 32px;
+  transition: box-shadow 0.2s ease;
+}
+
+.sponsor-card:hover:after {
+  box-shadow:
+    rgba(230, 57, 70, 0.4) 0px 8px 24px,
+    rgba(230, 57, 70, 0.3) 0px 16px 48px;
 }
 
 .iframe {
