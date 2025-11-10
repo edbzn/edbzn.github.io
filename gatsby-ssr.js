@@ -14,7 +14,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"
-        key="interFont"
+        key={font}
       />
     ))
   );
