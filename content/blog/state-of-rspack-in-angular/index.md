@@ -11,6 +11,10 @@ Recently real progress has been made around Rspack and Angular. This post will c
 
 Let's start with a brief history of compiling and bundling in Angular.
 
+<Note type="tip">
+**Update (November 2025):** There is now an [official angular-rspack plugin](https://nx.dev/docs/technologies/angular/angular-rspack/introduction) maintained by the Nx team. While it is still experimental, this represents a significant step forward for official Rspack support in the Angular ecosystem.
+</Note>
+
 ## Angular CLI, my good old friend
 
 Angular CLI **handles the build process and provides an easy interface for compiling and bundling Angular applications**. While powerful, the CLI has its limitations, particularly for _extending the build process_ or _integrating new tools_.
