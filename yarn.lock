@@ -1094,10 +1094,10 @@
   dependencies:
     mime "^3.0.0"
 
-"@cloudflare/unenv-preset@2.7.10":
-  version "2.7.10"
-  resolved "https://registry.yarnpkg.com/@cloudflare/unenv-preset/-/unenv-preset-2.7.10.tgz#a575676cf6fdac89d85619f0aaad725e137eb6a4"
-  integrity sha512-mvsNAiJSduC/9yxv1ZpCxwgAXgcuoDvkl8yaHjxoLpFxXy2ugc6TZK20EKgv4yO0vZhAEKwqJm+eGOzf8Oc45w==
+"@cloudflare/unenv-preset@2.7.11":
+  version "2.7.11"
+  resolved "https://registry.yarnpkg.com/@cloudflare/unenv-preset/-/unenv-preset-2.7.11.tgz#61f2448b367e2b6ed9e0e930bd97a6da24d9e5e5"
+  integrity sha512-se23f1D4PxKrMKOq+Stz+Yn7AJ9ITHcEecXo2Yjb+UgbUDCEBch1FXQC6hx6uT5fNA3kmX3mfzeZiUmpK1W9IQ==
 
 "@cloudflare/workerd-darwin-64@1.20251118.0":
   version "1.20251118.0"
@@ -10715,10 +10715,10 @@ mini-css-extract-plugin@1.6.2:
     schema-utils "^3.0.0"
     webpack-sources "^1.1.0"
 
-miniflare@4.20251118.0:
-  version "4.20251118.0"
-  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-4.20251118.0.tgz#d5d5cd68e03ba7219e82cd4cf476d71e77a0d2ee"
-  integrity sha512-dVO7Bhbv82karSaZ1qacN/W4My2cM9HVxzBl0I+oVX/P/a9NZASSj3kZoAkjuAvc/ytbdOckIRYpK1oLyzVXNg==
+miniflare@4.20251118.1:
+  version "4.20251118.1"
+  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-4.20251118.1.tgz#8e9210732d1b405487a88e7eac2e4865e37b3971"
+  integrity sha512-uLSAE/DvOm392fiaig4LOaatxLjM7xzIniFRG5Y3yF9IduOYLLK/pkCPQNCgKQH3ou0YJRHnTN+09LPfqYNTQQ==
   dependencies:
     "@cspotcode/source-map-support" "0.8.1"
     acorn "8.14.0"
@@ -14922,15 +14922,15 @@ workerd@1.20251118.0:
     "@cloudflare/workerd-windows-64" "1.20251118.0"
 
 wrangler@^4.0.0:
-  version "4.49.1"
-  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-4.49.1.tgz#cbb28a23271e5edf11beb39a939cc9bab9702c46"
-  integrity sha512-V0sMP4Gl1pYXwFastYtrcyHwxgmo0xwrnUoOj5hXhzOKunYc/YcCIRZ1ZmPO13OShkx8M0+zCymiNrXkrldj7g==
+  version "4.50.0"
+  resolved "https://registry.yarnpkg.com/wrangler/-/wrangler-4.50.0.tgz#cfce01a666c8744273b4bdf5b576b54cd3cbedac"
+  integrity sha512-+nuZuHZxDdKmAyXOSrHlciGshCoAPiy5dM+t6mEohWm7HpXvTHmWQGUf/na9jjWlWJHCJYOWzkA1P5HBJqrIEA==
   dependencies:
     "@cloudflare/kv-asset-handler" "0.4.0"
-    "@cloudflare/unenv-preset" "2.7.10"
+    "@cloudflare/unenv-preset" "2.7.11"
     blake3-wasm "2.1.5"
     esbuild "0.25.4"
-    miniflare "4.20251118.0"
+    miniflare "4.20251118.1"
     path-to-regexp "6.3.0"
     unenv "2.0.0-rc.24"
     workerd "1.20251118.0"
